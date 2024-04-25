@@ -1,0 +1,74 @@
+\begin{figure}[htb!]
+    \centering
+    \begin{subfigure}{0.495\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/e_cs_twfe/c_gw_nlog_pcs_main_1o2_main_pb0.pdf}
+        \label{sfig:olscsgwnlogpcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.495\textwidth}
+        \caption{Net Wealth (neglog))}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/e_cs_twfe/c_nw_nlog_pcs_main_1o2_main_pb0.pdf}
+        \label{sfig:olscsnwnlogpcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.495\textwidth}
+        \caption{Gross Wealth (k€, winsored)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/e_cs_twfe/c_gw_pcs_main_1o2_main_pb0.pdf}
+        \label{sfig:olscsgwpcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.495\textwidth}
+        \caption{Net Wealth (k€, winsored)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/e_cs_twfe/c_nw_pcs_main_1o2_main_pb0.pdf}
+        \label{sfig:olscsnwpcsmain}
+    \end{subfigure}
+    \caption{Comparison of $DiD_{DR}$ with TWFE specification (Physical Health Domain)} 
+    \label{fig:twfe_cs_pcs_main}
+    \fnote{%
+    Notes: All models refer to the treatment analysis in the physical health domain.
+    Whiskers depict the 95th confidence interval. 
+    In the logarithm specifications, the models display similar results, although 
+    with less precision in the CS specification. 
+    In the specification in levels, the results differ considerably. The 
+    TWFE would suggest a much stronger effect, but the nearly straight 
+    line from pre-treatment to post-treatment ATT's, would indicate that 
+    treated people were already in a different wealth accumulation path and 
+    the differences post treatment would likely not be interpreted as an effect of health degradation. 
+    This could suggest that the DiD\textsubscript{DR} does a good job at
+    balancing the groups via the re-weighting step, as well as avoiding 
+    the ``forbidden comparisons''. 
+    }
+\end{figure}
+
+
+
+
+\begin{figure}[htb!]
+    \centering
+    \begin{subfigure}{0.495\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/e_cs_twfe/c_gw_nlog_mcs_main_1o2_main_pb0.pdf}
+        \label{sfig:olscsgwnlogmcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.495\textwidth}
+        \caption{Net Wealth (neglog))}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/e_cs_twfe/c_nw_nlog_mcs_main_1o2_main_pb0.pdf}
+        \label{sfig:olscsnwnlogmcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.495\textwidth}
+        \caption{Gross Wealth (k€, winsored)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/e_cs_twfe/c_gw_mcs_main_1o2_main_pb0.pdf}
+        \label{sfig:olscsgwmcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.495\textwidth}
+        \caption{Net Wealth (k€, winsored)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/e_cs_twfe/c_nw_mcs_main_1o2_main_pb0.pdf}
+        \label{sfig:olscsnwmcsmain}
+    \end{subfigure}
+    \caption{Comparison of $DiD_{DR}$ with TWFE specification (Mental Health Domain)} 
+    \par \footnotesize \raggedright
+    \vspace{5pt} 
+    Notes: All models refer to the treatment analysis in the mental health domain. 
+    Whiskers depict the 95th confidence interval. 
+    In the mental health domain, the two models are much more in line with one another than when comparing them in the
+    physical domain (see \cref{fig:twfe_cs_pcs_main})
+    \label{fig:twfe_cs_mcs_main}
+\end{figure}

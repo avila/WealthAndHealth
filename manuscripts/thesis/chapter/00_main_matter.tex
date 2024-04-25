@@ -1,0 +1,565 @@
+% !TeX spellcheck = en_US
+% !TeX root = ../ma_mravila.tex
+
+% -------------------------------------------------------------------------------------------------
+% Intro
+% -------------------------------------------------------------------------------------------------
+
+%\input{./chapter/01_introduction.tex}
+
+\chapter{Introduction}
+
+\vspace{60pt}
+
+``The first wealth is health.'' \quad In 1860, the philosopher Ralph Waldo Emerson posited that good health is
+a precondition to flourishment and living a fulfilling life.  Since then, researchers have shown that people with higher socioeconomic status live healthier and longer lives (see \cite{deaton2003health,case.deaton2005broken,chetty.etal2016association}). %
+%
+
+While these results replicate across diverse societies and periods, the exact mechanisms are still open to
+discussion. To what extent wealth causes health or, conversely, health causes wealth is not trivial to disentangle
+given the nature of these variables. In a meta-analysis, \citeauthor{kröger.etal2015what} find evidence in both
+directions \autocite{kröger.etal2015what}. It is not difficult to think of possible mechanisms. People with higher
+socioeconomic status might, for example, have access to better health care or live in areas with more opportunities for following healthier life styles. On the other hand, good health might be a prerequisite for achieving
+financial success, as it enables individuals to participate fully in the workforce and pursue educational and career
+opportunities. Despite these broad associations, the specific pathways through which health influences wealth
+accumulation remain complex. This study aims to contribute to this discussion by focusing specifically on the
+pathway from health to wealth accumulation, quantifying how adverse health outcomes impact individuals' wealth
+trajectories over time. Further, by analyzing mental and physical health shocks separately, the effects from
+both domains can be compared to one another. 
+
+
+\cref{fig:wealthbyageovertreated} serves to illustrate the difference in wealth trajectory over the life cycle
+between two groups: those who experience a significant adverse health outcome over the life cycle, and those who do
+not. Although the starting values, on average, are on the same level earlier in life, one group manages to build up
+considerably more wealth than the other. By age 60, the group with a more stable health
+trajectory accumulates 35\% (gross) and 40\% (net) more wealth than their counterpart.
+This work aims to explore if, and to what extent, an adverse health outcome, whether in the mental or physical
+domain, helps explain the observed difference in this figure.
+
+
+On these accounts, this analysis employs a Difference-in-Differences (DiD) method with multiple time periods and
+variation in treatment timing to estimate the causal effect of an adverse health outcome on the wealth trajectory
+of adults in Germany. The unbalanced panel data employed in this work are provided by the German Socio-Economic
+Panel (SOEP). The final sample encompasses people aged between 18 and 75 and provides, among other variables, health and wealth 
+information since 2002. It includes over 16 thousand individuals and more than 80 thousand observations.
+
+
+This work is structured as follows: \cref{sec:overview_did} presents an overview of the DiD framework proposed by
+\textcite{cs2021did_mtp}. \cref{chap:data} describes the data and focal variables used in this study.
+\cref{sec:meas_health} focuses on the measurement of health and, as a secondary analysis, evaluates some of the
+criticisms raised in the literature about uncorrelated health summary scores. Further, the alternative method for
+computing the summary scores used in this analysis is introduced. \cref{chap:empir_metho_res} covers the empirical
+approach and focuses on the results obtained in the main analysis. Also in this chapter, secondary analyses are
+presented. They explore wealth accumulation links and evaluate effect heterogeneity by education attainment and age
+groups, as well as a section on robustness checks. \cref{ch:discus} presents a discussion on the obtained results,
+including a section on threat to internal validity and another on extensions to the current study. Finally,
+\cref{ch:conclus} summarizes the findings in this study.
+
+
+
+
+\begin{figure}[t]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \caption*{\small Gross Wealth}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/wealth_by_age_over_treated_gw.pdf}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \caption*{\small Net Wealth}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/wealth_by_age_over_treated_nw.pdf}
+    \end{subfigure}
+    \caption{Wealth trajectory by treatment status}
+    \fnote{ \footnotesize Notes: Figure shows two-year moving average with whiskers depicting the 99\% confidence intervals. 
+        Untreated refer to those that did not experience a adverse health outcome up to a given age,
+        while post-treated refer to those treated from the respective certain age onward. For brevity, only the treatment relative to mental health domain is shown. Sample composition changes over life cycle, as the longest time span for a single individual is 19 years. 
+        Data source: SOEPv37}
+    \label{fig:wealthbyageovertreated}
+\end{figure}
+
+
+
+
+
+% -------------------------------------------------------------------------------------------------
+% chapter diff in diff overview ----
+% -------------------------------------------------------------------------------------------------
+\include{./chapter/01_diff_in_diff.tex}
+
+
+
+\chapter{Data}
+\label{chap:data}
+
+In this section, I first describe the data source and highlight the focal variables. Subsequently, I outline the working sample and present descriptive statistics, focusing on the group differences across treatment status.
+
+\section{The Socio-Economic Panel}
+\label{sec:soep}
+
+This analysis is based on the Socio-Economic Panel (SOEP), a survey of individuals and households in Germany conducted yearly since 1984 (\cite{goebel.etal2019SOEP}, \cite{liebig.etal2022SOEP}). The two main components for the current study are the modules screening health indicators 
+and the one wealth at the individual level.  
+
+
+\subsubsection{Health variables} In 2002, the health module was revised and since then it has been conducted every
+second year (\cite{grabka2022healthv37}). The items in this module target whether the respondent's daily activities
+are impaired due to physical or mental health related issues, as well as a subjective assessment on their current
+health. An overview on the questionnaire is presente in \cref{tab:health_fact_varname_and_questions}. This resource
+also provides detailed information on the resulting variables and conducted transformations before using them in
+the factor model. In addition, the distribution of each variable is also presented in
+\cref{fig:main_multifig_phys}.
+ 
+From these variables, I compute alternative Physical and Mental Component Summary scores, PCS and MCS,
+respectively. An in depth explanation on these constructs is presented in \cref{sec:meas_health}. These summary
+scores are the key variables in this work. They are used to assess the individual's health trajectory and to
+determine their treatment status.
+
+
+\subsubsection{Wealth variables}
+
+The wealth module is also available since 2002, but conducted less frequently, namely in 2002, 2005, 2012, 2017 and
+2019. %
+The focal variables are overall gross wealth and overall net wealth as covered in the \textit{personal assets and
+    liabilities} section of the individual questionnaire. It covers real state assets and debts, savings and
+investments, building loan contracts, financial assets, tangible assets, and consumer debt. In 2017, two categories
+covering automotive and educational loans were added. These items, however, are not included in this analysis in
+order to maintain a consistent scope over the whole period. Furthermore, the wealth measures were deflated to 2020
+values by the CPI index provided by Germany's \textcite{destatiscpi}. 
+
+
+Since the wealth and health modules are conducted in different years, I apply a linear interpolation to the wealth
+variables in order have wealth measures matching the frequency of the health module. To illustrate, if a
+participant has valid wealth information in, say, years 2002, 2007 and 2012, I assume that any variation in
+wealth behaves linearly within the sub-ranges. The years with valid information can be considered fixed
+\textit{knots} in this exercise. With that, I impute values for 2004 and 2006, as well as 2008 and 2010, such that
+it varies linearly between 2002--2007 and, likely with a different change rate, between 2007--2012. I refrain
+from doing extrapolations, with the exception of 2020, in which year the values are taken from 2019.  The
+assumption is that wealth measures do not vary too drastically within one year. That implies that people with
+only one completed wealth module are not included in this analysis. In conclusion, the resulting data comprise
+10 waves from 2002 to 2020 with a two-year frequency.
+
+\subsubsection{Further variables of interest} In secondary analyses, I use variables related to the labor market,
+such as annual labor earnings, current employment status, as well as full-time experience and unemployment
+experience since entering the labor market. These variables are used to evaluate possible wealth accumulation
+channels.
+
+Furthermore, variables on subjective well-being are also used in secondary analyses. These include satisfaction
+with health, work, income, and life overall.
+
+In addtition, variables covering concrete health diagnoses that can be clearly mapped onto physical or mental
+health are also employed. These assess whether the respondent has ever been diagnosed with back pain, heart
+conditions, depression, or sleep disorder.
+
+Note that these items are only asked from 2009 onward, so the assumption is made that, prior to 2009, people were
+not diagnosed with any of these health conditions. This is arguably a strong assumption but is somewhat remedied by
+the question formulation, which asks if the respondent has ``ever'' been diagnosed with X. In a more detailed
+analysis, however, those that stated yes should have been dropped from the analysis, since the timing would be
+unclear. This was not done here, however, with the implicit assumption that the diagnosis happened on that very
+year.
+
+In addition, personal characteristics such as age, gender, marital status, federal state of residence, and years of
+education are used as covariates in the main analyses. These variables are employed in the $DiD_{DR}$ framework to
+compute the inverse probabilities of treatment. The workings of this procedure are explored in more detail in
+\cref{sec:overview_did}. Regarding age, a restricted cubic spline with five equally spaced knots is employed to
+better capture nonlinearities in the health and wealth trajectories over the life cycle. To conclude, the
+covariates used in the main estimation specification are gender, age spline, federal state residence, legal
+disability, marital status, and years of education.
+
+
+\section{Final Working Sample}
+
+From the health module, the data consist of 240,770 observations with valid PCS and MCS scores. Out of these,
+167,567 can be merged with valid observations from the wealth modules. After restricting to those with valid
+information on the variables of interest (described above), there remain 163,938 observations.
+
+
+Finally, I restrict the sample to adults aged between 18 and 75. The age restriction is done so that the models can
+still capture the effect of an adverse event happening around the retirement age, and how it evolves into the early
+retirement years. Those older than 75 years, however, it is likely to display a distinct (dis)accumulation pattern,
+which would likely be better captured by separate evaluations. Finally, after the merging process, it is required
+by the DiD framework that each individual has valid data in at least two periods. Those with only one valid
+observation dropped from the analysis.
+
+
+With that, the final sample consists of 141,337 observations. A few considerations are necessary, though. First,
+the always-treated units are dropped from the estimation. Those account for 7,866 observations in the physical and
+8,395 in the mental domain. Further, each of the 2 by 2 DiD calculations is performed with balanced observations
+for that specific calculation. More details are presented in \cref{sec:overview_did}, but as a brief illustration,
+in order to compute a single ATT, say, in 2010 for the group treated in 2004, only those individuals present in
+2004 and in 2010 can be used. The final number of unique and total observations ultimately used in the estimations
+are presented in the table of results for each specification.
+
+\subsection{Descriptive Statistics}
+
+\cref{tab:tableone} presents statistics comparing the eventually-treated and never-treated groups in the physical
+and mental domains. In both cases, the data refer to the information from the first survey year of each respondent.
+
+When comparing the physical and mental domains, one can observe that the groups exhibit greater similarity in the
+mental health domain. For instance, the difference in starting values of net wealth in the mental domain is only
+around 13 thousand, whereas in the physical domain, it differs by about 27 thousand. Similarly, the number of
+months in unemployment differs by around 2.5 in the physical domain, whereas in the mental domain, it only differs
+by around 1.5.
+
+
+% -------------------------------------------------------------------------------------------------
+% rotate page ----
+% -------------------------------------------------------------------------------------------------
+\afterpage{%
+\newcommand{\mc}{\multicolumn}
+\begin{landscape}
+    \centering
+    \begin{table}
+        \centering
+        \begin{adjustbox}{max width=.8\linewidth}
+            \centering
+            \begin{threeparttable}
+                \caption{Descriptive statistics by treatment group for both health domains}
+                \label{tab:tableone}
+                \begin{tabular}{l rrr c rrr}
+                    \toprule
+                    & \mc{3}{l}{Physical Domain} &  & \mc{3}{l}{Mental Domain} \\ \cmidrule(lr){2-4} \cmidrule(l){6-8} 
+                    & \mc{2}{l}{Eventually Treated (PCS)} &  & & \mc{2}{l}{Eventually Treated (MCS)} \\ \cmidrule(lr){2-3} \cmidrule(l){6-7} 
+                    & \mc{1}{c}{no}              & \mc{1}{c}{yes}             &     &  & \mc{1}{c}{no}              & \mc{1}{c}{yes}             &     \\
+                    & \mc{1}{l}{N: 13,786 (80.6\%)} & \mc{1}{l}{N: 3,316 (19.4\%)}  & Test         & \hspace{1em} & \mc{1}{l}{N: 12,933 (78.5\%)} & \mc{1}{l}{N: 3,545 (21.5\%)}  &  Test        \\ \midrule
+                    Age                             & 43.88 (14.39)   & 43.24 (12.97)   & 0.018    &  & 44.59 (14.42)   & 43.46 (13.47)   & $<$0.001 \\
+                    Years of Education              & 12.68 (2.79)    & 12.13 (2.50)    & $<$0.001 &  & 12.44 (2.73)    & 12.28 (2.59)    & 0.001    \\
+                    Physical Health (oblique)       & 55.29 (5.84)    & 54.66 (4.51)    & $<$0.001 &  & 53.35 (8.13)    & 51.57 (8.77)    & $<$0.001 \\
+                    Mental Health (oblique)         & 52.51 (7.96)    & 50.37 (8.72)    & $<$0.001 &  & 54.63 (6.24)    & 54.79 (3.72)    & 0.142    \\
+                    Gross Wealth (log)              & 3.46 (2.19)     & 3.14 (2.17)     & $<$0.001 &  & 3.42 (2.19)     & 3.30 (2.17)     & 0.004    \\
+                    Net Wealth (neglog)             & 3.05 (2.46)     & 2.63 (2.54)     & $<$0.001 &  & 2.99 (2.49)     & 2.87 (2.44)     & 0.018    \\
+                    Gross Wealth (k€, winsored)     & 144.57 (233.24) & 114.35 (195.83) & $<$0.001 &  & 139.76 (228.88) & 125.85 (206.47) & 0.001    \\
+                    Net Wealth (k€, winsored)       & 117.19 (204.92) & 90.63 (172.95)  & $<$0.001 &  & 113.98 (202.34) & 100.13 (179.60) & $<$0.001 \\
+                    Unemployment exp. (months)      & 7.46 (21.96)    & 10.01 (24.42)   & $<$0.001 &  & 8.15 (23.64)    & 9.70 (25.66)    & $<$0.001 \\
+                    Full-Time exp. (months)         & 182.89 (157.53) & 186.90 (149.14) & 0.183    &  & 189.78 (159.47) & 186.62 (152.77) & 0.291    \\
+                    Gender                          &                 &                 &          &  &                 &                 &          \\
+                    \hspace{1em}Male                & 6,573 (47.7\%)  & 1,518 (45.8\%)  & 0.049    &  & 6,178 (47.8\%)  & 1,623 (45.8\%)  & 0.036    \\
+                    \hspace{1em}Female              & 7,213 (52.3\%)  & 1,798 (54.2\%)  &          &  & 6,755 (52.2\%)  & 1,922 (54.2\%)  &          \\
+                    Marital Status                  &                 &                 &          &  &                 &                 &          \\
+                    \hspace{1em}Married             & 8,683 (63.0\%)  & 2,099 (63.3\%)  & 0.007    &  & 8,380 (64.8\%)  & 2,264 (63.9\%)  & 0.245    \\
+                    \hspace{1em}Single              & 3,332 (24.2\%)  & 747 (22.5\%)    &          &  & 2,890 (22.3\%)  & 840 (23.7\%)    &          \\
+                    \hspace{1em}Widowed             & 418 (3.0\%)     & 90 (2.7\%)      &          &  & 417 (3.2\%)     & 95 (2.7\%)      &          \\
+                    \hspace{1em}Divorced            & 1,047 (7.6\%)   & 309 (9.3\%)     &          &  & 994 (7.7\%)     & 273 (7.7\%)     &          \\
+                    \hspace{1em}Separated           & 306 (2.2\%)     & 71 (2.1\%)      &          &  & 252 (1.9\%)     & 73 (2.1\%)      &          \\
+                    Education Attainment            &                 &                 &          &  &                 &                 &          \\
+                    \hspace{1em}Less than High School       & 1,582 (11.5\%)  & 414 (12.5\%)    & $<$0.001 &  & 1,609 (12.4\%)  & 434 (12.2\%)    & 0.02     \\
+                    \hspace{1em}High School         & 8,114 (58.9\%)  & 2,147 (64.7\%)  &          &  & 7,885 (61.0\%)  & 2,246 (63.4\%)  &          \\
+                    \hspace{1em}More than High School       & 4,082 (29.6\%)  & 755 (22.8\%)    &          &  & 3,432 (26.6\%)  & 863 (24.4\%)    &          \\
+                    Employment Status               &                 &                 &          &  &                 &                 &          \\
+                    \hspace{1em}Not Employed        & 3,445 (25.0\%)  & 699 (21.1\%)    & $<$0.001 &  & 3,403 (26.3\%)  & 854 (24.1\%)    & 0.007    \\
+                    \hspace{1em}Employed            & 10,341 (75.0\%) & 2,617 (78.9\%)  &          &  & 9,530 (73.7\%)  & 2,691 (75.9\%)  &          \\ \bottomrule
+                \end{tabular}
+                \begin{tablenotes}[para,flushleft]
+                    \small
+Notes: Number unique observations and proportion (in parenthesis) by treatment group are indicated at the table's header. Those refer to 
+unique individuals present in the main model, after dropping always-treated and dealing
+with missing values of covariates. The statistics refer to the first survey year of each individual. 
+Continuous variables are summarized by their mean and, in parenthesis, standard deviation. 
+Categorical variables are summarized by count and, in parenthesis, group percentage. The fourth column of each domain shows the p-values of
+pooled t-tests for continuous variables and Pearson's $\chi^2$ tests for categorical variables. 
+                \end{tablenotes}
+            \end{threeparttable}
+        \end{adjustbox}
+    \end{table}
+\end{landscape}
+}
+% -------------------------------------------------------------------------------------------------
+% rotate page ----
+% -------------------------------------------------------------------------------------------------
+
+
+Interestingly, the MCS value in the mental health domain, which is the variable used in the treatment assignment
+rule, is one of the few that does not show a statistically significant difference between the eventually-treated
+and never-treated groups. This indicates that when first entering the SOEP, the eventually-treated individuals are
+not significantly dissimilar from the never-treated group to start with. This might be one reason why, as later
+shown, the models in the mental health domain are more supportive of the parallel trends assumption. It is worth
+emphasizing that the data correspond to that apt to be using the estimation procedure. This means that the
+always-treated units are discarded. If those would be considered, the differences would be much larger, specially
+at the respective first survey year.
+
+
+With a large number of observations as in this case, even small deviations from the mean across subgroups would
+render them to be statistically different to a high confidence level. To assess how the groups differ over the
+entire distribution, a univariate kernel density estimation, is presented in \cref{fig:univkerndens}. Restricting
+the data to the first survey year of each participant, we observe that the groups, divided by never- and
+eventually-treated, are not too dissimilar, as the test statistics in \cref{tab:tableone} would suggest. Focusing
+on the selected variables Age, Gross, and Net Wealth, we see well-overlapping support in both health domains, while
+in the mental case, the distributions among treated and untreated are more similar.
+
+In this context, I also conduct a logistic regression of \textit{eventually-treated} on the same covariates as in
+the main analysis. This aims to estimate the probability of being (eventually) treated, conditioned on  gender, age
+spline, federal state residence, legal disability, marital status, and years of education.  The goal is to better
+asses if there is enough overlap in the key variables used in the estimations. 
+
+A Common overlap is one of the assumptions of the doubly-robust specification of \textcite[see Assumption 6,
+``Overlap condition'']{cs2021did_mtp}. The results, as shown in
+\cref{sfig:kd_pi_mcs_main_pcs_main,sfig:kd_pi_mcs_main_mcs_main}, corroborate this assumption. Over the whole
+probability range (0--1)  both groups either display considerable density or, at the extremes, is very thinly
+populated. There are no areas where the treatment probability of one group is densely estimated and the other is
+not. In the mental domain, again, the densities are more similar to one another when compared to the results
+from the physical domain.
+
+Note that the resulting estimated probabilities, or their inverse, are not the same set of weights used in the
+$\text{DID}_{DR}$ framework. In this exercise, only a single probability of eventual treatment is estimated. In the
+$\text{DiD}_{DR}$, in contrast, the estimation targets the probability of being first treated at time $g$. With
+that, several values for each individual are computed and used in each of respective 2x2 blocks. This exercise,
+however, serves to enhance the credibility that the overlap condition would also be met within the estimation of
+each block.
+
+
+
+% -------------------------------------------------------------------------------------------------
+% COMMON SUPPORT ----
+% -------------------------------------------------------------------------------------------------
+\begin{figure}[htb!]
+    \renewcommand{\thesubfigure}{A.\alph{subfigure}}
+    % -------------------------------------------------------------------------------------------------
+    % var: pcs_main         % Physical Health Domain
+    % -------------------------------------------------------------------------------------------------
+    % -------------------------------------------------------------------------------------------------
+    \centering \setcounter{subfigure}{0}% Reset subfigure counter
+    A: Physical Health Domain
+    \\ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{subfigure}{0.425\textwidth}
+        \caption{Estimated Probability of Treatment}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/g_kdens/kd_pi_pcs_main_pcs_main.pdf}
+        \label{sfig:kd_pi_mcs_main_pcs_main}
+    \end{subfigure}
+    \begin{subfigure}{0.425\textwidth}
+        \caption{Age}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/g_kdens/kd_age_pcs_main.pdf}
+        \label{sfig:kd_age_pcs_main}    
+    \end{subfigure}
+    \begin{subfigure}{0.425\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/g_kdens/kd_gw_nlog_pcs_main.pdf}
+        \label{sfig:kd_gw_nlog_pcs_main}
+    \end{subfigure}
+    \begin{subfigure}{0.425\textwidth}
+        \caption{Net Wealth (neglog)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/g_kdens/kd_nw_nlog_pcs_main.pdf}
+        \label{sfig:kd_nw_nlog_pcs_main}
+    \end{subfigure}
+    \centering  
+    \renewcommand{\thesubfigure}{B.\alph{subfigure}}
+    % -------------------------------------------------------------------------------------------------
+    % var: mcs_main         % Mental Health Domain
+    % -------------------------------------------------------------------------------------------------
+    % -------------------------------------------------------------------------------------------------
+    \centering \\ \setcounter{subfigure}{0}% Reset subfigure counter
+    B: Mental Health Domain
+    \\ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{subfigure}{0.425\textwidth}
+        \caption{Estimated Probability of Treatment}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/g_kdens/kd_pi_mcs_main_mcs_main.pdf}
+        \label{sfig:kd_pi_mcs_main_mcs_main}
+    \end{subfigure}
+    \begin{subfigure}{0.425\textwidth}
+        \caption{Age}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/g_kdens/kd_age_mcs_main.pdf}
+        \label{sfig:kd_age_mcs_main}
+    \end{subfigure}
+    \begin{subfigure}{0.425\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/g_kdens/kd_gw_nlog_mcs_main.pdf}
+        \label{sfig:kd_gw_nlog_mcs_main}
+    \end{subfigure}
+    \begin{subfigure}{0.425\textwidth}
+        \caption{Net Wealth (neglog)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/g_kdens/kd_nw_nlog_mcs_main.pdf}
+        \label{sfig:kd_nw_nlog_mcs_main}
+    \end{subfigure}
+    \caption{Univariate kernel density estimation by eventual treatment groups}\label{fig:kd_pcs_main}%
+    \label{fig:univkerndens}
+    \fnote{Notes: The probability of being eventually-treated (panels A.a and B.a) was estimated via a
+        logistic regression on the same covariates from the main DiD\textsubscript{DR} models, with
+        eventually-treated as the response variable. The distribution of all variables shown above indicate 
+        a good overlap across treatment status, with the mental domain displaying a slightly better overlap.
+        Data restricted to the first survey year of each participant.
+    }
+\end{figure}
+
+% \caption[Overlapping support]{Overlapping support\par 
+    % Notes: This figure shows the kernel density estimation conditioned on being in the
+    % eventually-treated or never-treated groups. The underlaying information reflects the first
+    % survey year of each participant. The probability of being eventually-treated (panels A.a and
+    % B.a) was estimated via a logit regression on the same covariates from the main DiD models, with
+    % eventually-treated being the response variable. The probability of being eventually-treated
+    % }
+% -------------------------------------------------------------------------------------------------
+% END: COMMON SUPPORT ----
+% -------------------------------------------------------------------------------------------------
+
+
+
+\include{./chapter/01_measuring_health.tex}
+
+
+\chapter{Empirical Methodology and Results}
+\label{chap:empir_metho_res}
+
+\input{./chapter/06_methods.tex}
+
+
+\include{./chapter/07_results.tex}
+
+
+
+\chapter{Discussion}
+\label{ch:discus}
+
+The interactions between health and wealth are complex. Both variables evolve gradually over the life cycle and
+their interdependence is not trivial to disentangle. In this study, I focus on the proposition that health causes
+wealth. There are several plausible mechanisms, through which this premise would prove to be true. A health shock
+can have, for example, a direct impact on one's wealth through expenses to cover the medical costs. In addition,
+such a shock, can impair one's labor capacity to a lesser or greater extent. The ability to pursue career and
+educational objectives can also be impaired by a unstable health trajectory. These examples illustrate how a health
+shock can lead to a different wealth accumulation trajectory over the long run.
+
+Conversely, it is also easy to think of mechanisms where wealth causes health. While
+\textcite{meer.etal2003exploring}, via an instrumental variable approach, find evidence of a negligible effect in
+the short run, over a longer time span, it is credible that wealthier people could be able to achieve a better
+health status through access to better health care, or make preferable lifestyle choices due to easier access to
+health-promoting  activities, to name a few. In addition, there are a set of factors, which might be unobserved by
+the researcher, that show a causal pathway to both health and wealth. A behavioral or genetic trait might be the
+cause of, for example, being better equipped to attain higher education and, thus, accumulate more wealth while, at
+the same time, avoid unhealthy behaviors such as alcohol abuse or cigarettes consumption. On these accounts, I
+present in the following section key threats to the internal validity of this work.
+
+
+% -------------------------------------------------------------------------------------------------
+% Dicussion > Threats to Internal Validity
+% -------------------------------------------------------------------------------------------------
+\section{Threats to Internal Validity}
+
+The framework used in this study accounts for the issue of unobserved factors, by differencing out the outcome of
+the same individual over different points in time. Assuming these characteristics remain constant, these hidden
+factors cancel themselves out. With that, the obtained coefficients are valid causal estimates of the effect even
+in the presence of heterogeneity that, in a cross-sectional setting, would only grant a correlational
+interpretation.
+
+A stronger threat to internal validity in this setting, emerges when the researcher subscribes only to the
+\textit{social causation} hypothesis, which states that health is caused by, but does not cause wealth. In this
+setting, they could argue that those that are eventually treated are different from the non-treated in such key
+aspects, that regardless of experiencing an adverse health outcome, their wealth trajectory would not follow a
+parallel line to the path of those with more stable health. Differently to the hidden factors case, the applied
+framework does not mechanically account for reverse-causation, as implied by the social causation hypothesis. If
+this premise truly represents the underlying mechanism, the results obtained would remain the same. Only our
+interpretation and their implications would be wrong.
+
+To address this concern, in the availability of several pre-treatment periods, by evaluating their patterns, 
+the researcher can adjust their beliefs on the veracity of such hypotheses.  
+
+In this concrete case, the pre-treatment trends show, as covered in depth in \cref{sec:Results}, mixed results. In
+some specifications, the pre-trends being close to 0 indicates no difference in the outcome changes across treated
+and untreated groups previous to treatment event. Furthermore, the kink observed around the treatment event,
+corroborates to the hypothesis that the adverse health outcome does impact the wealth accumulation. With that said,
+the confidence intervals over the pre-treatment periods are large in some specifications. With that, one could
+argue that the pre-treatment tests do not have enough power to rule out the hypothesis of a diverting pre-treatment
+trends. In some cases, such as the physical health shock on unemployment experience (see \cref{sfig:c_expue_main}),
+this is indeed the most credible interpretation.  With this in mind, the work of \textcite{rambachan.roth2023more},
+where they propose a flexible specification of the pre-trend tests, could prove to find an interesting application
+in this setting.
+
+While this discussion may appear to be a solely philosophical consideration, the distinction has clear real life
+implications.  If a society, for example, finds it to be unfair that people experience high socioeconomic
+disparities at later stages of life and policy makers wish to remedy that, one interpretation would grant more room
+for policy instruments to be used than the other. Precisely, the causal interpretation implies that a policy aiming
+to minimize severe health variation for the working-age population would have the additional benefit of reducing
+wealth inequality at retirement age, as an example. If the correlation interpretation is taken, the policy would
+have to act directly on reducing wealth inequality at retirement in order to achieve its goals.
+
+
+To conclude, the specifications in the mental health domain shows better support for a causal identification,
+specially in the primary models with log of gross wealth as the response variable.  One could, therefore,
+hypothesize that there is a higher degree of exogeneity in the mental than in the physical dimension. It appears
+plausible, a priori, that in the physical domain, the health deterioration happens gradually and, therefore, can be
+anticipated in terms of reduced working hours or earlier retirement. And this would lead to a lower wealth build-up
+over time. Similarly, it also seems credible that a portion of mental health deterioration happens unexpectedly
+and, therefore, cannot be fully anticipated. If that is true, this would explain the difference in pre-trend
+pattern when comparing both health domains and why the mental health specifications portray a more credible causal
+interpretation.
+
+% -------------------------------------------------------------------------------------------------
+% Discussion > extsions ----
+% -------------------------------------------------------------------------------------------------
+\section{Extensions and Outlook}
+\label{extensions}
+
+In this section, I list a few conceivable extensions to this study in terms of its content as well as concerning
+its technical nature. Contentwise, one could enlarge this study's scope by including the partner's and household
+data. This could prove to be a significant gain by capturing wealth patterns within a household. The current
+setting focuses solely on the individual wealth trajectory.
+
+Another improvement could be achieved by including family history data, in order to capture characteristics
+inheritable from parents. This could include socioeconomic variables such as the father's and the mother's
+educational attainment. In addition, received inheritance could be a proxy of parent's wealth. In the health
+dimension, the parent's age of decease could be a proxy for their health, which would function as genetic proxy.
+These variables would capture an inter-generational dimension that focusing solely on the individual trajectory
+neglects. Preliminary checks have shown, however, that while these items are asked by the SOEP, the data availability
+is rather sparse. The options would be focusing on the subset with valid data or imputing the missing values in
+order to use most of the otherwise available information.
+
+The current study can also be extended in a technical way. A matching estimator, for example, that assures balanced
+groups prior to treatment, based on a rich set of covariates provided by the SOEP, would ensure that the treated
+and control units are indeed very similar to one another. If the results are similar, this procedure would increase
+the credibility of causal identification. In the current setting, however, a considerable threat to validity is the
+possibility of differential trends due to different levels of wealth between groups in the pre-treatment period.
+\textcite{daw.hatfield2018matching} show the risks introducing \textit{regression to the mean} bias by matching on
+variables that are correlated with the response variable, including, clearly, the response variable itself.
+
+In addition, \textcite{rambachan.roth2023more} propose an extension to DiD designs where the parallel trends
+assumption might be violated. By not restricting the trends between groups to be perfectly parallel, the
+authors present novel tools for inference over the bounds of the causal effect, relative to the extent of the
+difference in trends, justified by the observed pre-treatment trend.
+
+
+To conclude, in the current setting, the health summary scales, which are continuous variables, are dichotomized
+into a binary treatment variable, as is required by the applied DiD framework. Recent addition to the
+literature, however, generalizes this approach to a framework with continuous variables (see
+\cite{callaway.etal2024eventstudies}). The possible improvement is two-fold: First, it removes the
+discretionary decision of the treatment rule threshold and, second, it is able to distinguish effect intensities. 
+
+
+
+\chapter{Conclusion}
+\label{ch:conclus}
+
+In this study, I assess the impact of an adverse health outcome on wealth accumulation over a substantial time
+span. By dissecting the analysis into mental and physical health dimensions, I explore variations in effects
+across these domains. The investigation encompasses ten bi-yearly waves of the German Socio-Economic Panel,
+spanning from 2002 to 2020, and addresses the wealth accumulation trajectories of individuals aged between 18
+and 75 years old. Concentrating on primary specifications that measure gross wealth in relative terms, the key
+findings can be summarized as follows:
+
+An adverse health outcome in the physical domain reduces the gross wealth accumulation by $6.5\%$,
+and reaches $12\%$ twelve years after the event. %
+%
+In the mental health domain, the effect averages at $8.3\%$ less gross wealth than what is accumulated by the
+control group. Twelve years after the event, it accounts for $15\%$ reduced wealth accumulation.
+
+In exploring possible effect channels, I show that the increase in unemployment after the adverse health 
+event, measured by unemployment experience, employment status or lack of full-time employment experience,
+plausibly demonstrate the effect mechanisms. 
+
+Furthermore, I find no clear evidence on effect heterogeneity by education attainment on  wealth
+accumulation directly, although, in terms of unemployment experience---specially in the mental domain---the less
+educated are capturing the majority of the effect.
+
+When analyzing by age groups, there are hints of effect heterogeneity on wealth accumulation, with the younger
+population (18--39) experiencing a stronger impact. The difference among groups is bigger in the mental
+domain. The effect on unemployment experience, in contrast, is stronger for those aged between 40 and 55.
+
+
+In a secondary analysis, I confirm that the items from SOEP's health module, which are based on the SF-12v2
+methodology, captures the intended concepts. The items, as one would expect, are well clustered in the factor space
+and a clear separation between physical and mental health dimensions emerges. However, I could also reproduce some
+of the raised criticisms on the \textit{agreement problem} between sub-scales and their respective summary scores,
+when using the SF-12 with SOEP data. On this account, an alternative exploratory factor analysis model followed by
+an oblique rotation is adopted to construct the summary scores used in the main analysis.
+
+Conceivable extensions to this work include integrating partner's information to better account for within-household wealth
+structures. In addition, family-related data such as parent's health and proxies for socioeconomic status such
+as education attainment could prove to be key explanatory factors to the individual's wealth accumulation
+trajectory. 
+
+%todo: include other extensions

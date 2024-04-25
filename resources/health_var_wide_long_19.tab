@@ -1,0 +1,64 @@
+/*  wide          renamed                    long         label */
+ren bjp_01_01     healthsat                  plh0171      Satisfaction With Health
+ren bjp_144       healthcond                 ple0008      Current Health
+ren bjp_145_01    sleep_week                 pli0059      hours of sleep, normal workday
+ren bjp_145_02    sleep_weekend              pli0060      hours of sleep, weekend
+
+/* 146: Jetzt geht es um die letzten zwei Wochen. Wie oft fühlten Sie sich da durch diefolgenden Beschwerden
+   beeinträchtigt? */
+ren bjp_146_01    nointerest                 plh0339      [from de] Lack of interests
+ren bjp_146_02    dejection                  plh0340      [from de] Depressiveness
+ren bjp_146_03    nervous                    plh0341      [from de] nervousness
+ren bjp_146_04    worries                    plh0342      [from de] Cannot stop to worry
+
+/* 147. Hat ein Arzt bei Ihnen jemals eine oder mehrere der folgenden Krankheiten festgestellt? */
+ren bjp_147_01    ever_insomnia              ple0011      Sleep Disturbances
+ren bjp_147_02    ever_thyroid               ple0189      [from de] Thyroid disease
+ren bjp_147_03    ever_diabetes              ple0012      Diabetes
+ren bjp_147_04    asthma                     ple0013      Asthma
+ren bjp_147_05    heartdisease               ple0014      Cardiopathy
+ren bjp_147_06    cancer                     ple0015      Cancer
+ren bjp_147_07    stroke                     ple0016      Apoplectic Stroke
+ren bjp_147_08    migrane                    ple0017      Migraine
+ren bjp_147_09    hypertension               ple0018      High Blood Presure
+ren bjp_147_10    depression                 ple0019      Depression
+ren bjp_147_11    dementia                   ple0020      Dementia
+ren bjp_147_12    arthrosis                  ple0021      Joint Disorder (also: Arthrosis, Rheumatism)
+ren bjp_147_13    backpain                   ple0022      Chronic Back Complaints
+ren bjp_147_14    burnout                    ple0187      Burnout
+ren bjp_147_15    otherdisease               ple0023      Other Illness
+ren bjp_147_17    nodisease                  ple0024      No Illness
+ren bjp_148       limitations                ple0009      Limitations In Daily Life Because Of Health Problems
+ren bjp_149       limitations_6months        ple0162      Health Problems for more than 6 Months
+ren bjp_150       disabled                   ple0040      Legally Handicapped, Reduced Employment
+ren bjp_151       disabled_perc              ple0041      Legally Handicapped, Reduced Employment
+ren bjp_153       disability_benef           plc0446      Degree Of Disability
+ren bjp_154_01    doctor_visits              ple0072      Number Of Doctor Visits Last Three Mths.
+ren bjp_154_02    no_doctor_visits           ple0073      No Doctor Visit Last Three Mths.
+ren bjp_155       hospital_visits            ple0053      Hospital Stay Prev. Year
+ren bjp_156_01    number_hospital_nights     ple0056      Nights Of Hospital Stay Prev. Year
+ren bjp_156_02    number_hospital_visits     ple0055      Number Of Hospital Stays Prev. Year
+ren bjp_157       sickleave_6weeks           plb0024_v3   [de] Reported sick for more than 6 weeks [1999-2019]
+
+/* 158. Wie viele Tage haben Sie im Jahr 2018 wegen Krankheit nicht gearbeitet? */
+ren bjp_158_01    no_sickleave               ple0044_v1   [de] Not a day absent due to illness (irregular) [1985-2019]
+ren bjp_158_02    number_sickleave           ple0046      Number Of Days Off Work Sick Prev. Year
+ren bjp_159_01    childsick                  ple0048      no days off work child sick
+ren bjp_159_02    number_childsick           ple0049      number of days off work child sick
+ren bjp_159_03    care_relative              ple0174      Not Worked Due to Care For Relative Prev Yr
+ren bjp_159_04    number_care_relative       ple0175      Not Worked Due to Care For Relative Prev Yr, Days
+ren bjp_159_05    nowork_reasons             ple0050      days off work due to other reasons
+ren bjp_159_06    number_nowork_reasons      ple0051      number of days off work due to other reasons
+ren bjp_159_07    no_missingdays             ple0052      no days absent because of personal reasons
+ren bjp_160       change_hcprovider          ple0160      Changed Health Insurance Provider In 2004
+ren bjp_161       private_public_hc          ple0097      Type Of Health Insurance
+ren bjp_162       hc_provider                ple0104_v11  [de] Name of the statutory health insurance [2017-2019]
+ren bjp_163       how_hc_provided            ple0099_v5   [de] Insured status  [1999-2019]
+
+
+
+desc plh0171 ple0008 pli0059 pli0060 plh0339 plh0340 plh0341 plh0342 ple0011 ple0189 ple0012 ple0013 ple0014 ple0015 ///
+ple0016 ple0017 ple0018 ple0019 ple0020 ple0021 ple0022 ple0187 ple0023 ple0024 ple0009 ple0162 ple0040 ple0041 ///
+plc0446 ple0072 ple0073 ple0053 ple0056 ple0055 plb0024_v3 ple0044_v1 ple0046 ple0048 ple0049 ple0174 ple0175 ///
+ple0050 ple0051 ple0052 ple0160 ple0097 ple0104_v11 ple0099_v5 //
+

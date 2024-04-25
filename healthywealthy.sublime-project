@@ -1,0 +1,29 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"file_exclude_patterns": [
+				"*.oods", "*.ods", //
+				// stata
+				"*.dta", "*.DTA",
+				// R
+				"*.RData", "*.RDA", "*.rds", 
+				// latex text
+				"*.tex",
+			], 
+			"folder_exclude_patterns": [
+				// R stuff
+				".Rproj.user*", "z_*"
+			]
+
+
+			
+		}
+	], 
+	"settings":
+    {
+    	"rulers": [120]
+    },
+	
+}

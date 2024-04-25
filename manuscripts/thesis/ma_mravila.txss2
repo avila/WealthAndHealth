@@ -1,0 +1,56 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": false,
+        "File": "ma_mravila.pdf"
+    },
+    "Session": {
+        "Bookmarks": [
+        ],
+        "CurrentFile": "chapter/00_main_matter.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 11,
+                "EditorGroup": 0,
+                "FileName": "ma_mravila.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 8
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "chapter/00_main_matter.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 19
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "chapter/01_introduction.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "chapter/99_declaration.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "incl/tbls/tbl_health_factor_variables_groups.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            }
+        ],
+        "MasterFile": "ma_mravila.tex",
+        "VerticalSplit": false
+    }
+}

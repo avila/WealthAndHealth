@@ -1,0 +1,19 @@
+\chapter{Conclusion and Outlook}
+
+Exploratory analysis is a important starting point when searching for patterns in a dataset.  JMP reveals to be an powerful tool for exploratory spatial data analysis with its intuitive
+and interactive interface. When working with exact geo-coded data, the non-parametric estimation within the \textit{Fit Y by X} context offers the user access to a flexible estimation and exploration environment. The ability to adjust the bandwidth parameters separately for the X and Y variable reveals very useful, specially when dealing with data in the WGS 84 coordinate system with its varying longitudinal and latitudinal scaling.  Furthermore, the ability to integrate a street level interactive map stimulates quick and ad hoc verification of prior beliefs or unexpected results.  The resulting outputs are also visually pleasing and can be directly exported for presentational purposes without the necessity of extensive adjustments. The \textit{Graph Builder} context presents a user-friendlier interface for graph creation, but the available density estimation procedure in this context is less flexible. 
+
+When dealing with spatial data aggregated over predefined areas, a choropleth mapping procedure is often used to portray the density and distribution of the data. Within JMP, the user can import and work with customized shapefiles. The creation process is moderately complicated, but the implementation procedure is rather simple after the boundaries are set up.  Although it is expected that some information is lost when data is aggregated, the high sensitivity to scaling and visualisation adjustments indicates that the achieved results might not only be less informative but also misleading.  Furthermore, The implicit assumption that the data in each cell is homogeneous might not hold depending on the boundaries characteristics and granularity.  To circumvent this issue, I briefly examined the results achievable by conducting a kernel density estimation based on the LOR centroids, using the Plannungsraum (PLR) and the Bezirksraum (BZR) layers.  Based on the PLR layer, the most granular with 447 cells, the achieved output reveals to be very similar to the estimation based on exact geocoded data, with very small loss of precision.  The less granular the layer, as it is the case using the BZR layer with 138 cells, the less precise and eventually misleading the output might become.   The positive results using the PLR layer might also have been slightly overstated, due to the fact that the Stolpersteine data tends to concentrate on central areas, where the LOR cells are smaller. This, in turn, tends to generate smaller biases when compared to bigger areas, usually located distant from the centre.  These preliminary results, however, should be further examined using different data sets and under more robust statistical tests.  
+
+
+
+
+
+
+
+\vspace{4cm}
+
+
+
+\vspace{1cm}
+

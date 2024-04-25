@@ -1,0 +1,593 @@
+\newcommand{\vlgwnlog}{Gross Wealth (log)}                   % gw_nlog
+\newcommand{\vlnwnlog}{Net Wealth (neglog)}                  % nw_nlog
+\newcommand{\vlgw}{Gross Wealth (k€, winsored)}              % gw
+\newcommand{\vlnw}{Net Wealth (k€, winsored)}                % nw
+\newcommand{\vlexpue}{Unemployment exp. (months)}            % expue
+\newcommand{\vlexpft}{Full-Time exp. (months)}               % expft
+\newcommand{\vlemplstatus}{Employment Status of Individual}  % empl_status
+\newcommand{\vllaborearns}{Individual Labor Earnings}        % labor_earns
+\newcommand{\vlcardioev}{Cardiopathy}                        % cardio_ev
+\newcommand{\vldepresev}{Depression}                         % depres_ev
+
+
+% -------------------------------------------------------------------------------------------------
+%  {\vlgwnlog}{Gross Wealth (log)}                   % gw_nlog
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+\begin{figure}[htb!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log); Models: MP1 / MM1}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_gw_nlog.pdf}
+        \label{sfig:ep1_gw_nlog}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log); Models: MP2 / MM2}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_gw_nlog.pdf}
+        \label{sfig:ep2_gw_nlog}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log); Models: MP3 / MM3}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_gw_nlog.pdf}
+        \label{sfig:ep3_gw_nlog}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log); Models: MP4 / MM4}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_gw_nlog.pdf}
+        \label{sfig:ep4_gw_nlog}
+    \end{subfigure}
+    \caption{Varying model specification (Response var: \vlgwnlog)}
+    \par \footnotesize \raggedright
+    \vspace{5pt} 
+    Notes: Table of results corresponding to this figure in \cref{tbl:t_cmp_gw_nlog}.
+    \label{fig:ep_gw_nlog}
+\end{figure}
+
+% -------------------------------------------------------------------------------------------------
+\begin{table}[htb!]
+    \begin{adjustbox}{max width=\textwidth}
+        \begin{threeparttable}
+            \caption{Varying model specification (Response var: \vlgwnlog)}
+            \label{tbl:t_cmp_gw_nlog}
+            \begin{tabular}{l*{8}{c}}
+                \toprule
+                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+                \midrule%
+                \input{./incl/tbls/t_cmp_gw_nlog.tex}
+            \end{tabular}
+            \begin{tablenotes}[para,flushleft]
+                \vspace*{-\baselineskip}
+                {\raggedleft*~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$\\}
+                Notes: For this robustness checks, the same model with varying specification was run to check stability of 
+                estimated coefficients. In all models the logarithm of Gross Wealth is the response variable. 
+                Models MP1 and MM1 is the same as the models in the main results. Models MP2 and MM2 do 
+                not include any covariates. Models MP3 and MM3 include covariates and are weighted 
+                by the inverse probability of remaining in the SOEP, to account for sample attrition which might
+                impact the wealth distribution differentially. Finally, models MP4 and MM4 are balanced,
+                in the sense that only people that are present from 2002 until 2020 are kept this specification. 
+                The coefficients are stable across models. The estimated coefficients of the mental health domain 
+                are consistently higher than those of the physical domain. 
+                Notes: Figure corresponding to this table in \cref{tbl:t_cmp_gw_nlog}. \\
+                
+            \end{tablenotes}
+        \end{threeparttable}
+    \end{adjustbox}
+\end{table}
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vlnwnlog}{Net Wealth (neglog)}                  % nw_nlog
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_nw_nlog.pdf}
+%        \label{sfig:ep1_nw_nlog}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM2}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_nw_nlog.pdf}
+%        \label{sfig:ep2_nw_nlog}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM3}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_nw_nlog.pdf}
+%        \label{sfig:ep3_nw_nlog}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MM4}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_nw_nlog.pdf}
+%        \label{sfig:ep4_nw_nlog}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vlnwnlog} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{fig:ep_nw_nlog}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vlnwnlog ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_nw_nlog.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vlgw}{Gross Wealth (k€, winsored)}              % gw
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_gw.pdf}
+%        \label{sfig:ep1_gw}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM21}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_gw.pdf}
+%        \label{sfig:ep2_gw}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM31}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_gw.pdf}
+%        \label{sfig:ep3_gw}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MP4MM41)}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_gw.pdf}
+%        \label{sfig:ep4_gw}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vlgw} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{ep_fig:gw}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vlgw ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_gw.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vlnw}{Net Wealth (k€, winsored)}                % nw
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_nw.pdf}
+%        \label{sfig:ep1_nw}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_nw.pdf}
+%        \label{sfig:ep2_nw}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_nw.pdf}
+%        \label{sfig:ep3_nw}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_nw.pdf}
+%        \label{sfig:ep4_nw}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vlnw} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{ep_fig:nw}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vlnw ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_nw.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vlexpue}{Unemployment exp. (months)}            % expue
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_expue.pdf}
+%        \label{sfig:ep1_expue}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_expue.pdf}
+%        \label{sfig:ep2_expue}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_expue.pdf}
+%        \label{sfig:ep3_expue}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_expue.pdf}
+%        \label{sfig:ep4_expue}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vlexpue} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{ep_fig:expue}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vlexpue ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_expue.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vlexpft}{Full-Time exp. (months)}               % expft
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_expft.pdf}
+%        \label{sfig:ep1_expft}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_expft.pdf}
+%        \label{sfig:ep2_expft}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_expft.pdf}
+%        \label{sfig:ep3_expft}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_expft.pdf}
+%        \label{sfig:ep4_expft}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vlexpft} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{ep_fig:expft}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vlexpft ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_expft.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vlemplstatus}{Employment Status of Individual}  % empl_status
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_empl_status.pdf}
+%        \label{sfig:ep1_empl_status}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_empl_status.pdf}
+%        \label{sfig:ep2_empl_status}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_empl_status.pdf}
+%        \label{sfig:ep3_empl_status}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_empl_status.pdf}
+%        \label{sfig:ep4_empl_status}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vlemplstatus} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{fig:ep_empl_status}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vlemplstatus ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_empl_status.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vllaborearns}{Individual Labor Earnings}        % labor_earns
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_labor_earns.pdf}
+%        \label{sfig:ep1_labor_earns}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_labor_earns.pdf}
+%        \label{sfig:ep2_labor_earns}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_labor_earns.pdf}
+%        \label{sfig:ep3_labor_earns}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_labor_earns.pdf}
+%        \label{sfig:ep4_labor_earns}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vllaborearns} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{fig:ep_labor_earns}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vllaborearns ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_labor_earns.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vlcardioev}{Cardiopathy}                        % cardio_ev
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_cardio_ev.pdf}
+%        \label{sfig:ep1_cardio_ev}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_cardio_ev.pdf}
+%        \label{sfig:ep2_cardio_ev}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_cardio_ev.pdf}
+%        \label{sfig:ep3_cardio_ev}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_cardio_ev.pdf}
+%        \label{sfig:ep4_cardio_ev}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vlcardioev} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{fig:ep_cardio_ev}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vlcardioev ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_cardio_ev.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%
+%
+%% -------------------------------------------------------------------------------------------------
+%%  {\vldepresev}{Depression}                         % depres_ev
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP1 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_depres_ev.pdf}
+%        \label{sfig:ep1_depres_ev}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP2 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_depres_ev.pdf}
+%        \label{sfig:ep2_depres_ev}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP3 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_depres_ev.pdf}
+%        \label{sfig:ep3_depres_ev}
+%    \end{subfigure}
+%    \begin{subfigure}{0.45\textwidth}
+%        \caption{MP4 MM1}
+%        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_depres_ev.pdf}
+%        \label{sfig:ep4_depres_ev}
+%    \end{subfigure}
+%    \caption{MAIN CAPTION FIG: \vldepresev} 
+%    \par \footnotesize \raggedright
+%    \vspace{5pt} 
+%    Notes: 
+%    \label{fig:ep_depres_ev}
+%\end{figure}
+%
+%% -------------------------------------------------------------------------------------------------
+%\begin{table}[H]
+%    \begin{adjustbox}{max width=\textwidth}
+%        \begin{threeparttable}
+%            \caption{Varying model specification (Response var: \vldepresev ) }
+%            \label{tbl:t_cmp_gw_nlog}
+%            \begin{tabular}{l*{8}{c}}
+%                \toprule
+%                & \multicolumn{4}{c}{Physical Health} & \multicolumn{4}{c}{Mental Health}                             \\ \cmidrule(l){2-5} \cmidrule(l){6-9} 
+%                & (MP1)       & (MP2)       & (MP3)        & (MP4)        & (MM1)       & (MM2)       & (MM3)        & (MM4)       \\
+%                \midrule%
+%                \input{./incl/tbls/t_cmp_depres_ev.tex}
+%            \end{tabular}
+%            \begin{tablenotes}[para,flushleft]
+%                \vspace*{-\baselineskip}
+%                *~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$
+%            \end{tablenotes}
+%        \end{threeparttable}
+%    \end{adjustbox}
+%\end{table}
+%% -------------------------------------------------------------------------------------------------
+%% -------------------------------------------------------------------------------------------------
+
+

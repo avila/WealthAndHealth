@@ -1,0 +1,81 @@
+---
+title: 'Healthy and Wealthy'
+author: "Marcelo Avila"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  beamer_presentation:
+    slide_level: 2
+    toc: false
+header-includes:
+- \widowpenalties 1 150
+- \setbeameroption{hide notes}
+---
+
+
+|             | At least one year | All Years | Total   |
+| -----------:| -----------------:| ---------:| -------:|
+| Survey Year |                   |           |         |
+|   2011      | 9,939             | 11,615    | 21,554  |
+|   2013      | 10,646            | 11,615    | 22,261  |
+|   2015      | 9,860             | 11,615    | 21,475  |
+|   2017      | 15,205            | 11,615    | 26,820  |
+|   2019      | 14,306            | 11,615    | 25,921  |
+|             |                   |           |         |
+|   Total     | 59,956            | 58,075    | 118,031 |
+
+Table: Sample Size
+
+## Other tables 
+
+.. link to other tables 
+
+## Wealth distribution {.allowframebreaks}
+
+
+![](../present/qanda/fig_net_wealth_pooled_by_age.png)
+
+
+## Correlation between wealth and satisfaction with health {.allowframebreaks}
+
+
+![](../output/figures/explorative/regs/fig_margins_wealth_dcile_plain.png)
+
+
+![](../output/figures/explorative/regs/fig_margins_wealth_dcile_adjusted.png)
+
+
+
+## Preliminary results {.allowframebreaks}
+
+Pooled OLS: 
+
+- y: life / health satisfaction (scale 0 - 10)
+- wealth: net wealth (interpolated)
+- controls: age, education, gender, marital status, legally hadicapped, 
+
+
+![Preliminary results (pooled ols)](../output/figures/explorative/regs/fig_margins_wealth_dcile_by_age_healthsats.png)
+
+
+- wealth has higher predictive power at higher age. 
+- unexpected non-linearity for lowest decile at higher ages (it could be highly leveraged pushing it)
+
+
+## Graphs {.allowframebreaks}
+
+![Preliminary results (pooled ols)](../output/figures/explorative/regs/fig_margins_wealth_dcile_by_educ_health_satis.png)
+
+
+![Preliminary results (pooled ols)](../output/figures/explorative/regs/fig_margins_sats_life_overall_wealth_dcile_by_instype.png)
+
+
+## Issues 
+
+- The fixed effects (or random) estimation is not converging. I believe is due to the fact that 
+that there is little variation within-indiviual, since the majority of my control variables 
+are categorical and wealth percentile is very stable in this short time frame.
+
+## Ideas 
+
+- check if there is enough observations with a big drop (or increase) in wealth in this time period
+- 

@@ -1,0 +1,56 @@
+---
+title: "Potentials and challenges in the connection of survey data and georeferenced data"
+output: beamer_presentation
+#fontsize: 9pt
+date: "21.03.2023" 
+author: "Marcelo Rainho Avila"
+header-includes:
+- \usepackage{caption}
+- \captionsetup[figure]{labelformat=empty}
+- \captionsetup[table]{labelformat=empty}
+- \definecolor{links}{HTML}{2A1B81}
+- \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+## Potential
+
+- Small Area estimation (SAE): with growing demand for reliable small area statistics, SAE's methodology 
+alongside more precise anonymized geolocation data can enrich SOEP's offering to researchers. 
+
+- Data Linking with publicly available geographic data, remote sensing, urban data, real estate value data. 
+
+- Better research reproducibility if costs of accessing such data is reduced
+
+## Challenges
+
+Two main challenges:
+
+- Crucial challenge is to ensure data protection and data privacy of SOEP participants, including
+strong legal protections in Germany.
+- Develop a method for researchers to access the data with less intervention from SOEP employees.
+
+
+Also important:
+
+- maintain distributional characteristics of raw geographic data.
+
+## Geographic Masking Methods
+
+
+1. [Donut Method Geomasking](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2984253/)
+
+1. [Street masking](https://ij-healthgeographics.biomedcentral.com/articles/10.1186/s12942-020-00219-z)
+
+1. [Adaptive Voronoi Masking](https://drops.dagstuhl.de/opus/volltexte/2021/14760/pdf/LIPIcs-GIScience-2021-II-1.pdf)
+
+
+# Discussion 
+
+# Thank you

@@ -1,0 +1,199 @@
+---
+title: "The health-wealth nexus over the life cycle"
+fontsize: 11pt
+date: "`r format(Sys.time(), '%d.%m.%Y')`"
+author: "Marcelo Rainho Avila"
+institute: "Free University Berlin"
+output: 
+  beamer_presentation:
+    latex_engine: xelatex
+    incremental: false
+    includes:
+      in_header: columns.tex
+header-includes:
+- \usepackage{caption}
+- \usepackage{bm}
+- \usepackage{graphicx}
+- \usepackage{pgfpages}
+- \captionsetup[figure]{labelformat=empty}
+- \captionsetup[table]{labelformat=empty}
+- \definecolor{links}{HTML}{2A1B81}
+- \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+#- \setbeameroption{show notes on second screen}
+#- \setbeameroption{show only notes}
+#- \pgfpagesuselayout{8 on 1}[a4paper,border shrink=1mm]
+theme: metropolis
+classoption: "aspectratio=169"
+bibliography: bib.bib
+link-citations: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Recap
+
+
+## Structure 
+
+1. (Re)Constructing mcs and pcs from factor model of _subjective health measures_
+     1. Discussion on differences between SOEP's and my factor model
+1. Validating MCS and PCS (based on other more _objective_ variables)
+1. Estimation of longitudinal clusters (GBTM) 
+1. Main analysis: How does (mental/physical) health affect wealth build up
+     1. Implement a matching method? 
+     1. Implement a "event study" with dichotomized treatment as in "Out for good"?
+1. Optional: detailed descriptives of health outcome across the wealth distribution (also over the life cycle)
+
+## Health scores by trajectory group I: mcs and pcs
+
+\centering 
+![](../../output/figures/diff_health_by_clust/fig_dhbc_breg_mcs_main_1875.pdf){width=49%}
+![](../../output/figures/diff_health_by_clust/fig_dhbc_breg_pcs_main_1875.pdf){width=49%}
+
+- Indication of _survivorship bias_ kicking in at around age 60 in cluster 1 for both variables
+- Indication of (relatively small) starting differences which increase over the life cycle
+
+## Health scores by trajectory group: mcs and pcs variation
+
+\centering
+![](../../output/figures/diff_health_by_clust/fig_dhbc_breg_mcs_main_sd_1875.pdf){width=49%}
+![](../../output/figures/diff_health_by_clust/fig_dhbc_breg_pcs_main_sd_1875.pdf){width=49%}  
+
+- Using variation of health components as a measure of _health shock_
+    - Alternatively: use the presence of a low health score as a shock. @vilagut2013 estimate optimal cut-off points
+for depressive disorder detection. (45.6 for 30-day and  48.9 for 12-months depressive disorder. 
+- Note that the health scores are shifted standard scores with mean=50 and sd=10 
+
+
+## Validating $mcs$ and $sd(mcs)$
+
+- Binscatter logit estimation adjusted for cubic splines of $age$ (Note: variable y scales)
+
+\centering
+![](../../output/figures/validatingmcspcs/fig_binslog_depression_mcs_bytraj.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_migraine_mcs_bytraj.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_depression_mcs_sd_bytraj.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_migraine_mcs_sd_bytraj.pdf){width=23%}
+
+
+## Validating $pcs$ and $sd(pcs)$
+
+- Binscatter logit estimation adjusted for cubic splines of $age$ (Note: variable y scales)
+
+\centering 
+![](../../output/figures/validatingmcspcs/fig_binslog_cardio_pcs_bytraj.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_asthma_pcs_bytraj.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_cardio_pcs_sd_bytraj.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_asthma_pcs_sd_bytraj.pdf){width=23%} 
+
+\raggedright \footnotesize
+\pause
+- good indication that mental and physical score components are valid measures of _objective_ health outcomes
+- also good indication that the variation of the above components are a good proxy for a measure of "health shock"
+- the variation in $mcs$ seems more predictive than the variation in $pcs$
+
+
+## Validating $mcs$, $sd(mcs)$, $pcs$ and $sd(pcs)$: Days off sick and hospitalization 
+
+\centering
+
+- Binscatter linear regression adjusted for cubic splines of $age$ (Note: variable y scales)
+
+![](../../output/figures/validatingmcspcs/fig_binslog_days_off_sick_prev_year_traj_Group_mcs.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_days_off_sick_prev_year_traj_Group_pcs.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_days_off_sick_prev_year_by_j_Group_mcs_sd.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_days_off_sick_prev_year_by_j_Group_pcs_sd.pdf){width=23%}
+
+![](../../output/figures/validatingmcspcs/fig_binslog_hosp_stay_nights_traj_Group_mcs.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_hosp_stay_nights_traj_Group_pcs.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_hosp_stay_nights_by_j_Group_mcs_sd.pdf){width=23%}
+![](../../output/figures/validatingmcspcs/fig_binslog_hosp_stay_nights_by_j_Group_pcs_sd.pdf){width=23%}
+
+
+# Main model 
+
+## Choices: model specification 
+
+
+### a: on the model specification choice 
+
+
+$$
+\tag{1: Residualized change model}
+\label{eq:regressor}
+W_2 = \alpha_1 + \alpha_2 T + \gamma W_1 + ... + \epsilon
+$$
+$$
+\tag{2: Change scores method}
+\label{eq:delta}
+\Delta W = W_2 - W_1 = \alpha_1 + \alpha_2 T + ... + \epsilon
+$$
+
+\pause
+
+- The **Lord's paradox** @lord1967 raises the issue of when it is appropriate to control for baseline (or starting conditions) status
+
+- Paul @allison1990 defends the _change scores method_, which he calls _"the underdog"_ at the time, but when
+expected that $W_1 \xrightarrow{\text{causal}} W_2$, then the _regressor variable approach_  is better
+indicated (see ibid, pg 110). 
+
+- Note that the _change scores method_ is a restricted form of the _residualized change model_, with $\gamma$ fixed to $1$.
+
+
+<!-- ## Choices: transfomartion  -->
+
+<!-- ### b: on the transformation choice -->
+
+<!-- \begin{equation} -->
+<!--   g(W_2)- g(W_1) -->
+<!-- \end{equation} -->
+<!-- \begin{equation} -->
+<!--   g(W_2 - W_1) -->
+<!-- \end{equation} -->
+
+
+<!-- - Possible transformations: identity, neglog, asinh, cubic root, percentile rank, etc. -->
+<!-- - Question: what does the choice between (1) and (2) would change, a priori? -->
+
+## Regression design 
+
+$$
+g({W_{i|age \approx 32}}) = \alpha_0 + \alpha_1 hs^{mean}_{i|age \in [21..30]} + \alpha_2 hs^{sd}_{i|age \in [21..30]} +
+\gamma W_{i|age \approx 22} + \bm{{\beta X_{i}}} + \epsilon_{i}
+$$
+$$
+g({W_{i|age \approx 42}}) = \alpha_0 + \alpha_1 hs^{mean}_{i|age \in [31..40]} + \alpha_2 hs^{sd}_{i|age \in [31..40]} +
+\gamma W_{i|age \approx 32} + \bm{{\beta X_{i}}} + \epsilon_{i}
+$$
+$$
+... \text{ and so on } ...
+$$
+
+\pause
+
+- I can also do a single model with a relative period, but with separate models one can also check for differences 
+in coeffecients over the life cycle.
+- $g()$ is the cubic root here, but other transformations available (asinh, neglog, 5th root, etc)
+- $hs$ stands for _health score_. For simplicity only one is displayed, but both components would be included in actual regression.
+
+
+## Currently working on
+
+- Good and bad controls
+    - e.g. should (HH) income be included in regression model??
+- Some proxy for parental or genectic influence
+- Distance matching or weighting (with continuous treatment?)
+- Construct balanced panel (only those with at least $x$ years presence?)
+- Dealing with panel attrition (likely correlated with low health scores)
+- Implement a "event study" with dichotomized treatment similar to strategy in "Out for good"?
+- Validating methods by looking at the impact in other (more volatile) variables
+    - Such as income, intensive/extensive labor market participation, etc
+
+
+# Thank you
+
+## References 
+
+\footnotesize

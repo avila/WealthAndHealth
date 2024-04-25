@@ -1,0 +1,120 @@
+
+In this section, revisiting the theoretical groundwork explored in \cref{sec:overview_did}, I
+present the empirical methodology applied to the current setting.
+
+\section{Event Study Framework}
+\label{sec:empir_event_study}
+
+In the main analysis, the aim is to estimate the dynamics of wealth accumulation which can be
+attributed to a significant health degradation in the physical and mental domain. That is, how does
+experiencing a negative health outcome affects wealth accumulation over subsequent years in a
+relatively long term. With this in mind, the parameter of interest is\footnote{This might be an
+    unfamiliar presentation on the event study framework, for an analogous version based on a regression-based design,
+    refer to \cref{app:twfe}.} %
+\begin{equation}
+    \theta_\text{es}(e) = \sum_{g \in \mathcal{G}} \mathbb{1}\big[ g + e \leq \mathcal{T} \big] P(G=g|G+e \leq \mathcal{T}) ATT(g,g+e), 
+    \tag{\ref{eq:theta_es} revisited}
+    \label{eq:theta_es2}
+\end{equation}
+%
+where $e = t-g$, $t \in \{2002, 2004, ..., 2020\}$,  $g \in \mathcal{G}$, where $\mathcal{G} = \{2004, 2006,
+..., 2020\}$ and $\mathcal{T}=2020$. Note that the first item of $\mathcal{G}$ is 2004, because always-treated
+units are dropped from the analysis. Additionally, people assigned to treatment in their first survey
+year are also not considered in the analysis.
+
+The relative time window is restricted to $e=\{-10,-8,...,10,12\}$ years, as estimates outside this range
+become very imprecise. The time of treatment, i.e., when an individual first experiences a negative health
+outcome happens between $e=-2$ and $e=0$, but is only becomes observable in the data when $e=0$. The base or
+reference period, is set to $e=-2$, which is the last period before treatment.
+
+
+\subsection{Treatment Assignment Rule}
+\label{sec:treatassigrule}
+
+Everything in what follows is conducted twice: once in relation to the physical domain and once in relation to
+the mental domain. For brevity, however, I subsequently describe the rule using a general term
+\textit{health outcome}.
+
+An individual $i$ is assigned to group $g=t$ if they experience a relatively severe adverse health outcome
+compared to people of the same age and gender, as measured by the respective component summary score (PCS
+for the physical and MCS for the mental domain). Specifically, if the individual's summary score is half
+a standard deviation worse than the median score of people of the same age and gender, they become a candidate for
+treatment assignment.\footnote{Alternative threshold and rules are tested in robustness checks.} If
+this individual experiences a negative health outcome at least once more (though not necessarily
+consecutively), they are indeed assigned to treatment in the period when they first experience the adverse
+health outcome. This decision has two primary reasons: first, to prevent treatment assignment due to a small
+fluctuation around the threshold, and second, by employing a less strict assignment rule, approximately half of
+the sample would eventually be assigned to treatment. Thus, by restricting to those experiencing it twice, the
+analysis focuses on individuals with a more severe health deterioration. Further, the age--gender adjustment, 
+instead of using the simple difference was done to account for gender--age specific reporting heterogeneity, as
+indicated by \textcite{ziebarth2010measurement}. 
+
+
+The threshold of one-half standard deviation aligns with the findings of
+\textcite[568]{vilagut.etal2013mental}, who identify 45.6 as the optimal cutoff point for $\text{MCS}_{sf12}$
+to evaluate 30-day depressive disorders. Given that our health components have a mean of 50 and a standard
+deviation of 10, half a standard deviation is approximately equal to the identified cutoff point. On the other
+hand, the comparison (or control) group consists of people with more stable health trajectories, experiencing a
+health outcome worse than the threshold at most once.
+
+Note that, for clarity, I also use the term ``shock'' throughout this work to denote the adverse event.
+However, it must be emphasized that not all treatment assignments occur due to a drastic score decrease from
+one period to the next for a given person. A continuous but slow degradation of their health also characterizes
+treatment.  Further, also regarding terminology, I use conventional terms in the causal inference literature
+borrowed from the medical domain and since this analysis deals with health outcomes, this can lead to confusion.
+To clarify, ``treatment assignment'' here simply means that the individual experiences a bad health outcome,
+without taking into account any medical treatments, in the usual common sense of the world.
+
+
+
+\subsection{Wealth Measures}
+
+For this analysis, I use four measures of wealth: gross and net wealth, as well as these measured in
+levels and in logs. The variables in levels are winsored at the 1st and 99th percentile. In the case of 
+net wealth, the \textit{neglog} transformation was applied, where%
+%
+\begin{equation}
+    W^{\text{neglog}} = \sign(W) \cdot \log{ ( 1 + \abs{ W } ) }.
+    \label{eq:neglog}
+\end{equation}
+
+The neglog transformation possesses several interesting features, beyond its primary goal of reducing the
+skewness of the input data. Notably, it retains the value of zero due to the $\text{sign}$ function. Moreover,
+for large positive values of $W$, it behaves as $\log(W)$, and for large negative values, it behaves like
+$-\log(W)$. For values around 0, it approximates $W$ linearly. The same transformation is applied to gross
+wealth, but as it is non-negative, the transformation simplifies to $\log{(1+W)}$. Additionally, winsoring the
+variables at the 1st and 99th percentiles has been shown to enhance the stability of the models.
+
+\subsubsection{On the parallel trends assumption} Crucial to effect identification is the assumption of
+Parallel Trends (PT). Dealing with health accumulation over time, it's essential to critically consider what
+this assumption entails. In principle, one could question whether trends are more likely to be parallel when
+dealing with the wealth variable in absolute or relative terms. This boils down to whether an additive or a
+multiplicative wealth accumulation process better models the wealth trajectory over the life cycle. Hence, I
+consider wealth in levels and in logs, but a priori, find it  plausible that for different starting values of
+wealth, the multiplicative process is likely to capture the accumulation path of different groups better.
+Concretely, it seems more credible that richer and poorer people can accumulate a similar percentage of their
+current wealth, rather than expecting their wealth to increase by values in absolute term.
+
+
+\subsubsection{On wealth measure and transformation choice} Both net and gross measures offer compelling
+reasons for being the key variable of interest. Net wealth might better capture effective changes in the wealth
+trajectory. For instance, if an individual borrows money to buy a house, this would increase gross wealth by
+the value of the house but leave net wealth intact until they start paying off the loan. Moreover, experiencing
+negative net wealth might be an intriguing aspect in this analysis, given its potential linkages with stress
+and anxiety.
+
+On the other hand, the data reveal a considerable number of people with large negative net wealth. Consider an
+individual who takes a substantial loan to open a business or another who incurs student loans. If the value of
+their assets when opening the business or by the end of their studies is considerably smaller than the value of
+their acquired debt, they would be located at the very low end of the net wealth distribution. However, one
+would hardly argue that they are the poorest people in the population. On this account, I focus on gross 
+wealth as the main measure to capture the socio-economic status of the individual. 
+
+
+Furthermore, due to the crossing over 0, the interpretation of coefficients from the neglog-transformed models
+is not trivial and cannot be simply taken as percentage or proportional effects. While the neglog
+transformation might be interesting for modeling and technical reasons, interpretation and economic
+implications based on those results are harder to convey. With this reasoning, I consider the model with
+log-transformed gross wealth to be the main model in this analysis and focus on those results. However, for
+completeness, all results are presented.
+

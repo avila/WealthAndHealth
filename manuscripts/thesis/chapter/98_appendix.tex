@@ -1,0 +1,218 @@
+%\newpage
+\appendix
+%\appendixpage\dfrac{num}{den}
+
+% appendix start here  % appendix start here  % appendix start here  
+\chapter{Additional Resources}
+\label{app:chapter_additional_resources}
+% appendix start here  % appendix start here  % appendix start here  
+
+\section{Doubly Robust Estimator}
+\label{app:drdeep}
+
+In this section, for completeness, I present the $\widehat{A T T}_{d r}(g, t)$ as 
+described in \textcite[Section 4]{cs2021did_mtp}. Only the equations for the never-treated 
+design is presented here, as this was the one used in the main analysis. Further, since
+in the main analysis I do not adjust for anticipation, the version presented here
+is also simplified in this respect.
+
+\begin{equation}
+    \widehat{A T T}_{d r}(g, t)=\mathbb{E}_n\left[\left(\widehat{w}_g^{\text{treat}}-\widehat{w}_g^{\text{comp}}\right)\left(Y_t-Y_{g-1}-\widehat{m}_{g, t}\left(X; \widehat{\beta}_{g, t}\right)\right)\right],
+    \label{eq:attdr}
+\end{equation}
+where 
+\begin{equation}
+    \begin{aligned}[t]
+        \widehat{w}_g^{\text {treat }}=\frac{G_g}{\mathbb{E}_n\left[G_g\right]},
+    \end{aligned}\qquad
+    \begin{aligned}[t]
+        \widehat{w}_g^{\text{comp}}=\frac{\frac{\widehat{p}_g\left(X ; \widehat{\pi}_g\right) C}{1-\widehat{p}_g\left(X ; \widehat{\pi}_g\right)}}{\mathbb{E}_n\left[\frac{\widehat{p}_g\left(X ; \widehat{\pi}_g\right) C}{1-\widehat{p}_g\left(X ; \widehat{\pi}_g\right)}\right]}
+        \label{eq:wgtreatcomp}
+    \end{aligned}
+\end{equation}
+
+\section{TWFE Alternative Design}
+\label{app:twfe}
+
+In the following, I present the alternative model featuring a TWFE regression design. 
+
+\begin{equation}
+    Y_{i,t}=\sum_{e \in \mathcal{E}} \theta_e^{\text{\tiny{FE}}}   \mathbb{1}(\text {health degradation})_{i,t}+ \eta  X_{i,t} + \delta_i + \gamma_t + u_{i,t},
+    \label{eq:twfe}
+\end{equation}
+where the relatvei event times $e \in \mathcal{E} = \{-10, -8, -6, -4, 0, 2, ..., 12\}$. Note that
+relative event time $e=-2$ is dropped from the estimation, in order to be able to identify the ATT
+in a full set of individual and year fixed effects. The indicator function $\mathbb{1}(\text {health
+    degradation})_{i,t}$ tracks the relative time since/until experiencing a significant health
+degradation. The vector $X$ incorporates (time varying) covariates used in the model, and $\delta_i$
+and $\gamma_t$ represent the individual and year fixed effects, respectively.
+
+
+\newpage
+
+\section{Transformation of Log-Linear Specifications}
+\label{sec:transformcoefs}
+
+As explained in \code{estout}'s manual (\cite{jann2007making}),
+a function, $f(b)$, and its first derivative, $\partial f(b)$, can be used to transform the coefficients to
+be presented. Concretely, the following functions were used for the log specifications:  
+%
+\begin{equation}
+    \begin{aligned}
+        f(b) = 100 \cdot (e^{b}-1), 
+    \end{aligned}\qquad
+    \begin{aligned}
+        \partial f(b) = 100 \cdot (e^{b}).
+    \end{aligned}
+    \label{eq:transformcoefs}
+\end{equation}
+
+According to the package's manual, the first derivative is used to transform the standard errors as in:
+\begin{equation}
+        \text{se} \cdot \partial f(b)
+\end{equation}
+
+With regards to the log of \textit{net} wealth, however, the original coefficients cannot be interpreted as
+percentage changes due to crossing over from negative to positive and vice-versa. To illustrate, if an
+individual's net worth is valued at negative $10.000$€, and in the next period it is valued at positive
+$20.000$€. What would the percentage change in their net wealth? Only if one assumes very few people cross the
+€0 threshold could one interpret the coefficients approximately as a percentage change. As a matter of fact,
+even the interpretation of gross wealth is not, at first, trivial due to the possibility of owning 0 wealth.
+This issue is, however, circumvented with the unproblematic assumption that everyone has something valued for
+at least $1$€. On these accounts, the transformation was applied to both gross and net wealth specifications,
+but the reader should be aware of this caveat when interpreting the results of the neglog transformation.
+
+\newpage
+
+\section{Health Scales and Sub-Scales Over the Life Cycle}
+
+\begin{figure}[h]
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \caption{Physical Health Domain}
+        \includegraphics[width=1\linewidth]{../../output/figures/validatingmcspcs/pcs_age_subscales}
+        \label{fig:pcsagesubscales}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \caption{Mental Health Domain}
+        \includegraphics[width=1\linewidth]{../../output/figures/validatingmcspcs/mcs_age_subscales}
+        \label{fig:mcsagesubscales}
+    \end{subfigure}
+    \caption{Comparison of average health summary scores and sub-scales by age group}\label{fig:bothagesubscales}
+    \fnote{Notes: This figure shows the sub-scales superimposed with the summary scores constructed following the 
+        SF-12 method as well as the alternative method with an oblique rotation. Since age is a key variable that
+        captures most of the variation in health outcomes, this visualization helps us better grasp 
+        how the summary scores behave relative to each sub-scale. Note that \textit{Mental Health} is the
+        denomination of one of the sub-scales, while MCS is the summary score in the mental domain. 
+        }
+        { \small \vspace*{6pt}
+        Panel \subref{fig:pcsagesubscales} shows the PCS (from both methodologies) and the sub-scales from the physical health dimension. 
+        It becomes apparent that in this domain, the summary scores are coherent with all sub-scales in both methodologies. 
+        \\ In the Mental domain, depicted in panel \subref{fig:mcsagesubscales}, one sub-scale (Mental Health) shows a different pattern to the other three. 
+        MCS\tsub{sf21} follows this single variable very closely, in detriment of the other three. 
+        \\ It is worth noting that the interpretation of how the mental health unfolds over the life cycle differs considerably over the two methods. 
+        MCS\tsub{sf21} would suggest a rather low starting point, then a slow increase over the time, a big increase around retirement age and, finally, a rapid decrease subsequently. 
+        In the oblique case, in contrast, we see a relatively high starting point, then a slow decrease over time, then only a moderate increase around retirement and, finally, also a rapid decrease later on. 
+    }
+\end{figure}
+
+
+
+\input{./incl/figs/multifig_factor_descriptives.tex}
+
+
+
+
+
+
+
+
+
+
+
+\begingroup
+% The \begingroup ... \endgroup pair ensures values of spacing 
+% parameters only affect this particular table, and not any
+% subsequent ones in the document.
+\renewcommand{\arraystretch}{1.2} % Default value: 1
+\renewcommand{\thefootnote}{\alph{footnote}}
+\newcommand{\inlinecode}{\texttt}
+
+\newcommand{\rowgroupemph}[1]{\hspace{-1em}\textbf{#1}}
+%\newcommand{\rowgroupemph}[1]{\hspace{0em}\underline{#1}}
+\begin{table}[tb]
+    \centering
+    \begin{adjustbox}{max width=.9\textwidth}
+        \begin{threeparttable}
+            \caption{Overview of module health module from individual questionnaire}
+            \label{tab:health_fact_varname_and_questions}
+            %\begin{tabularx}{\textwidth}{lX X}
+            \begin{tabularx}{\textwidth}{>{\hspace{+1em}}l l >{\raggedright\arraybackslash}X}
+                \toprule
+                Category            & Variable               & Question \\
+                \midrule
+                \rowgroupemph{Physical Health Domain} \\ 
+                Physical Function 1  & \code{pf1~(ple0004)} & $^{(b)}$When you have to climb several flights of stairs on foot, does your health limit you greatly, somewhat, or not at all?                                                                                      \\
+                Physical Function 2  & \code{pf2~(ple0005)} & $^{(b)}$And what about other demanding everyday activities, such as when you have to lift something heavy or do something requiring physical mobility: Does your health limit you greatly, somewhat, or not at all? \\
+                General Health       & \code{gh~~(ple0008)} & $^{(c,rev)}$How would you describe your current health?                                                                                                                                                                 \\
+                Bodily Pain          & \code{bp~~(ple0030)} & $^{(a)}$have severe physical pain?                                                                                                                                                                                  \\
+                Role Physical 1      & \code{rp1~(ple0031)} & $^{(a)}$feel that due to physical health problems you achieved less than you wanted to at work or in everyday activities?                                                                                           \\
+                Role Physical 2      & \code{rp2~(ple0032)} & $^{(a)}$feel that due to physical health problems you were limited in some way at work or in everyday activities?                                                                                                   \\[3ex]
+                \midrule
+                \rowgroupemph{Mental Health Domain} \\
+                Stress               & \code{st~~(ple0026)} & $^{(a,e)}$feel rushed or pressed for time?                                                                                                                                                                            \\
+                Mental Health 1      & \code{mh1~(ple0027)} & $^{(a)}$feel down and gloomy?                                                                                                                                                                                       \\
+                Mental Health 2      & \code{mh2~(ple0028)} & $^{(a,rev)}$feel calm and relaxed?                                                                                                                                                                                      \\
+                Vitality             & \code{vt~~(ple0029)} & $^{(a,rev)}$feel energetic?                                                                                                                                                                                             \\
+                Role Emotional 1     & \code{re1~(ple0033)} & $^{(a)}$feel that due to mental health or emotional problems you achieved less than you wanted to at work or in everyday activities?                                                                                \\
+                Role Emotional 2     & \code{re2~(ple0034)} & $^{(a)}$feel that due to mental health or emotional problems you carried out your work or everyday tasks less thoroughly than usual?                                                                                \\
+                Social Function      & \code{sf~~(ple0035)} & $^{(a)}$feel that due to physical or mental health problems you were limited socially, that is, in contact with friends, acquaintances, or relatives?                                                               \\
+                \bottomrule
+            \end{tabularx}
+            %        \begin{tablenotes}[para,flushleft]
+                \begin{tablenotes}[para,flushleft]   
+                    \footnotesize
+                    \item Notes: This table shows an overview of the questions used in the factor models to construct the physical 
+                    and mental health scores. Names of input variables from \code{pl} dataset in parenthesis.\\
+                    \item a: Categorical variable with 5 levels (1: \textit{Always} to 5: \textit{Never}) and time framed as \textit{previous four weeks}.\\
+                    \item b: Categorical variable with 3 levels (1: \textit{Greatly} to 3: \textit{Not at all}) and no explicit time frame.\\
+                    \item c: Categorical variable with 5 levels (1: \textit{Very good} to 5: \textit{Bad}) and time framed as \textit{currently}.\\
+                    \item rev: Categories order reversed so lower values are `negative' and higher values are `positive' health outcomes.\\
+                    \item e: \code{st} is not included SF-12 methodology and, for better comparability, also not in the alternative factor model, but 
+                    displayed here for completeness.
+                \end{tablenotes}
+            \end{threeparttable}
+        \end{adjustbox}
+    \end{table}
+    
+    \endgroup
+
+
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------------------------------------------------------------------------------
+% Robustness Checks ----
+% -------------------------------------------------------------------------------------------------
+\chapter{Robustness Checks}
+
+\section{Model specification variation}
+\label{modelspecificationvariation}
+\input{./chapter/98b_appendix_figstbls.tex}
+
+%\input{./chapter/98c_appendix_treatcontrollevels.tex}
+%
+%\input{./chapter/98c_appendix_twfecscomp.tex}
+%
+%
+
+

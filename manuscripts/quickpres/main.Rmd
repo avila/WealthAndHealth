@@ -1,0 +1,245 @@
+---
+title: "Exploring the effect of rotation method choice on the estimated scores in a factor analysis framework" 
+output: beamer_presentation 
+fontsize: 9pt
+date: "21.03.2023" 
+author: "Marcelo Rainho Avila"
+header-includes:
+- \usepackage{caption}
+- \captionsetup[figure]{labelformat=empty}
+- \captionsetup[table]{labelformat=empty}
+- \definecolor{links}{HTML}{2A1B81}
+- \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r source data, message=FALSE, warning=FALSE, cache=TRUE, include=FALSE}
+# source("code/R/create_scores_bidimensiona_plots.R")
+```
+
+
+## Motivation
+
+- For this brief presentation I took a topic tangent to a part of my master thesis that I wanted to explorer a
+bit more in depth and took this opportunity to conduct this exercise.
+
+- The main idea is to compare how the choice of **rotation method in a factor model** affects the **estimated scores**. 
+which are used for subsequent analyses. 
+
+- The question arose when I realized that mental and physical scores provided by SOEP are, by construction, **uncorrelated**, 
+which might convey misleading interpretation of results based on those variables.
+
+
+
+## Quick overview of Factor Analysis
+
+> "You are asking me to describe a minefield."
+
+> \footnotesize _(Nick Cox, StataList 2005, on the differences among FA, PCA, PCF, ...)_
+
+\
+
+\
+
+Main idea: To extract the correlation structure from observed variables to model a smaller number of unobserved, latent variables. 
+
+Usually the following terms are used in the the following context:
+
+- Factor Analysis (FA) is based on an assumption of a theoretical model of latent factors causing observed variables.
+
+- Principal Component Analysis (PCA) aims to reduce correlated variables to a smaller set of variables.
+
+
+<!---
+https://stats.stackexchange.com/questions/366970/fundamental-difference-between-pca-and-fa
+https://stats.stackexchange.com/questions/94048
+
+rule of thumb: https://stats.stackexchange.com/questions/1576
+-->
+
+<!--
+Larger promax powers simplify the loadings (generate numbers closer to zero and one) but at the cost of additional correlation between factors.
+
+
+
+## On the Short Form 12 Health Survey 2 (SF-12v2)
+
+SOEP includes every second year since 2002 a health module strongly based on the SF-12v2, and provides *mental*
+and *physical component scales* (Andersen et al, 2007).
+
+The SF-12v2 (Turner-Bowker, D., Hogue, S.J. (2014)) is a shortened form (12 items) of the SF-36v2 Health Survey used to assess generic health outcomes of
+participants. It includes 8 domains from which one can construct the latent factor scores:
+
+- Mental: vitality (`vt`), social functioning (`sf`), role-emotional (`re`), and mental health (`mh`)
+
+- Physical: physical functioning (`pf`), role-physical (`rp`), bodily pain (`bp`), general health (`gh`)
+
+-->
+
+
+## Overview of mental and physical health variables (I) 
+
+\centering![p1](../../manuscripts/quickpres/figs/tab_p1.png){width=80%}\
+
+## Overview of mental and physical health variables (II)
+
+\centering![p1](../../manuscripts/quickpres/figs/tab_p2.png){width=80%}\
+
+
+# Factor Loadings
+
+## Factor Loadings (I)
+
+::: columns
+:::: column
+![(A) SOEPs default method](../../output/figures/factor/factor_loadings_a_soeps_default.png)
+::::
+:::: column
+![(B) Main alternative method](../../output/figures/factor/factor_loadings_b_oblique_main_raw_input_vars.png)
+:::: 
+:::
+
+
+## Factor Loadings (II)
+
+::: columns
+:::: column
+![(C) All variables, no rotation](../../output/figures/factor/factor_loadings_norotate.png)
+::::
+:::: column
+![(D) Mean grouped variables, oblique rotation](../../output/figures/factor/factor_loadings_d_oblique.png)
+:::: 
+:::
+
+## Factor Loadings: Main points
+
+
+1. Clusters are well defined and can be interpreted as physical and mental scores based on the underlaying questions
+1. Rotating the makes the structure simpler, with clusters more strongly loaded onto unique factors
+1. Allowing for oblique rotation increases the discrimination between clusters and their factors 
+1. Vitality (`vt`) is not strongly loaded to any factor. Some practitioners would suggest dropping weakly loaded variables.
+
+
+
+
+# Generated Scores
+
+## MCS and PCS correlation based on different rotaion methods
+
+
+| Method               | MCS/PCS correlation |
+|----------------------|--------------------:|
+| (A) default          |              0.0000 |
+| (B) main alternative |              0.3552 |
+| (C) no rotation      |              0.0091 |
+| (D) oblique rot.     |              0.2918 |
+
+Table: Pearson Correlation between MCS and PCS variables based on different rotation methods
+
+\
+
+
+> \footnotesize "Many researchers limit themselves to orthogonal rotation. This may be a problem if they conceptualize the factors as correlated. For example, we might have a physical health factor and a mental health factor. Conceptually, these would be correlated." (Acock, 2014, p. 380)
+
+
+
+## Scores bi-dimensional density (I)
+
+::: columns
+:::: column
+![(A) SOEPs default method, (corr=0.0000)](../../output/figures/factor/fig_bidim_marg_def.png)
+::::
+:::: column
+![(B) Main alternative method, (corr=0.3552)](../../output/figures/factor/fig_bidim_marg_main.png)
+::::
+:::
+
+## Scores bi-dimensional density (II)
+
+::: columns
+:::: column
+![(C) No rotation, all input variables, (corr=0.0091)](../../output/figures/factor/fig_bidim_marg_nort.png)
+::::
+:::: column
+![(D) Oblique, mean of group variables, (corr=0.2918)](../../output/figures/factor/fig_bidim_marg_obli.png)
+::::
+:::
+
+
+
+## MCS and PCS correlation among different rotation methods
+
+
+|          |  pcs_def | pcs_main | pcs_nort  | pcs_obli |
+|----------|--------:|---------:|---------:|---------:|
+| pcs_def  |  1.0000 |          |          |          |
+| pcs_main |  0.9573 |   1.0000 |          |          |
+| pcs_nort |  0.7439 |   0.8528 |   1.0000 |          |
+| pcs_obli |  0.9805 |   0.9859 |   0.8312 |   1.0000 |
+
+
+Table: Physical Components correlation table
+
+
+|             | mcs_def | mcs_main | mcs_nort | mcs_obli |
+|-------------|----------|----------|-----------|---------:|
+|     mcs_def |   1.0000 |          |           |          |
+|    mcs_main |   0.8958 |   1.0000 |           |          |
+|    mcs_nort |   0.7080 |   0.6040 |    1.0000 |          |
+|    mcs_obli |   0.9563 |   0.9734 |    0.6301 |   1.0000 |
+
+Table: Mental Components correlation table
+
+
+
+
+# Comparison 
+
+## Gross Wealth groups (at age 45) 
+
+::: columns
+:::: column
+![(A)](../../output/figures/factor/fig_p1.png)
+::::
+:::: column
+![(B)](../../output/figures/factor/fig_p2.png)
+::::
+:::
+
+## Age Group
+
+::: columns
+:::: column
+![(C)](../../output/figures/factor/fig_p3.png)
+::::
+:::: column
+![(D) Note: Different y-scale](../../output/figures/factor/fig_p4.png)
+::::
+:::
+
+
+## Main Takeaways
+
+- Choice of rotation (or specially the lack of) can have a significant impact in the generated scores
+- First factor less impacted by the rotation method
+- Caution is advised when interpreting or, specially, comparing results from the 1st and 2nd factors. 
+
+
+# Thank you
+
+## References 
+
+- Acock, Alan C. A Gentle Introduction to Stata. 4th edition, A Stata Press Publication, StataCorp LP, 2014
+
+- Andersen, Hanfried H., et al. ‘Computation of Standard Values for Physical and Mental Health Scale Scores Using the SOEP Version of SF-12v2’. Schmollers Jahrbuch, 2007
+
+- Nick Cox, [StataList, 11 Sep 2005](https://www.stata.com/statalist/archive/2005-09/msg00297.html), (accessed on 20/03/2023)
+
+- Turner-Bowker, D., Hogue, S.J. (2014). Short Form 12 Health Survey (SF-12). In: Michalos, A.C. (eds) Encyclopedia of Quality of Life and Well-Being Research. Springer, Dordrecht
+
+
+
+
+

@@ -1,0 +1,2034 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{abadie2005semiparametric}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=da499bff747c5f6cd0ec9185c820ba4d}{%
+           family={Abadie},
+           familyi={A\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {[Oxford University Press, The Review of Economic Studies, Ltd.]}%
+      }
+      \strng{namehash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{fullhash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{bibnamehash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{authorbibnamehash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{authornamehash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{authorfullhash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{jstor}
+      \field{issn}{0034-6527}
+      \field{journaltitle}{The Review of Economic Studies}
+      \field{number}{1}
+      \field{shortjournal}{Rev. Econ. Stud.}
+      \field{title}{Semiparametric {{Difference-in-Differences Estimators}}}
+      \field{urlday}{23}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{volume}{72}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{eprint}
+      \verb 3700681
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/3700681
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/3700681
+      \endverb
+    \endentry
+    \entry{andersen.etal2007computation}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=32bdd97fe63553bb8ed7c3512f445268}{%
+           family={Andersen},
+           familyi={A\bibinitperiod},
+           given={Hanfried\bibnamedelima H},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9cab48ca2c4cfda6da1d553cec8853b7}{%
+           family={Mühlbacher},
+           familyi={M\bibinitperiod},
+           given={Axel},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=da18f08ee5d166701423c628227c00ce}{%
+           family={Nübling},
+           familyi={N\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b5a94fba4fc7802f6cf0788dc20bd5c8}{%
+           family={Schupp},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a782cdb400e499e6683fd8870ff96d3b}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={Gert\bibnamedelima G},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0b4a651ae73efce908841cb5a51b0486}
+      \strng{fullhash}{3f6a38b9e4639be17a98123a00d4e1ac}
+      \strng{bibnamehash}{0b4a651ae73efce908841cb5a51b0486}
+      \strng{authorbibnamehash}{0b4a651ae73efce908841cb5a51b0486}
+      \strng{authornamehash}{0b4a651ae73efce908841cb5a51b0486}
+      \strng{authorfullhash}{3f6a38b9e4639be17a98123a00d4e1ac}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Schmollers Jahrbuch}
+      \field{langid}{english}
+      \field{shortjournal}{Schmollers Jahrbuch}
+      \field{title}{Computation of {{Standard Values}} for {{Physical}} and {{Mental Health Scale Scores Using}} the {{SOEP Version}} of {{SF-12v2}}}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{pages}{171\bibrangedash 182}
+      \range{pages}{12}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/H74A9CG5/Andersen et al. - 2007 - Computation of Standard Values.pdf
+      \endverb
+    \endentry
+    \entry{borusyak.etal2024revisiting}{online}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=bd786f74596fee4b3890f929e06a0f8a}{%
+           family={Borusyak},
+           familyi={B\bibinitperiod},
+           given={Kirill},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf9f59745c80d75e4b28c948d6b49032}{%
+           family={Jaravel},
+           familyi={J\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2e249611355f88583165432eab0ba4e1}{%
+           family={Spiess},
+           familyi={S\bibinitperiod},
+           given={Jann},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{868bd3b0860d23d0522ca78a414bfd87}
+      \strng{fullhash}{088786d88490d4ebdcd781569cc02694}
+      \strng{bibnamehash}{088786d88490d4ebdcd781569cc02694}
+      \strng{authorbibnamehash}{088786d88490d4ebdcd781569cc02694}
+      \strng{authornamehash}{868bd3b0860d23d0522ca78a414bfd87}
+      \strng{authorfullhash}{088786d88490d4ebdcd781569cc02694}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{eprintclass}{econ}
+      \field{eprinttype}{arxiv}
+      \field{month}{1}
+      \field{pubstate}{preprint}
+      \field{shorttitle}{Revisiting {{Event Study Designs}}}
+      \field{title}{Revisiting {{Event Study Designs}}: {{Robust}} and {{Efficient Estimation}}}
+      \field{version}{5}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2108.12419
+      \endverb
+      \verb{eprint}
+      \verb 2108.12419v5
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/J66YXFXT/Borusyak et al. - 2024 - Revisiting Event Study Designs.pdf
+      \endverb
+      \keyw{COMPARE,Economics - Econometrics}
+    \endentry
+    \entry{callaway.etal2024eventstudies}{online}{}
+      \name{author}{3}{ul=2}{%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=437b3fad5b4a40d10f45b4fc16dd7730}{%
+           family={Goodman-Bacon},
+           familyi={G\bibinithyphendelim B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1437114b489047e8fccf608fa3396390}
+      \strng{fullhash}{100b0960671e592b2885c4af9a18389d}
+      \strng{bibnamehash}{100b0960671e592b2885c4af9a18389d}
+      \strng{authorbibnamehash}{100b0960671e592b2885c4af9a18389d}
+      \strng{authornamehash}{1437114b489047e8fccf608fa3396390}
+      \strng{authorfullhash}{100b0960671e592b2885c4af9a18389d}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{NBER}
+      \field{month}{2}
+      \field{number}{32118}
+      \field{pubstate}{preprint}
+      \field{series}{Working {{Paper Series}}}
+      \field{title}{Event-{{Studies}} with a {{Continuous Treatment}}}
+      \field{type}{Working Paper}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.3386/w32118
+      \endverb
+      \verb{eprint}
+      \verb 32118
+      \endverb
+    \endentry
+    \entry{cs2021did_mtp}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{bibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorbibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authornamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{03044076}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{2}
+      \field{shortjournal}{Journal of Econometrics}
+      \field{title}{Difference-in-{{Differences}} with Multiple Time Periods}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{pages}{200\bibrangedash 230}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/DHZTJPSC/Callaway and Sant’Anna - 2021 - Difference-in-Differences with multiple time perio.pdf;/home/avila/Zotero/storage/JQN6ENVW/Callaway and Sant’Anna - 2021 - Difference-in-Differences with.pdf
+      \endverb
+    \endentry
+    \entry{case.deaton2005broken}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=728f55712c8c279b03ff68413f504127}{%
+           family={Case},
+           familyi={C\bibinitperiod},
+           given={Anne},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=84a3fb0a415707452c63f887f259ab3a}{%
+           family={Deaton},
+           familyi={D\bibinitperiod},
+           given={Angus\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{publisher}{1}{%
+        {National Bureau of Economic Research, Inc}%
+      }
+      \strng{namehash}{98c86cf7870b6b826b9d17119f66c412}
+      \strng{fullhash}{98c86cf7870b6b826b9d17119f66c412}
+      \strng{bibnamehash}{98c86cf7870b6b826b9d17119f66c412}
+      \strng{authorbibnamehash}{98c86cf7870b6b826b9d17119f66c412}
+      \strng{authornamehash}{98c86cf7870b6b826b9d17119f66c412}
+      \strng{authorfullhash}{98c86cf7870b6b826b9d17119f66c412}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{NBER Chapters}
+      \field{langid}{english}
+      \field{shorttitle}{Broken {{Down}} by {{Work}} and {{Sex}}}
+      \field{title}{Broken {{Down}} by {{Work}} and {{Sex}}: {{How Our Health Declines}}}
+      \field{urlday}{6}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{185\bibrangedash 212}
+      \range{pages}{28}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/B8QPLPYQ/Case and Deaton - 2005 - Broken Down by Work and Sex H.pdf;/home/avila/Zotero/storage/524GGYGV/10361.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org//h/nbr/nberch/10361.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org//h/nbr/nberch/10361.html
+      \endverb
+    \endentry
+    \entry{chetty.etal2016association}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=7a853740afbc544905334cf607b3cd51}{%
+           family={Chetty},
+           familyi={C\bibinitperiod},
+           given={Raj},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=afb43a20acaf3b760e2f4d23f3cec5cb}{%
+           family={Stepner},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1bfe7aacc440efc360e6a6e3eaa7a2d3}{%
+           family={Abraham},
+           familyi={A\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a0121dcf84b5c541617fbfb99ef5e19}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Shelby},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2be6edd4b1de8439781716d23b68e888}{%
+           family={Scuderi},
+           familyi={S\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4dd0ea18d980ba721431a5fa9703e6a0}{%
+           family={Turner},
+           familyi={T\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13ad8c1123ddf65b2d5d669280df04be}{%
+           family={Bergeron},
+           familyi={B\bibinitperiod},
+           given={Augustin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=48f6c67c9a01a6f9ffd12cd724a52aa1}{%
+           family={Cutler},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{de9f176c59c95a4d2de134921515d461}
+      \strng{fullhash}{a4cf9f84b3fe9db47812ff7b74463903}
+      \strng{bibnamehash}{de9f176c59c95a4d2de134921515d461}
+      \strng{authorbibnamehash}{de9f176c59c95a4d2de134921515d461}
+      \strng{authornamehash}{de9f176c59c95a4d2de134921515d461}
+      \strng{authorfullhash}{a4cf9f84b3fe9db47812ff7b74463903}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{924 citations (Crossref) [2021-11-10]}
+      \field{day}{26}
+      \field{eprinttype}{pmid}
+      \field{issn}{1538-3598}
+      \field{journaltitle}{JAMA}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{16}
+      \field{shortjournal}{JAMA}
+      \field{title}{The {{Association Between Income}} and {{Life Expectancy}} in the {{United States}}, 2001-2014}
+      \field{volume}{315}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{1750\bibrangedash 1766}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1001/jama.2016.4226
+      \endverb
+      \verb{eprint}
+      \verb 27063997
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/UZ3K8G55/Chetty_etal_2016_The_Association_Between.pdf
+      \endverb
+      \keyw{tocite}
+    \endentry
+    \entry{christensen.etal2013validation}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=972d52fff6ad4663e066be7d478feb42}{%
+           family={Christensen},
+           familyi={C\bibinitperiod},
+           given={Louise\bibnamedelima Næser},
+           giveni={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3b93373c7b3b7507b3c1dd5c3857ed45}{%
+           family={Ehlers},
+           familyi={E\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3f834d7e02eb24ded7a571d4894358ae}{%
+           family={Larsen},
+           familyi={L\bibinitperiod},
+           given={Finn\bibnamedelima Breinholt},
+           giveni={F\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19b344f6c96caedcead91d4a38d369cd}{%
+           family={Jensen},
+           familyi={J\bibinitperiod},
+           given={Morten\bibnamedelima Berg},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7f3b5b3847250b92c2e2ea4ed1972e8b}
+      \strng{fullhash}{63add5c3030d531734e162c115a42294}
+      \strng{bibnamehash}{7f3b5b3847250b92c2e2ea4ed1972e8b}
+      \strng{authorbibnamehash}{7f3b5b3847250b92c2e2ea4ed1972e8b}
+      \strng{authornamehash}{7f3b5b3847250b92c2e2ea4ed1972e8b}
+      \strng{authorfullhash}{63add5c3030d531734e162c115a42294}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{jstor}
+      \field{issn}{0303-8300}
+      \field{journaltitle}{Social Indicators Research}
+      \field{number}{2}
+      \field{shortjournal}{Soc. Indic. Res.}
+      \field{title}{Validation of the 12 {{Item Short}} Form {{Health Survey}} in a {{Sample}} from {{Region Central Jutland}}}
+      \field{urlday}{3}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{volume}{114}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{513\bibrangedash 521}
+      \range{pages}{9}
+      \verb{eprint}
+      \verb 24720261
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/24720261
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/24720261
+      \endverb
+    \endentry
+    \entry{correia2023reghdfe}{software}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e8344b104644437b9125af7b1135ed38}{%
+           family={Correia},
+           familyi={C\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e8344b104644437b9125af7b1135ed38}
+      \strng{fullhash}{e8344b104644437b9125af7b1135ed38}
+      \strng{bibnamehash}{e8344b104644437b9125af7b1135ed38}
+      \strng{authorbibnamehash}{e8344b104644437b9125af7b1135ed38}
+      \strng{authornamehash}{e8344b104644437b9125af7b1135ed38}
+      \strng{authorfullhash}{e8344b104644437b9125af7b1135ed38}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{21}
+      \field{month}{8}
+      \field{shorttitle}{{{REGHDFE}}}
+      \field{title}{{{REGHDFE}}: {{Stata}} Module to Perform Linear or Instrumental-Variable Regression Absorbing Any Number of High-Dimensional Fixed Effects}
+      \field{version}{6.12.3}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \true{nocite}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/YSBPXP2T/s457874.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org//c/boc/bocode/s457874.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org//c/boc/bocode/s457874.html
+      \endverb
+      \keyw{fixed effects,high dimension fixed effects,instrumental variables,regression,software,Stata}
+    \endentry
+    \entry{daw.hatfield2018matching}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f03f40c017ef43409791e133bae21cdb}{%
+           family={Daw},
+           familyi={D\bibinitperiod},
+           given={Jamie\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0dc8e1e8539cbe2e67aecc7074c89c45}{%
+           family={Hatfield},
+           familyi={H\bibinitperiod},
+           given={Laura\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{302270922b0ac32e3a4a518543354610}
+      \strng{fullhash}{302270922b0ac32e3a4a518543354610}
+      \strng{bibnamehash}{302270922b0ac32e3a4a518543354610}
+      \strng{authorbibnamehash}{302270922b0ac32e3a4a518543354610}
+      \strng{authornamehash}{302270922b0ac32e3a4a518543354610}
+      \strng{authorfullhash}{302270922b0ac32e3a4a518543354610}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1475-6773}
+      \field{journaltitle}{Health Services Research}
+      \field{langid}{english}
+      \field{number}{6}
+      \field{shortjournal}{Health Serv. Res.}
+      \field{title}{Matching and {{Regression}} to the {{Mean}} in {{Difference-in-Differences Analysis}}}
+      \field{volume}{53}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{pages}{4138\bibrangedash 4156}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1111/1475-6773.12993
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/DBVQFJ9N/Daw and Hatfield - 2018 - Matching and Regression to the.pdf;/home/avila/Zotero/storage/2U38ZZZQ/1475-6773.html
+      \endverb
+      \keyw{difference-in-differences,matching,Observational research,tocite}
+    \endentry
+    \entry{deaton2003health}{article}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=49e860b4f71d798fa4f5cf1c90103fc4}{%
+           family={Deaton},
+           familyi={D\bibinitperiod},
+           given={Angus},
+           giveni={A\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{49e860b4f71d798fa4f5cf1c90103fc4}
+      \strng{fullhash}{49e860b4f71d798fa4f5cf1c90103fc4}
+      \strng{bibnamehash}{49e860b4f71d798fa4f5cf1c90103fc4}
+      \strng{authorbibnamehash}{49e860b4f71d798fa4f5cf1c90103fc4}
+      \strng{authornamehash}{49e860b4f71d798fa4f5cf1c90103fc4}
+      \strng{authorfullhash}{49e860b4f71d798fa4f5cf1c90103fc4}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Literature}
+      \field{langid}{english}
+      \field{shortjournal}{J. Econ. Lit.}
+      \field{title}{Health, {{Inequality}}, and {{Economic Development}}}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{pages}{46}
+      \range{pages}{1}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/XXBCGV3Z/Deaton_2003_Health,_Inequality,_and_Economic_Development.pdf
+      \endverb
+      \keyw{done\_reading}
+    \endentry
+    \entry{dechaisemartin.dhaultfoeuille2022twoway}{online}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,useprefix=true,hash=e476426fa9151355cd09327277745a1c}{%
+           family={Chaisemartin},
+           familyi={C\bibinitperiod},
+           given={Clément},
+           giveni={C\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=4f144b9e328b955315daa79c0d4d2122}{%
+           family={D'Haultfoeuille},
+           familyi={D\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{10877da5bd44f3d87d6bc5fb5c07527a}
+      \strng{fullhash}{10877da5bd44f3d87d6bc5fb5c07527a}
+      \strng{bibnamehash}{10877da5bd44f3d87d6bc5fb5c07527a}
+      \strng{authorbibnamehash}{10877da5bd44f3d87d6bc5fb5c07527a}
+      \strng{authornamehash}{10877da5bd44f3d87d6bc5fb5c07527a}
+      \strng{authorfullhash}{10877da5bd44f3d87d6bc5fb5c07527a}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{pubstate}{preprint}
+      \field{title}{Two-{{Way Fixed Effects}} and {{Differences-in-Differences}} with {{Heterogeneous Treatment Effects}}: {{A Survey}}}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.3386/w29734
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/NC8V972T/de Chaisemartin and D'Haultfoeuille - Two-Way Fixed Effects and Differences-in-Differenc.pdf
+      \endverb
+    \endentry
+    \entry{fabrigar.wegener2012exploratory}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=39b5ad2c6569dc1dd602488171889097}{%
+           family={Fabrigar},
+           familyi={F\bibinitperiod},
+           given={Leandre\bibnamedelima R.},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d381cb1e6c8875e335b4f851b305da9}{%
+           family={Wegener},
+           familyi={W\bibinitperiod},
+           given={Duane\bibnamedelima Theodore},
+           giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Oxford ; New York}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{faa8e6c8a953aeb2468ea157002c9ec7}
+      \strng{fullhash}{faa8e6c8a953aeb2468ea157002c9ec7}
+      \strng{bibnamehash}{faa8e6c8a953aeb2468ea157002c9ec7}
+      \strng{authorbibnamehash}{faa8e6c8a953aeb2468ea157002c9ec7}
+      \strng{authornamehash}{faa8e6c8a953aeb2468ea157002c9ec7}
+      \strng{authorfullhash}{faa8e6c8a953aeb2468ea157002c9ec7}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-19-973417-7}
+      \field{langid}{english}
+      \field{pagetotal}{159}
+      \field{series}{Understanding Statistics}
+      \field{title}{Exploratory Factor Analysis}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/XSUTYLFZ/Fabrigar and Wegener - 2012 - Exploratory factor analysis.pdf
+      \endverb
+      \keyw{Explanatory factor analysis,Mathematical models,Psychology,Social sciences,tocite}
+    \endentry
+    \entry{destatiscpi}{dataset}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c8928eb235086c167eb3481a5704da22}{%
+           family={{Federal Statistical Office}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Genesis-Online}%
+      }
+      \strng{namehash}{c8928eb235086c167eb3481a5704da22}
+      \strng{fullhash}{c8928eb235086c167eb3481a5704da22}
+      \strng{bibnamehash}{c8928eb235086c167eb3481a5704da22}
+      \strng{authorbibnamehash}{c8928eb235086c167eb3481a5704da22}
+      \strng{authornamehash}{c8928eb235086c167eb3481a5704da22}
+      \strng{authorfullhash}{c8928eb235086c167eb3481a5704da22}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{Genesis-Online, Statistisches Bundesamt (Destatis), Wiesbaden}
+      \field{title}{Consumer Price Index: {{Germany}}, Years (Series 61111-0001)}
+    \endentry
+    \entry{gill.etal2007validity}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=c57e51f4c746ac85e132e8499326b09e}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={Sarah\bibnamedelima C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dd8877620b944627e0f4c818c68c3ddc}{%
+           family={Butterworth},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6df466091990051531fe847f1a68e4bd}{%
+           family={Rodgers},
+           familyi={R\bibinitperiod},
+           given={Bryan},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a6ece27dc2471797fed2f4274bb64330}{%
+           family={Mackinnon},
+           familyi={M\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a55e47f0d27630fca910a0bb9564efe1}
+      \strng{fullhash}{fdc2c53e44b483ca85773a8ea0f83d45}
+      \strng{bibnamehash}{a55e47f0d27630fca910a0bb9564efe1}
+      \strng{authorbibnamehash}{a55e47f0d27630fca910a0bb9564efe1}
+      \strng{authornamehash}{a55e47f0d27630fca910a0bb9564efe1}
+      \strng{authorfullhash}{fdc2c53e44b483ca85773a8ea0f83d45}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{30}
+      \field{issn}{0165-1781}
+      \field{journaltitle}{Psychiatry Research}
+      \field{month}{7}
+      \field{number}{1}
+      \field{shortjournal}{Psychiatry Research}
+      \field{title}{Validity of the Mental Health Component Scale of the 12-Item {{Short-Form Health Survey}} ({{MCS-12}}) as Measure of Common Mental Disorders in the General Population}
+      \field{volume}{152}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{pages}{63\bibrangedash 71}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.psychres.2006.11.005
+      \endverb
+      \keyw{Area Under Curve,GHQ-12,ICD-10,K10,Mental disorder,Receiver Operating Characteristic Curve,SF-12}
+    \endentry
+    \entry{goebel.etal2019SOEP}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=a226ae947c9c919b80c7eec3482b3862}{%
+           family={Goebel},
+           familyi={G\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=153e177ddc0aece2c9208fe92c244d94}{%
+           family={Grabka},
+           familyi={G\bibinitperiod},
+           given={Markus\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4626785599113746bbc1e6c16d56384a}{%
+           family={Liebig},
+           familyi={L\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fe87ab1a4961f6a0d13da4145fa7028c}{%
+           family={Kroh},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1c1b9b802e0866a4eafc8293c6c065ae}{%
+           family={Richter},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5815b9f5eb5895490608ccb4c4370204}{%
+           family={Schröder},
+           familyi={S\bibinitperiod},
+           given={Carsten},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b5a94fba4fc7802f6cf0788dc20bd5c8}{%
+           family={Schupp},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {De Gruyter Oldenbourg}%
+      }
+      \strng{namehash}{94d257fe3bd4992bff554a3d60c0c683}
+      \strng{fullhash}{b0f26ae8968dde5ef6e697ad37b802f3}
+      \strng{bibnamehash}{94d257fe3bd4992bff554a3d60c0c683}
+      \strng{authorbibnamehash}{94d257fe3bd4992bff554a3d60c0c683}
+      \strng{authornamehash}{94d257fe3bd4992bff554a3d60c0c683}
+      \strng{authorfullhash}{b0f26ae8968dde5ef6e697ad37b802f3}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{2366-049X}
+      \field{journaltitle}{Jahrbücher für Nationalökonomie und Statistik}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{2}
+      \field{shortjournal}{Jahrb. Für Natl. Stat.}
+      \field{title}{The {{German Socio-Economic Panel}} ({{SOEP}})}
+      \field{volume}{239}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{345\bibrangedash 360}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1515/jbnst-2018-0022
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/HHBYB4QH/Goebel et al. - 2019 - The German Socio-Economic Pane.pdf
+      \endverb
+      \keyw{SOEP,tocite}
+    \endentry
+    \entry{grabka2022healthv37}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=153e177ddc0aece2c9208fe92c244d94}{%
+           family={Grabka},
+           familyi={G\bibinitperiod},
+           given={Markus\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {SOEP Survey Papers}%
+      }
+      \strng{namehash}{153e177ddc0aece2c9208fe92c244d94}
+      \strng{fullhash}{153e177ddc0aece2c9208fe92c244d94}
+      \strng{bibnamehash}{153e177ddc0aece2c9208fe92c244d94}
+      \strng{authorbibnamehash}{153e177ddc0aece2c9208fe92c244d94}
+      \strng{authornamehash}{153e177ddc0aece2c9208fe92c244d94}
+      \strng{authorfullhash}{153e177ddc0aece2c9208fe92c244d94}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{number}{1181}
+      \field{title}{{{SOEP-Core}} V37 - {{HEALTH}}}
+      \field{type}{Research Report}
+      \field{urlday}{3}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/NVD8UZIV/Grabka - 2022 - SOEP-Core v37 - HEALTH.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.econstor.eu/handle/10419/263194
+      \endverb
+      \verb{url}
+      \verb https://www.econstor.eu/handle/10419/263194
+      \endverb
+    \endentry
+    \entry{hagell.etal2017beware}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=414039eda1b8e7fea723e9fbafda1e6a}{%
+           family={Hagell},
+           familyi={H\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ac512e5d05304c431498a8e468dd7a43}{%
+           family={Westergren},
+           familyi={W\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37369e3dbab9cd926ef1c21b6d1b02c9}{%
+           family={Årestedt},
+           familyi={Å\bibinitperiod},
+           given={Kristofer},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3feb03950083b0af3f84512f99c26841}
+      \strng{fullhash}{d249279de22ccc6101dc884806ac0f0c}
+      \strng{bibnamehash}{d249279de22ccc6101dc884806ac0f0c}
+      \strng{authorbibnamehash}{d249279de22ccc6101dc884806ac0f0c}
+      \strng{authornamehash}{3feb03950083b0af3f84512f99c26841}
+      \strng{authorfullhash}{d249279de22ccc6101dc884806ac0f0c}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0160-6891, 1098-240X}
+      \field{journaltitle}{Research in Nursing \& Health}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{4}
+      \field{shortjournal}{Research in Nursing \& Health}
+      \field{shorttitle}{Beware of the Origin of Numbers}
+      \field{title}{Beware of the Origin of Numbers: {{Standard}} Scoring of the {{SF}}‐12 and {{SF}}‐36 Summary Measures Distorts Measurement and Score Interpretations}
+      \field{volume}{40}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{pages}{378\bibrangedash 386}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1002/nur.21806
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/R9J8HH68/Hagell_Westergren_Årestedt_2017_Beware_of_the_origin_of.pdf
+      \endverb
+      \keyw{mcs,pca,pcs,tocite}
+    \endentry
+    \entry{hann2008sf36}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=de738e1b4580909c25548f512c893d7d}{%
+           family={Hann},
+           familyi={H\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e9a7dfb3a0bf9c40ff6c6107e969edc}{%
+           family={Reeves},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea345470a6c3af1fdf2ae18361a624de}
+      \strng{fullhash}{ea345470a6c3af1fdf2ae18361a624de}
+      \strng{bibnamehash}{ea345470a6c3af1fdf2ae18361a624de}
+      \strng{authorbibnamehash}{ea345470a6c3af1fdf2ae18361a624de}
+      \strng{authornamehash}{ea345470a6c3af1fdf2ae18361a624de}
+      \strng{authorfullhash}{ea345470a6c3af1fdf2ae18361a624de}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0962-9343, 1573-2649}
+      \field{journaltitle}{Quality of Life Research}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{3}
+      \field{shortjournal}{Qual Life Res}
+      \field{title}{The {{SF-36}} Scales Are Not Accurately Summarised by Independent Physical and Mental Component Scores}
+      \field{volume}{17}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{pages}{413\bibrangedash 423}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1007/s11136-008-9310-0
+      \endverb
+      \keyw{pca,tocite}
+    \endentry
+    \entry{heckman.etal1997matching}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b70b920520f54634a1f03f9312707db2}{%
+           family={Heckman},
+           familyi={H\bibinitperiod},
+           given={James\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0d261351e2d86ceaf41d62b7d7308f9}{%
+           family={Ichimura},
+           familyi={I\bibinitperiod},
+           given={Hidehiko},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a2a2e53cb36906936ce1abdb635a4c9a}{%
+           family={Todd},
+           familyi={T\bibinitperiod},
+           given={Petra\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {[Oxford University Press, Review of Economic Studies, Ltd.]}%
+      }
+      \strng{namehash}{f006d0e2174466d5917902b66def5494}
+      \strng{fullhash}{57bf4b5d09873569a6aeaf55c75dab91}
+      \strng{bibnamehash}{57bf4b5d09873569a6aeaf55c75dab91}
+      \strng{authorbibnamehash}{57bf4b5d09873569a6aeaf55c75dab91}
+      \strng{authornamehash}{f006d0e2174466d5917902b66def5494}
+      \strng{authorfullhash}{57bf4b5d09873569a6aeaf55c75dab91}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{eprinttype}{jstor}
+      \field{issn}{0034-6527}
+      \field{journaltitle}{The Review of Economic Studies}
+      \field{number}{4}
+      \field{shortjournal}{Rev. Econ. Stud.}
+      \field{shorttitle}{Matching as an {{Econometric Evaluation Estimator}}}
+      \field{title}{Matching as an {{Econometric Evaluation Estimator}}: {{Evidence}} from {{Evaluating}} a {{Job Training Programme}}}
+      \field{volume}{64}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{pages}{605\bibrangedash 654}
+      \range{pages}{50}
+      \verb{doi}
+      \verb 10.2307/2971733
+      \endverb
+      \verb{eprint}
+      \verb 2971733
+      \endverb
+    \endentry
+    \entry{jann2007making}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fe15a2c6323193f38ebd40cff31e53f8}{%
+           family={Jann},
+           familyi={J\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fe15a2c6323193f38ebd40cff31e53f8}
+      \strng{fullhash}{fe15a2c6323193f38ebd40cff31e53f8}
+      \strng{bibnamehash}{fe15a2c6323193f38ebd40cff31e53f8}
+      \strng{authorbibnamehash}{fe15a2c6323193f38ebd40cff31e53f8}
+      \strng{authornamehash}{fe15a2c6323193f38ebd40cff31e53f8}
+      \strng{authorfullhash}{fe15a2c6323193f38ebd40cff31e53f8}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{Current version 3.31 26apr2022}
+      \field{journaltitle}{The Stata Journal: Promoting communications on statistics and Stata}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{2}
+      \field{shortjournal}{The Stata Journal}
+      \field{title}{Making {{Regression Tables Simplified}}}
+      \field{volume}{7}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{pages}{227\bibrangedash 244}
+      \range{pages}{18}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/FUNV7RBT/Jann - 2007 - Making Regression Tables Simpl.pdf
+      \endverb
+      \keyw{software}
+    \endentry
+    \entry{kröger.etal2015what}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=79708b3338c771cee61c9a5e159d8e81}{%
+           family={Kröger},
+           familyi={K\bibinitperiod},
+           given={Hannes},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4f77ee33b815b17f82083aa7268e7b4a}{%
+           family={Pakpahan},
+           familyi={P\bibinitperiod},
+           given={Eduwin},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a093cc010854ebbb21ebfe42ed972005}{%
+           family={Hoffmann},
+           familyi={H\bibinitperiod},
+           given={Rasmus},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2f13a5eb9e2ba12b4f5b08bc1a36bba4}
+      \strng{fullhash}{31a18d5ba7a25fb2e860d7a5c5ad5bcc}
+      \strng{bibnamehash}{31a18d5ba7a25fb2e860d7a5c5ad5bcc}
+      \strng{authorbibnamehash}{31a18d5ba7a25fb2e860d7a5c5ad5bcc}
+      \strng{authornamehash}{2f13a5eb9e2ba12b4f5b08bc1a36bba4}
+      \strng{authorfullhash}{31a18d5ba7a25fb2e860d7a5c5ad5bcc}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{eprinttype}{pmid}
+      \field{issn}{1464-360X}
+      \field{journaltitle}{European Journal of Public Health}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{6}
+      \field{shortjournal}{Eur J Public Health}
+      \field{shorttitle}{What Causes Health Inequality?}
+      \field{title}{What Causes Health Inequality? {{A}} Systematic Review on the Relative Importance of Social Causation and Health Selection}
+      \field{volume}{25}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{pages}{951\bibrangedash 960}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1093/eurpub/ckv111
+      \endverb
+      \verb{eprint}
+      \verb 26089181
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/Y55VK7GW/Kröger et al. - 2015 - What causes health inequality.pdf
+      \endverb
+      \keyw{{Models,Statistical},Educational Status,Health Status Disparities,Humans,Income,Social Determinants of Health,Socioeconomic Factors}
+    \endentry
+    \entry{liebig.etal2022SOEP}{dataset}{}
+      \name{author}{24}{}{%
+        {{un=0,uniquepart=base,hash=4626785599113746bbc1e6c16d56384a}{%
+           family={Liebig},
+           familyi={L\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a226ae947c9c919b80c7eec3482b3862}{%
+           family={Goebel},
+           familyi={G\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8172632da4596d164910b88c72e83c02}{%
+           family={Grabka},
+           familyi={G\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5815b9f5eb5895490608ccb4c4370204}{%
+           family={Schröder},
+           familyi={S\bibinitperiod},
+           given={Carsten},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9ea87b5acfc462c38e6d8e92fdf03b9c}{%
+           family={Zinn},
+           familyi={Z\bibinitperiod},
+           given={Sabine},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=772efba663af60a160d6168ae142381f}{%
+           family={Bartels},
+           familyi={B\bibinitperiod},
+           given={Charlotte},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9a6c9b1d9807239c56b80b6475ba13ef}{%
+           family={Franken},
+           familyi={F\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=154cd066a8905d2add1f07979fc5c65b}{%
+           family={Gerike},
+           familyi={G\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bae4627245ca16768817d04e9655a76e}{%
+           family={Geschke},
+           familyi={G\bibinitperiod},
+           given={Sascha-Christopher},
+           giveni={S\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=619386d9f5486b0cee5fd77878486fb1}{%
+           family={Griese},
+           familyi={G\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2a0b282db3ddfdceed4899b8153751ed}{%
+           family={Kara},
+           familyi={K\bibinitperiod},
+           given={Selin},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dbed428d491a8e50487e6eb11a7b9d63}{%
+           family={König},
+           familyi={K\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19ff73344dd3f31f810df3fc2e38534e}{%
+           family={Krause},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79708b3338c771cee61c9a5e159d8e81}{%
+           family={Kröger},
+           familyi={K\bibinitperiod},
+           given={Hannes},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=400dd9f63faa7f6869710158861d7dd0}{%
+           family={Liebau},
+           familyi={L\bibinitperiod},
+           given={Elisabeth},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=797130646b7a8c3e10d6a618e8a6fe73}{%
+           family={Nebelin},
+           familyi={N\bibinitperiod},
+           given={Jana},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e87f4d4d55fa608d82bd51cbb3512f5f}{%
+           family={Petrenz},
+           familyi={P\bibinitperiod},
+           given={Marvin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1c1b9b802e0866a4eafc8293c6c065ae}{%
+           family={Richter},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b5a94fba4fc7802f6cf0788dc20bd5c8}{%
+           family={Schupp},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=725edfb28d31e14242a7618b4b724bcb}{%
+           family={Siegers},
+           familyi={S\bibinitperiod},
+           given={Rainer},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf938e766100bbf2654a3f0634696566}{%
+           family={Steinhauer},
+           familyi={S\bibinitperiod},
+           given={Hans\bibnamedelima Walter},
+           giveni={H\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=105aa84e4ac81b37ebc7030d3c7c9033}{%
+           family={Wenzig},
+           familyi={W\bibinitperiod},
+           given={Knut},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d8114ab41fa95d953c30f4636a20f72b}{%
+           family={Zimmermann},
+           familyi={Z\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2264e7df843fcb3acfb36f1085a37b65}{%
+           family={{Deutsches Institut Für Wirtschaftsforschung (DIW Berlin)}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \name{editora}{1}{}{%
+        {{hash=875cf476760ac697074b2cdbceae1366}{%
+           family={{Kantar Deutschland GmbH}},
+           familyi={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SOEP Socio-Economic Panel Study}%
+      }
+      \strng{namehash}{bb84de51eb595b08d42c067107a9bf79}
+      \strng{fullhash}{864b6a0ea01b39451bc94ea5b1b30fb3}
+      \strng{bibnamehash}{bb84de51eb595b08d42c067107a9bf79}
+      \strng{authorbibnamehash}{bb84de51eb595b08d42c067107a9bf79}
+      \strng{authornamehash}{bb84de51eb595b08d42c067107a9bf79}
+      \strng{authorfullhash}{864b6a0ea01b39451bc94ea5b1b30fb3}
+      \strng{editorabibnamehash}{875cf476760ac697074b2cdbceae1366}
+      \strng{editoranamehash}{875cf476760ac697074b2cdbceae1366}
+      \strng{editorafullhash}{875cf476760ac697074b2cdbceae1366}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{editoratype}{collaborator}
+      \field{title}{Socio-{{Economic Panel}}, Data from 1984-2020, ({{SOEP-Core}}, V37, {{EU Edition}})}
+      \field{version}{v37}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.5684/SOEP.CORE.V37EU
+      \endverb
+      \keyw{10000 Social Sciences,10200 Sociology,10208 Sociology of Education,10700 Psychology,10900 Economics,11003 Social Security,Arbeit und Betrieb,Beruf,Big Five,Culture,Economy,Education,Einkommen,Empirical educational research,Empirische Bildungsforschung,Erziehung und Schulwesen,Familie,Family,FOS: Political science,FOS: Psychology,FOS: Sociology,Freizeit,Gesellschaft und Kultur,Income,Leisure,Occupation,Ökonomie,Political Attitudes and Behavior,Political Science,Politikwissenschaft,Politische Einstellungen und Verhaltensweisen,Profession,Psychologie,Psychology,Religion und Weltanschauung,School Systems,Society,Sociology,SOEP,Soziologie,tocite,Work and Industry,Zufriedenheit}
+    \endentry
+    \entry{meer.etal2003exploring}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8fb4e48c24a1b591e7cbe2306bed97fb}{%
+           family={Meer},
+           familyi={M\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=666ff5de6a44e31611322ad1b6ddf9d3}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Douglas\bibnamedelima L},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37056a6d8cace2e5f04be3c330364f23}{%
+           family={Rosen},
+           familyi={R\bibinitperiod},
+           given={Harvey\bibnamedelima S},
+           giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{316366b752ed12de9b472f85f76555f0}
+      \strng{fullhash}{e3a790f44f9f3dc19b4b6f884a716274}
+      \strng{bibnamehash}{e3a790f44f9f3dc19b4b6f884a716274}
+      \strng{authorbibnamehash}{e3a790f44f9f3dc19b4b6f884a716274}
+      \strng{authornamehash}{316366b752ed12de9b472f85f76555f0}
+      \strng{authorfullhash}{e3a790f44f9f3dc19b4b6f884a716274}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{184 citations (Crossref) [2021-09-04]}
+      \field{day}{1}
+      \field{issn}{0167-6296}
+      \field{journaltitle}{Journal of Health Economics}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{5}
+      \field{shortjournal}{Journal of Health Economics}
+      \field{title}{Exploring the Health–Wealth Nexus}
+      \field{volume}{22}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{pages}{713\bibrangedash 730}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1016/S0167-6296(03)00059-6
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/BT39UVFC/Meer_et_al_2003_Exploring_the_health–wealth_nexus.pdf
+      \endverb
+      \keyw{Health,Panel Study of Income Dynamics (PSID),tocite,Wealth}
+    \endentry
+    \entry{nickcox2005st}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7b2d5dc6d7b94dfaf0422675fa5fe6ff}{%
+           family={{Nick Cox}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b2d5dc6d7b94dfaf0422675fa5fe6ff}
+      \strng{fullhash}{7b2d5dc6d7b94dfaf0422675fa5fe6ff}
+      \strng{bibnamehash}{7b2d5dc6d7b94dfaf0422675fa5fe6ff}
+      \strng{authorbibnamehash}{7b2d5dc6d7b94dfaf0422675fa5fe6ff}
+      \strng{authornamehash}{7b2d5dc6d7b94dfaf0422675fa5fe6ff}
+      \strng{authorfullhash}{7b2d5dc6d7b94dfaf0422675fa5fe6ff}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{month}{9}
+      \field{title}{St: {{RE}}: -Factor Pcf- vs -Pca- (Was Factor Score Postestimation)}
+      \field{urlday}{12}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/VQ25A4MY/msg00297.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.stata.com/statalist/archive/2005-09/msg00297.html
+      \endverb
+      \verb{url}
+      \verb https://www.stata.com/statalist/archive/2005-09/msg00297.html
+      \endverb
+    \endentry
+    \entry{rambachan.roth2023more}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=85edb53244c29c17ce57830271014b46}{%
+           family={Rambachan},
+           familyi={R\bibinitperiod},
+           given={Ashesh},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=73c1da3266b3c7728f6b1f38a73c7671}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c7db070288680264f6dfa86410e8586f}
+      \strng{fullhash}{c7db070288680264f6dfa86410e8586f}
+      \strng{bibnamehash}{c7db070288680264f6dfa86410e8586f}
+      \strng{authorbibnamehash}{c7db070288680264f6dfa86410e8586f}
+      \strng{authornamehash}{c7db070288680264f6dfa86410e8586f}
+      \strng{authorfullhash}{c7db070288680264f6dfa86410e8586f}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{5}
+      \field{issn}{0034-6527, 1467-937X}
+      \field{journaltitle}{Review of Economic Studies}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{5}
+      \field{shortjournal}{Rev. Econ. Stud.}
+      \field{title}{A {{More Credible Approach}} to {{Parallel Trends}}}
+      \field{volume}{90}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{pages}{2555\bibrangedash 2591}
+      \range{pages}{37}
+      \verb{doi}
+      \verb 10.1093/restud/rdad018
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/SUVWAZLX/Rambachan and Roth - 2023 - A More Credible Approach to Pa.pdf
+      \endverb
+    \endentry
+    \entry{rios-avila2023SLWeights}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8780ffb8b2119e19b7327ec3426ba2a3}{%
+           family={Rios-Avila},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8780ffb8b2119e19b7327ec3426ba2a3}
+      \strng{fullhash}{8780ffb8b2119e19b7327ec3426ba2a3}
+      \strng{bibnamehash}{8780ffb8b2119e19b7327ec3426ba2a3}
+      \strng{authorbibnamehash}{8780ffb8b2119e19b7327ec3426ba2a3}
+      \strng{authornamehash}{8780ffb8b2119e19b7327ec3426ba2a3}
+      \strng{authorfullhash}{8780ffb8b2119e19b7327ec3426ba2a3}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{29}
+      \field{month}{4}
+      \field{title}{Does {{CSDID}} Store Weight (Dripw)? - {{Statalist}}}
+      \field{urlday}{23}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/RWF5TCZZ/1711680-does-csdid-store-weight-dripw.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.statalist.org/forums/forum/general-stata-discussion/general/1711680#post1711687
+      \endverb
+      \verb{url}
+      \verb https://www.statalist.org/forums/forum/general-stata-discussion/general/1711680#post1711687
+      \endverb
+    \endentry
+    \entry{rios-avila.etal2023csdid}{software}{}
+      \name{author}{3}{ul=2}{%
+        {{un=0,uniquepart=base,hash=8780ffb8b2119e19b7327ec3426ba2a3}{%
+           family={Rios-Avila},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cba61e0adf5704dd256a102f07dc687d}
+      \strng{fullhash}{d2668c651ca14ec864a0270c5a9269ea}
+      \strng{bibnamehash}{d2668c651ca14ec864a0270c5a9269ea}
+      \strng{authorbibnamehash}{d2668c651ca14ec864a0270c5a9269ea}
+      \strng{authornamehash}{cba61e0adf5704dd256a102f07dc687d}
+      \strng{authorfullhash}{d2668c651ca14ec864a0270c5a9269ea}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{25}
+      \field{month}{2}
+      \field{shorttitle}{{{CSDID}}}
+      \field{title}{{{CSDID}}: {{Stata}} Module for the Estimation of {{Difference-in-Difference}} Models with Multiple Time Periods}
+      \field{urlday}{22}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{version}{1.73}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/avila/Zotero/storage/RHAX2SN3/s458976.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org//c/boc/bocode/s458976.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org//c/boc/bocode/s458976.html
+      \endverb
+      \keyw{DID,difference in differences,drdid,event studies,software,Stata}
+    \endentry
+    \entry{rios-avila.etal2024csdid2}{software}{}
+      \name{author}{3}{ul=2}{%
+        {{un=0,uniquepart=base,hash=8780ffb8b2119e19b7327ec3426ba2a3}{%
+           family={Rios-Avila},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cba61e0adf5704dd256a102f07dc687d}
+      \strng{fullhash}{d2668c651ca14ec864a0270c5a9269ea}
+      \strng{bibnamehash}{d2668c651ca14ec864a0270c5a9269ea}
+      \strng{authorbibnamehash}{d2668c651ca14ec864a0270c5a9269ea}
+      \strng{authornamehash}{cba61e0adf5704dd256a102f07dc687d}
+      \strng{authorfullhash}{d2668c651ca14ec864a0270c5a9269ea}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{commit: 8f0e3a92688ab411495907dc970ff0cdc270913d}
+      \field{day}{4}
+      \field{month}{1}
+      \field{shorttitle}{{{CSDID2}}}
+      \field{title}{{{CSDID2}}: {{New Version}} of {{CSDID}}. {{All}} in {{Mata}}}
+      \field{version}{1.21}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://github.com/friosavila/stpackages/tree/8f0e3a92688ab411495907dc970ff0cdc270913d
+      \endverb
+      \verb{url}
+      \verb https://github.com/friosavila/stpackages/tree/8f0e3a92688ab411495907dc970ff0cdc270913d
+      \endverb
+      \keyw{DID,difference in differences,drdid,event studies,software,Stata}
+    \endentry
+    \entry{santanna.zhao2020doubly}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3313b0fb30c52802abe615a883198713}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bde1a7ae8a9901e7ef746f8fe73ec8c5}
+      \strng{fullhash}{bde1a7ae8a9901e7ef746f8fe73ec8c5}
+      \strng{bibnamehash}{bde1a7ae8a9901e7ef746f8fe73ec8c5}
+      \strng{authorbibnamehash}{bde1a7ae8a9901e7ef746f8fe73ec8c5}
+      \strng{authornamehash}{bde1a7ae8a9901e7ef746f8fe73ec8c5}
+      \strng{authorfullhash}{bde1a7ae8a9901e7ef746f8fe73ec8c5}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{0304-4076}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{month}{11}
+      \field{number}{1}
+      \field{shortjournal}{Journal of Econometrics}
+      \field{title}{Doubly Robust Difference-in-Differences Estimators}
+      \field{volume}{219}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{101\bibrangedash 122}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2020.06.003
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/63XMTM6I/Sant’Anna and Zhao - 2020 - Doubly robust difference-in-di.pdf
+      \endverb
+      \keyw{Causal inference,Difference-in-differences,Natural experiments,Panel data,Repeated cross-section data,Semiparametric efficiency}
+    \endentry
+    \entry{statacorp.2023stata}{software}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8402f20eb2f83aacb569a915446f09f6}{%
+           family={{StataCorp.}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {College Station, TX}%
+      }
+      \list{organization}{1}{%
+        {StataCorp LLC.}%
+      }
+      \strng{namehash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{fullhash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{bibnamehash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{authorbibnamehash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{authornamehash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{authorfullhash}{8402f20eb2f83aacb569a915446f09f6}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Stata {{Statistical Software}}}
+      \field{version}{Release 18}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \true{nocite}
+      \keyw{software}
+    \endentry
+    \entry{tucker.etal2013observed}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=e7abce16f2ea54756fa04f76dd3e46b9}{%
+           family={Tucker},
+           familyi={T\bibinitperiod},
+           given={Graeme},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=89ff76ff08fd3a10e7a6ab9b40401bfe}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=341f068d70cb99facb28fed00545a9f3}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{577555c1c3b4712b1b5e4d064a94f711}
+      \strng{fullhash}{5986aaae4522adb91440a2d19d1fb490}
+      \strng{bibnamehash}{5986aaae4522adb91440a2d19d1fb490}
+      \strng{authorbibnamehash}{5986aaae4522adb91440a2d19d1fb490}
+      \strng{authornamehash}{577555c1c3b4712b1b5e4d064a94f711}
+      \strng{authorfullhash}{5986aaae4522adb91440a2d19d1fb490}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{12}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{PLOS ONE}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{4}
+      \field{shortjournal}{PLOS ONE}
+      \field{title}{Observed {{Agreement Problems}} between {{Sub-Scales}} and {{Summary Components}} of the {{SF-36 Version}} 2 - {{An Alternative Scoring Method Can Correct}} the {{Problem}}}
+      \field{volume}{8}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{pages}{e61191}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0061191
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/Y7835EDB/Tucker et al. - 2013 - Observed Agreement Problems be.pdf
+      \endverb
+      \keyw{Body weight,Emotions,Factor analysis,Mental health and psychiatry,Pain,Plants,Skewness,United States}
+    \endentry
+    \entry{vilagut.etal2013mental}{article}{}
+      \name{author}{11}{}{%
+        {{un=0,uniquepart=base,hash=19f15fdb22cb04b99c247a63e0b0c7df}{%
+           family={Vilagut},
+           familyi={V\bibinitperiod},
+           given={Gemma},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e44c93a469b9c0d06e8d9ebe0002930b}{%
+           family={Forero},
+           familyi={F\bibinitperiod},
+           given={Carlos\bibnamedelima G.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e6c4fd2060797e23843ca886ceb8a2e1}{%
+           family={Pinto-Meza},
+           familyi={P\bibinithyphendelim M\bibinitperiod},
+           given={Alejandra},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ca502db468e375333e7bcf5e6e61fe94}{%
+           family={Haro},
+           familyi={H\bibinitperiod},
+           given={Josep\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,useprefix=true,hash=eee050a8941a375e3104666b9230aeba}{%
+           family={Graaf},
+           familyi={G\bibinitperiod},
+           given={Ron},
+           giveni={R\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=9aa3482ced96aa433b94b5c51fa1b356}{%
+           family={Bruffaerts},
+           familyi={B\bibinitperiod},
+           given={Ronny},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=098be938bf91b9cfdb959324061665e0}{%
+           family={Kovess},
+           familyi={K\bibinitperiod},
+           given={Viviane},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,useprefix=true,hash=857ec8553b29153fcbbcb903e3b33ec0}{%
+           family={Girolamo},
+           familyi={G\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=d507a75c5ead75104ab1442e218a0855}{%
+           family={Matschinger},
+           familyi={M\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f7f6cd33612c00bf3ea0a7aee11983c6}{%
+           family={Ferrer},
+           familyi={F\bibinitperiod},
+           given={Montserrat},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=acaf170074abb4e497b0c96b1912af30}{%
+           family={Alonso},
+           familyi={A\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8202736840a43c96feaca67c4380eb1b}
+      \strng{fullhash}{e8f1905da97d639057a7d3aea381da9f}
+      \strng{bibnamehash}{8202736840a43c96feaca67c4380eb1b}
+      \strng{authorbibnamehash}{8202736840a43c96feaca67c4380eb1b}
+      \strng{authornamehash}{8202736840a43c96feaca67c4380eb1b}
+      \strng{authorfullhash}{e8f1905da97d639057a7d3aea381da9f}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{1}
+      \field{issn}{1098-3015}
+      \field{journaltitle}{Value in Health}
+      \field{month}{6}
+      \field{number}{4}
+      \field{shortjournal}{Value in Health}
+      \field{shorttitle}{The {{Mental Component}} of the {{Short-Form}} 12 {{Health Survey}} ({{SF-12}}) as a {{Measure}} of {{Depressive Disorders}} in the {{General Population}}}
+      \field{title}{The {{Mental Component}} of the {{Short-Form}} 12 {{Health Survey}} ({{SF-12}}) as a {{Measure}} of {{Depressive Disorders}} in the {{General Population}}: {{Results}} with {{Three Alternative Scoring Methods}}}
+      \field{volume}{16}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{pages}{564\bibrangedash 573}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.jval.2013.01.006
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/WTPWWTAQ/Vilagut et al. - 2013 - The Mental Component of the Short-Form 12 Health S.pdf
+      \endverb
+      \keyw{depressive disorders,diagnostic accuracy,health-related quality-of-life,mental disorders,mental health screeming,screening,SF-12}
+    \endentry
+    \entry{ware.etal2002how}{book}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=f98ca5a6e12e14dca06e560bf495aa0f}{%
+           family={Ware},
+           familyi={W\bibinitperiod},
+           given={John\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a2ac5835fef2ec464eb3c317f5796158}{%
+           family={{Kosinski, Mark}},
+           familyi={K\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=41360aab3fa6cdeca06cf09b8a6e8e78}{%
+           family={{Turner-Bowker, Diane}},
+           familyi={T\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=26dfe9c06f8186b2328cce1158e003e6}{%
+           family={{Gandek, Barbara}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Lincoln, RI}%
+      }
+      \list{publisher}{1}{%
+        {Qualitymetric Incorporated.}%
+      }
+      \strng{namehash}{c12d0439f7f31d307a22b55ca2a6a876}
+      \strng{fullhash}{1455eb8935ed6b33e405e54bf470dc2d}
+      \strng{bibnamehash}{c12d0439f7f31d307a22b55ca2a6a876}
+      \strng{authorbibnamehash}{c12d0439f7f31d307a22b55ca2a6a876}
+      \strng{authornamehash}{c12d0439f7f31d307a22b55ca2a6a876}
+      \strng{authorfullhash}{1455eb8935ed6b33e405e54bf470dc2d}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{How to {{Score Version}} 2 of the {{SF-12 Health Survey}} (with a Supplement Documenting {{Version}} 1)}
+      \field{year}{2002}
+      \field{dateera}{ce}
+    \endentry
+    \entry{widaman1993common}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6ebd0e0592d2819d0ce62417e9eeb9af}{%
+           family={Widaman},
+           familyi={W\bibinitperiod},
+           given={Keith\bibnamedelima F.},
+           giveni={K\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {US}%
+      }
+      \list{publisher}{1}{%
+        {Lawrence Erlbaum}%
+      }
+      \strng{namehash}{6ebd0e0592d2819d0ce62417e9eeb9af}
+      \strng{fullhash}{6ebd0e0592d2819d0ce62417e9eeb9af}
+      \strng{bibnamehash}{6ebd0e0592d2819d0ce62417e9eeb9af}
+      \strng{authorbibnamehash}{6ebd0e0592d2819d0ce62417e9eeb9af}
+      \strng{authornamehash}{6ebd0e0592d2819d0ce62417e9eeb9af}
+      \strng{authorfullhash}{6ebd0e0592d2819d0ce62417e9eeb9af}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1532-7906}
+      \field{journaltitle}{Multivariate Behavioral Research}
+      \field{number}{3}
+      \field{shortjournal}{Multivar. Behav. Res.}
+      \field{shorttitle}{Common Factor Analysis versus Principal Component Analysis}
+      \field{title}{Common Factor Analysis versus Principal Component Analysis: {{Differential}} Bias in Representing Model Parameters?}
+      \field{volume}{28}
+      \field{year}{1993}
+      \field{dateera}{ce}
+      \field{pages}{263\bibrangedash 311}
+      \range{pages}{49}
+      \verb{doi}
+      \verb 10.1207/s15327906mbr2803_1
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/3BF9HU3X/Widaman - 1993 - Common factor analysis versus .pdf
+      \endverb
+      \keyw{Common Factors,Experimental Replication,Factor Analysis,Principal Component Analysis,Statistical Sample Parameters}
+    \endentry
+    \entry{wilson.etal2000sf36}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=341f068d70cb99facb28fed00545a9f3}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=edbbb9b3614cbbcaded84e851704b51e}{%
+           family={Parsons},
+           familyi={P\bibinitperiod},
+           given={Jacqueline},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7abce16f2ea54756fa04f76dd3e46b9}{%
+           family={Tucker},
+           familyi={T\bibinitperiod},
+           given={Graeme},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{58e5c29949fe2c82e0de9eb7693def9e}
+      \strng{fullhash}{61fb56567b9b08f6546a3c97cc4361e1}
+      \strng{bibnamehash}{61fb56567b9b08f6546a3c97cc4361e1}
+      \strng{authorbibnamehash}{61fb56567b9b08f6546a3c97cc4361e1}
+      \strng{authornamehash}{58e5c29949fe2c82e0de9eb7693def9e}
+      \strng{authorfullhash}{61fb56567b9b08f6546a3c97cc4361e1}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{1}
+      \field{issn}{1420-911X}
+      \field{journaltitle}{Sozial- und Präventivmedizin}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{6}
+      \field{shortjournal}{Soz Präventivmed}
+      \field{shorttitle}{The {{SF-36}} Summary Scales}
+      \field{title}{The {{SF-36}} Summary Scales: {{Problems}} and Solutions}
+      \field{volume}{45}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{pages}{239\bibrangedash 246}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/BF01591686
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/HW89RWA2/Wilson et al. - 2000 - The SF-36 summary scales Prob.pdf
+      \endverb
+      \keyw{Confirmatory Factor Analysis,Mental Component Summary,Physical Component Summary,Physical Component Summary Score,Principle Component Analysis}
+    \endentry
+    \entry{ziebarth2010measurement}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8c98d9d907e795fc30f201b5e9d6d5c0}{%
+           family={Ziebarth},
+           familyi={Z\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8c98d9d907e795fc30f201b5e9d6d5c0}
+      \strng{fullhash}{8c98d9d907e795fc30f201b5e9d6d5c0}
+      \strng{bibnamehash}{8c98d9d907e795fc30f201b5e9d6d5c0}
+      \strng{authorbibnamehash}{8c98d9d907e795fc30f201b5e9d6d5c0}
+      \strng{authornamehash}{8c98d9d907e795fc30f201b5e9d6d5c0}
+      \strng{authorfullhash}{8c98d9d907e795fc30f201b5e9d6d5c0}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{0277-9536}
+      \field{journaltitle}{Social Science \& Medicine}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{1}
+      \field{shortjournal}{Social Science \& Medicine}
+      \field{title}{Measurement of Health, Health Inequality, and Reporting Heterogeneity}
+      \field{volume}{71}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{pages}{116\bibrangedash 124}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.socscimed.2010.03.016
+      \endverb
+      \verb{file}
+      \verb /home/avila/Zotero/storage/IT67F4GH/Ziebarth - 2010 - Measurement of health, health inequality, and repo.pdf;/home/avila/Zotero/storage/W25DLGTT/S0277953610002431.html
+      \endverb
+      \keyw{Concentration index,German Socio -Economic Panel Study (SOEP),Germany,Grip strength,Health measures,Income-related health inequality,Reporting heterogeneity,SF12}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

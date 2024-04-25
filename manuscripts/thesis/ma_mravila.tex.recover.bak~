@@ -1,0 +1,198 @@
+% !TeX spellcheck = en_US
+\documentclass[
+  fontsize=11pt,
+  bibliography=totoc,
+  numbers=noenddot,
+  listof=totoc,
+  %toc=totoc,
+  appendixprefix,
+  oneside, %% twoside=semi,
+  paper=a4,
+  headings=small
+]{scrbook} % scrbook  memoir
+
+%
+% Packages
+% -----------------------------------
+\usepackage[
+  paper=a4paper,
+  left=12.5mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm,
+  bindingoffset=10mm]{geometry}                            % page and binding margins can be adjust here
+
+\usepackage[utf8]{inputenc}                                 % mutated vowel (Umlaute) in the text
+\usepackage[british]{babel}                                 % orthography
+\usepackage{csquotes}                                       % Context sensitive quotation
+%\usepackage[utf8]{fontenc}                                 % for better encoding --
+\usepackage{lmodern}                                        % font family
+\usepackage{microtype}                                      % for micro typography (for a better typeface)
+\usepackage{graphicx}                                       % for including graphs (pdf,png - but do avoid jpg)
+\graphicspath{{./img/}{../../output/figures}}                                     % path to the pictures
+\usepackage{xcolor}
+
+\usepackage[hyphens]{url}                                   %  formatting URL (e.g. in the literature)
+
+
+\usepackage{tabularx}                                       % for a better configuration of tables
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\usepackage[flushleft]{threeparttable}
+\usepackage[active]{srcltx}
+
+\usepackage{listings}                                       % for computer code output
+% \usepackage{inconsolata}
+
+\usepackage{mdwlist}                                        % lists
+
+\usepackage{setspace}                                       % setting of the lines (rows)
+%\newtheorem{mydef}{Merksatz}                               % if examples or mnemotechnic verses are used with continuous numeration
+%\newtheorem{bsp}{Beispiel}
+
+%\usepackage{todonotes}                                     % for the creation of ToDos
+\usepackage{lscape}                                         % for the rotation of pages
+\usepackage{amsmath}                                        % for the writting of mathematical formula
+\usepackage{calc}
+%\usepackage{footnote}                                      % footnotes
+\usepackage{tablefootnote}                                  % footnotes in tables
+
+% test test
+%\usepackage{easyReview}
+% \usepackage[os=win]{menukeys}
+\usepackage{caption} % 'format=plain' avoids hanging indentation
+\captionsetup{
+  font=small,
+  labelfont={sf,bf},
+  justification=justified, %justified, raggedright
+  labelsep=quad,
+  % labelsep=space,
+  singlelinecheck=false
+  }
+\usepackage[font=footnotesize]{subcaption}
+
+\newcommand\fnote[1]{
+  \captionsetup{font=tiny, 
+  justification=justified,
+  singlelinecheck=false
+  }\caption*{#1}
+}
+
+%% subcaption options
+\captionsetup[subfigure]{
+  justification=centering,
+  font=footnotesize,
+  labelfont=bf
+  }
+
+%\captionsetup{format=hang,labelsep=space,indention=-2cm,labelfont=bf,width=.9\textwidth,skip=.5\baselineskip}
+%%\captionsetup[sub]{labelfont=bf, labelformat=simple, subrefformat=brace}
+
+\makeatletter
+\renewcommand\thesubfigure{\alph{subfigure}}
+\renewcommand\p@subfigure{\thefigure\,}
+\makeatother
+
+%% end subcaption
+
+\usepackage[linktocpage=true,hidelinks,colorlinks,linkcolor=purple,citecolor=black,urlcolor=black]{hyperref}                 % For hperlinks in PDF-documents
+
+\hypersetup{%
+	colorlinks=false,% hyperlinks will be black
+	linkbordercolor=red,% hyperlink borders will be red
+	pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
+
+\usepackage[capitalise]{cleveref}
+\usepackage{enumitem}
+
+% hack 
+\usepackage{scrhack}
+\usepackage{adjustbox}
+
+\pdfminorversion=6
+
+% bibliography --
+\usepackage[
+    backend=biber,
+    style=authoryear-icomp,
+    %authoryear, %bibstyle=draft, %sorting=nyt,
+    giveninits=true,
+    uniquename=init,
+    bibencoding=utf8,
+    hyperref,
+  maxcitenames=2]{biblatex}
+
+
+\addbibresource{./literature/sources.bib}                   % including literature sources
+\DeclareLabeldate{\field{date}\field{eventdate}\field{origdate}\field{year}\literal{nodate}}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+
+%\hyphenation{voll-st\"andigen}                             % for defining word devisions globally
+
+\setcounter{tocdepth}{2   }                                 % levels which are displayed in the table of contents
+
+
+
+% set new commands % set new commands % set new commands
+% set new commands % set new commands % set new commands
+\newcommand*{\inlineimg}[1]{%
+    \raisebox{-.3\baselineskip}{%
+        \includegraphics[
+        height=\baselineskip,
+        width=\baselineskip,
+        keepaspectratio,
+        ]{#1}%
+    }%
+}
+
+% reset counter after parts
+%\makeatletter
+%\@addtoreset{chapter}{part}
+%\makeatother
+% Note: decided not to reset, so that chapters are more easily uniquely identifiable
+
+% inline code environment
+\let\code=\texttt
+
+
+
+% Document
+% -----------------------------------
+\begin{document}
+
+\frontmatter
+    \input{./title/title}                                   % title
+    \input{./chapter/abstract_eng}                          % abstract
+     \tableofcontents                                       % table of contents
+    \clearpage
+\begingroup
+    \let\cleardoublepage\relax
+    \listoffigures                                          % list of figures
+\endgroup
+\begingroup
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+       \listoftables                                       % list of tables
+\endgroup
+
+% -----------------------------------
+
+\mainmatter                                                 % the respective chapters
+
+\onehalfspacing                      % line spacing which is set to 1.5 from this point on
+
+	\input{./chapter/01_introduction.tex}
+	\input{./chapter/00_main_matter.tex}
+
+\backmatter
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\printbibliography
+\input{./chapter/98_appendix}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\input{./chapter/99_declaration}
+\end{document}

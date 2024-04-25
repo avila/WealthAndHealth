@@ -1,0 +1,160 @@
+\chapter{Overview of DiD with Staggered Treatment from Callaway and Sant'Anna (2021)}
+\label{sec:overview_did}
+
+In recent years, numerous authors have advanced the Difference-in-Differences
+design literature by addressing the ``forbidden comparisons'' issue, term coined and explained in
+\textcite[14]{borusyak.etal2024revisiting}. In short, it arises when comparing later treated to early
+treated units in a staggered DiD setting in the presence of effect heterogeneity. One of these approaches was proposed by
+\textcite{cs2021did_mtp}, which is not only robust to this issue but offers other compelling
+features, as discussed below. For an overview on the recent methods refer to the extensive survey from
+\textcite{dechaisemartin.dhaultfoeuille2022twoway}.
+
+In the following section I present an overview of the estimator as proposed from
+\textcite{cs2021did_mtp}. I include only the sections that are relevant to this analysis,
+while variations and other considerations are left out. For consistency, I borrow the terminology from the authors
+for this analysis. In particular, I use terms such as ``comparison'' units instead of commonly used
+``control'' units. I also use the term ``group'' which can be exchanged for ``cohort''.
+
+
+\section{Building Blocks}
+
+In short, the proposed estimator can be divided into two steps. First, compute the differences of valid
+comparison groups in several simple, balanced 2-periods by 2-groups DiD designs. Then, aggregate
+these estimations in a meaningful way. Adapting the notation of Eq. 2.8 from
+\parencite{cs2021did_mtp}, the groups in the first step can be defined by their respective treatment
+period $g$ and the measurement time $t$. So each group-time Average Treatment Effects on the Treated, 
+hereafter $ATT(g,t)$ is defined as%
+%
+\begin{equation} 
+    ATT(g,t) = \E \big[ Y_{t} - Y_{g-1} | G_{g}=1 \big]  -  \E \big[ Y_{t} - Y_{g-1} |
+    C=1 \big], 
+    \label{eq:attgt}
+\end{equation}
+%
+where the conditional terms $G_g=1$ identifies the group first treated at period $g$ and $C=1$
+determines the comparison units.%
+\footnote{Note that the authors introduce two approaches that differs in terms of comparison units.
+    One uses never-treated only, while the other uses also not-yet-treated units as comparison. I focus
+    here on the never-treated specification, which is used in the main analysis, due to the risk of
+    anticipation effects biasing the results.} %
+%
+This is the \textit{group-time average treatment effect}, as defined by the authors
+\parencite*[Section 2.2]{cs2021did_mtp}. Since each one of these groups is by construction, a
+canonical DiD design, they are valid comparisons and do not suffer from the ``negative weights''
+issue.
+
+In the second step, the \textcite{cs2021did_mtp} propose different ways of aggregating all $ATT(g,t)$'s.
+In the main analysis, I follow the event study aggregation. For that, a relative-time 
+variable $e = t-g$ is defined, which identifies time elapsed since treatment adoption. The target 
+parameter is
+%%
+%
+\begin{equation}
+    \theta_\text{es}(e) = \sum_{g \in \mathcal{G}} \mathbb{1}\big[ g + e \leq \mathcal{T} \big] P(G=g|G+e \leq \mathcal{T}) ATT(g,g+e), 
+    \label{eq:theta_es}
+\end{equation}
+%
+where $\mathcal{T}$ is the last period in the analysis. The two new terms in the above summation are, first,
+the indicator function that restricts the group-time average treatment effects. And second, the term $P(.)$ are
+the group weights, so that the summation produces an average - weighted by group size - of all $ATT(g,t)$'s
+included in the aggregation.
+
+
+Note that this aggregation may suffer from compositional changes, which will have important implications, as
+explained thoroughly in \textcite[see Equation 3.5]{cs2021did_mtp}. In short, the authors show that there are
+two approaches to handling it: either restricting the analysis to a balanced sample or, alternatively, relying
+on the additional assumption that the effects are equal across groups. That is, $ATT(g,g+e)$ does not vary with
+$g$ for any $e \geq 0$. In the main analysis, I make the equal-effects assumption, but robustness checks with
+sample restrictions do not change the results considerably.
+
+\section{Summary Measures}
+
+After computing the $ATT(g,t)$'s, there are a few choices of overall aggregation to obtain a single
+parameter estimating the effect being assigned to treatment. As proposed by \textcite[Section
+3.2]{cs2021did_mtp}, an intuitive one would be
+
+\begin{equation}
+    \overbar{\theta}_\text{simple} = \frac{1}{k} \sum_{g \in \mathcal{G}}^{} 
+    \sum_{t=2}^{\mathcal{T}} \mathbb{1}\big[ t \geq g \big] ATT(g,t) P(G=g|G \leq \mathcal{T}), 
+    \label{eq:didsimp}
+\end{equation}
+%
+where $k=\sum_{g \in \mathcal{G}} \sum_{t=2}^{\mathcal{T}} \mathbb{1}\big[ t \geq g \big]
+ATT(g,t) P(G=g|G \leq \mathcal{T})$. Another aggregation target proposed is relevant for the
+event-study structure applied here. We can obtain an overall treatment effect by averaging
+$\theta_{es}(e)$ over all event times, as in%
+%
+\begin{equation}
+    \overbar{\theta}_\text{es} = \frac{1}{\mathcal{T-1}} \sum_{e=0}^{\mathcal{T}-2}{\theta_{es}(e)}.
+    \label{eq:didpostpast}
+\end{equation}
+
+While the authors propose other summary measures, these are the relevant ones examined in this
+analysis and presented in \cref{sec:Results}. %todo: cross ref main results
+
+\section{Doubly-Robustness}
+
+\citeauthor{cs2021did_mtp} propose three approaches to achieve an estimator capable of conducting
+inference on the group-time average treatment effects \autocite[Sec. 4]{cs2021did_mtp}. In short, the Outcome
+Regression, a generalization of the approach in \textcite{heckman.etal1997matching}, requires the evolution of
+the response variable of the comparison group to be modeled correctly to ensure conditional parallel trends.
+The second approach, building on inverse probability weighting (IPW) proposed by
+\textcite{abadie2005semiparametric}, requires correct estimation of the conditional probability of being in
+group $g$.
+
+
+The doubly-robust method, extending the simpler DiD estimator from
+\textcite{santanna.zhao2020doubly} to allow for multiple \textit{group-times}, is particularly appealing
+because it can be seen as a combination of both approaches, modeling the response variable evolution
+as well as the propensity score, but it only requires one to be correctly specified. Thus the 
+term ``doubly robust''. 
+
+
+For a more detailed view on the proposed estimator, see \cref{app:drdeep}. A closer look at
+\cref{eq:wgtreatcomp} shows that the treated group are not re-weighted (or all receive unit
+weights). Further, the subscripts in $\widehat{ATT}_{d r}(g, t)$, in \cref{eq:attdr}, hints that
+this procedure is conducted for each one of the 2-by-2 group-time $ATT$, which entails important
+implications: the same comparison units, those that are never treated in this case, are used for all
+group-time estimations but receive different weights in each \textit{step}.
+
+
+The implication is that it is not trivial to extract and store the weights from the IPW procedure.%
+\footnote{The main author of the \code{csdid} package for Stata \parencite{rios-avila.etal2023csdid}
+    confirms this in the Statalist forum \parencite{rios-avila2023SLWeights}. One could extract the
+    weights from each treatment time cohort, and use them for further checks. In a setting with
+    more than a few cohorts, however, this quickly becomes infeasible.} This means that while
+this procedure doubly robust and automatically ``balances'' treatment and comparison groups, the
+researcher cannot access the same weights to double check if the estimator is doing a good job at
+that. This is a considerable drawback, because it reduces the ability of the research to better
+explore some of the identifying assumptions of causality.
+
+% -------------------------------------------------------------------------------------------------
+% Key Assumptions of DiD design ----
+% -------------------------------------------------------------------------------------------------
+%todo: lead to next subsection
+\section{Key Identifying Assumption}
+
+As in conventional DiD settings, the key identifying assumption is of common trends. That is, the
+response variable of the treated units would follow the same trend of that from comparison units
+also in the absence of treatment. If the assumption holds, we have a credible counterfactual 
+with which we can estimate causal treatment effects. Since this assumption is not testable, we
+refer to pre-treatment trends to assess its plausibility. If, prior to treatment, the eventually
+treated and comparison units follow a similar trend, it is reasonable to infer that the 
+trend would have remained parallel after treatment time also in the \textit{counterfactual world} where 
+the in the treated units were not treated. 
+
+It is also important to note that while pre-treatment balance can boost the plausibility of the
+parallel trends assumption, balanced groups are not actually a requirement. This strategy relies on
+the assumption that solely the trends are parallel, that is, the evolution of the response variable
+are the same across groups, regardless of starting values.
+
+The pre-treatment periods can also be useful to assess the presence of reverse-causality. In this
+setting, reverse causality would imply that wealth outcomes (or lack thereof) in early periods
+actually causing the steeper health degradation, which ultimately causes treatment assignment
+eventually. Given the nature of these two variables at hand, how they might, a priori, interact and
+slowly evolve over the life time, this is a serious reason of concern.
+
+
+
+
+

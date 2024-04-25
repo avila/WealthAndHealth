@@ -1,0 +1,355 @@
+\newpage
+\appendix
+\lstset{literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1,
+	basicstyle=\footnotesize\ttfamily,
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\scriptsize, 
+	showspaces=false,               % show spaces adding particular underscores 
+	showstringspaces=false,         % underline spaces within strings 
+	tabsize=4,
+	breaklines=true,                % sets automatic line breaking 
+	frame=single,                   % adds a frame around the code
+}
+
+
+% appendix start here  % appendix start here  % appendix start here  
+\chapter{Appendix}
+% appendix start here  % appendix start here  % appendix start here  
+
+\section{WMS server implementation and comparison}
+\label{app:wms}
+
+
+For the results shown in \cref{fig:wms_all} under \cref{sec:wms} the following URL and layer settings were used: 
+
+
+\begin{enumerate}[label=(\alph*)]\setlength{\itemsep}{-5pt}
+	\item Aerial Image from 2015 (FIS-Broker) \\
+	URL: \url{http://fbinter.stadt-berlin.de/fb/wms/senstadt/k_luftbild2015_rgb} \\
+	Layer: 0
+	
+	\item Colour OpenStreetMap (terrestris) \\
+	URL: \url{http://ows.terrestris.de/osm/service} \\
+	Layer: OSM-WMS
+	
+	\item Aerial Image from 1928 (FIS-Broker)\\
+	URL: \url{http://fbinter.stadt-berlin.de/fb/wms/senstadt/k_luftbild1928} \\
+	Layer: 0
+	
+	\item Grayscale OpenstreetMap (terrestris)\\
+	URL: \url{http://ows.terrestris.de/osm-gray/service}\\
+	Layer: OSM-WMS
+	
+	\item Berlin Map from 1940 (FIS-Broker)\\
+	URL: \url{http://fbinter.stadt-berlin.de/fb/wms/senstadt/berlin1940}\\
+	Layer: 0\\
+	Notes: This map covers only relatively small area over the centre of Berlin
+	
+	\item Built-in OpenStreetMaps (JMP)\\
+	URL and layer not required.
+\end{enumerate}
+
+\noindent Note also that, in order to better emphasise the data points, the marker colour was changed appropriately and the transparency level set to 0.7 on map images (Figs. b), d), e) and f)). Such changes can be done via the \textit{Customize...} window [on Graph frame: Right-click > Customize...].
+
+
+
+
+\section{R scripts geocoding Stolpersteine addresses}
+\label{sec:appendix_geocode}
+
+For this code implementation I separated the process into three parts. The first part deals with the preparation of the data, including making sure there are not repeated addresses with slightly different names, such as "ss" and "ß" or even lower and upper case. Additionally, given that multiple observations refer to the exact same address, a column with a unique identifier for each address was added, so that each observation needed to be geocoded only once.  In the end, a smaller csv file containing only the unique address and their index number is saved for the geocoding process in the second step.
+
+\begin{lstlisting}[title=R code to geocode addresses (1), frame=single]
+# file format: UTF-8
+
+# read csv file 
+df <- read.csv("./input/stolper_07.09.17.csv",
+			   header = T, sep = ",", encoding = "UTF-8",
+			   strip.white = TRUE, na.strings = "",
+    		   stringsAsFactors=FALSE)
+
+# rename column 3 from "District." to "District"
+# and add missing distric name
+colnames(df)[3] = "District"                          
+df$District[is.na(df$District)] <- "Schmargendorf"
+
+# make new column with address and ortsteil
+df$address.full <- paste(df$Address, df$District,
+						 "Berlin, Deutschland", sep=" - ")
+
+# change all to lower case and umlauts to latin characters.
+df$address.full <- tolower(df$address.full)
+df$address.full <- sub("str\\.", "strasse", df$address.full)
+df$address.full <- sub("pl\\.", "platz", df$address.full)
+df$address.full <- sub("ü", "ue", df$address.full)
+df$address.full <- sub("ö", "oe", df$address.full)
+df$address.full <- sub("ä", "ae", df$address.full)
+df$address.full <- sub("é", "e", df$address.full)
+df$address.full <- sub("è", "e", df$address.full)
+df$address.full <- sub("ß", "ss", df$address.full)
+
+# sort by address 
+df <- df[order(df$address.full), ]
+
+# Add unique index
+df <- transform(df, ClusterID = as.numeric(
+				interaction(df$address.full, drop=TRUE)))
+		
+max(df$ClusterID) # = 2843 unique addresses
+# write ongoing output into csv file
+write.csv(df, file = "./input/dfCleaned.csv",
+		  fileEncoding = "UTF-8", row.names = FALSE)
+
+# make a small data frame with ID and full address only
+dfSmall <- unique(data.frame("ClusterID" = df$ClusterID,
+					 		 "Address" =  df$address.full))
+
+# save preparation data into csv file
+write.csv(dfSmall, file="./input/dfSmall.csv", fileEncoding="UTF-8")
+\end{lstlisting}
+
+
+In the second step is where the geocoding process takes place. The following lines of code are a little more complex and surely not in the most sophisticated way\footnote{A better script for a geocoding a large list of addressees, which was helpful when creating my own, can be found on: \url{https://www.shanelynn.ie/massive-geocoding-with-r-and-google-maps}, Accessed: 03.10.2017.}, but it accomplishes the intended results. Some complexity is added, due to the fact that Google's API user conditions sets a daily query limit at 2500. With that in mind, I created a way of saving the ongoing results for retrieval the following day or if there should be an internet connection problem.  
+
+\begin{lstlisting}[title=R code to geocode addresses (2)]
+library(ggmap)
+
+# set location for ongoing-results file
+ongoing_results_file <- "./output/ongoing_results.rds"
+
+# open ongoing if exists, otherwise open dfSmall from preparation 
+if (file.exists(ongoing_results_file)) {
+	dfSmall <- readRDS(ongoing_results_file)
+	startIndex <- nrow(dfSmall) - sum(is.na(dfSmall$lon))
+	print("using ongoing file as dfSmall")
+} else {
+	dfSmall <- read.table("./input/dfSmall.csv",
+	header=T, sep=",", encoding="UTF-8",
+	colClasses=c('NULL',NA,NA), stringsAsFactors=FALSE)
+	
+	# create new column for lon, lat and address to be later populated
+	dfSmall$lon <- NA 
+	dfSmall$lat <- NA  
+	dfSmall$address <- NA
+	startIndex <- 1
+	print("using dfSmall from preparation step (1)")
+}
+
+# function to go through the rows and geocode each address
+for(i in seq(startIndex, nrow(dfSmall))) {
+	id <- dfSmall$ClusterID[i]
+	
+	if (is.na(dfSmall$lon[i])) {
+		#checks if row is a "missing value"
+		address <- dfSmall$Address[i]
+		
+		# call geocode function and apply lat, lon to cluster ID rows
+		dfAPIResponse <- geocode(address, output="latlona", override_limit=T)
+		dfAPIResponse$ClusterID[1] <- id
+			dfAPIResponse$FullAddress <- dfSmall$Address[i]
+		dfSmall$lat[dfSmall$ClusterID == id] <- 
+			dfAPIResponse$lat[dfAPIResponse$ClusterID == id]
+		dfSmall$lon[dfSmall$ClusterID == id] <- 
+			dfAPIResponse$lon[dfAPIResponse$ClusterID == id]
+			
+		# when retrieval is not successfull the column "address"
+		# is not filled, therefore the next if-else statement
+		if( "address" %in% names(dfAPIResponse) ) {
+		dfSmall$address[dfSmall$ClusterID == id] <- 
+			dfAPIResponse$address[dfAPIResponse$ClusterID == id]
+		} else {
+			dfSmall$address[dfSmall$ClusterID == id] <- NA
+		}
+	
+		# save ongoing results every 10th query
+		if (i %% 10 == 0 | i == nrow(dfSmall)) {
+		saveRDS(dfSmall, file = ongoing_results_file)  
+		}
+	} else {
+	print(paste("id nr", id, "already geocoded"))
+	}
+}
+# logging in case of errors 
+w <- warnings()
+sink("./log/warnings.txt")
+print(w)
+sink()
+
+# write final results into csv file 
+write.table(dfSmall, file = "./output/dfResults.csv", sep = ",",
+			fileEncoding = "UTF-8",row.names = FALSE)
+\end{lstlisting}
+
+Finally, the geocoded addresses can be merged back into the main data frame in the third step. The csv file created is then used for further analysis within JMP.
+
+\begin{lstlisting}[title=R code to geocode addresses (3)]
+# read results data
+dfResults <- read.table("./output/dfResults.csv",
+						header=T, sep=",",
+						encoding="UTF-8",
+						stringsAsFactors=FALSE)
+
+# read full input data (already cleaned)
+df <- read.table("./input/dfCleaned.csv",
+				 header = T, sep = ",", encoding = "UTF-8",
+				 na.strings = "", stringsAsFactors=FALSE)
+
+# join both data.frames by matching "ClusterID"
+dfTotal <- join(df, dfResults, type = "full", by = "ClusterID")
+
+# after checking that the address matches, drop duplicate columns
+list_keep <- c("Name", "Address", "District",
+			   "Year", "ClusterID", "lon", "lat")
+			   
+dfTotal <- dfTotal[ , (names(dfTotal) %in% list_keep)]
+
+# rename some columns for better consistency among oder headers
+names(dfTotal)[6] <- "Longitude"; names(dfTotal)[7] <- "Latitude"
+
+# write final results into csv file for analysis in JMP
+write.table(dfTotal, file = "./output/stolpersteine.csv",
+			fileEncoding = "UTF-8", sep = ",", row.names = FALSE)
+\end{lstlisting}
+
+
+\section{R scripts for shapefile coordinate system conversion}
+\label{app:shapefile_conv}
+
+
+
+\begin{lstlisting}[title=R code to convert shapefile from UTM33 N to WGS84]
+# ref: https://stackoverflow.com/questions/36520915/
+# https://gis.stackexchange.com/questions/166876/
+
+# libraries and working directory
+library(rgdal)
+
+# CRS for input and output formats
+epsg_input = "+init=epsg:25833" # change input CRS accordingly
+epsg_output = "+init=epsg:4326" # change output CRS accordingly
+
+# read ESRI shapefile 
+Berlinshape <- readOGR("./inputDATA/LOR_BERLIN_ALL/LOR_SHP_EPSG_25833_UTM33/.",
+					   "Planungsraum_EPSG_25833")
+
+# assign UTM33 projection via proj4strig
+proj4string(Berlinshape) <- CRS(epsg_input)
+
+# convert into WGS84 Coordinate System
+Berlinshape <- spTransform(Berlinshape, CRS(epsg_output))
+
+#write new shapefile on WGS84 Coordinate System 
+writeOGR(Berlinshape,
+		"./outputDATA/WGS84/from_SHP_UTM33",   # file location
+		"BERLIN_LOR_PLR_WGS84",    # file prefix
+		driver = "ESRI Shapefile")
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=R code for aggregating Stolpersteine in LOR boundaries]
+# helpful resource:
+# https://gis.stackexchange.com/questions/110117/
+
+# read ESRI shapefile downloaded from Berlin OPENDATA portal 
+BerlinShape <- readOGR("./outputDATA/WGS84/from_SHP_UTM33/.",
+					   "BERLIN_LOR_PLR_WGS84")
+
+# read stolpersteine csv as data.frame
+stolpersteine <- read.table("./stolpersteine/output/stolpersteine.csv",
+							header=T, sep=",",
+							encoding="UTF-8",
+							stringsAsFactors=FALSE)
+
+# drop NA's from data.frame
+stolpersteine <- stolpersteine[!is.na(stolpersteine$Latitude),]
+
+# set Longintude and Latitude columns as coordinates, this 
+# also turns the data.frame into a SpatialPolygonsDataFrame object
+coordinates(stolpersteine) <- ~ Longitude + Latitude
+
+# check proj4string of each object
+proj4string(stolpersteine) ;proj4string(BerlinShape)
+
+# assign WGS84 CS via proj4string
+proj4string(stolpersteine) <- proj4string(BerlinShape)
+
+# creates data frame with Stolpersteien points
+# contained in Berlinshape
+df_aggregate <- over(stolpersteine, BerlinShape)
+
+# aggregate results and turn into data.frame class
+df_aggregate <- data.frame(table(df_aggregate$SCHLUESSEL))
+
+# rename columns
+names(df_aggregate) <- c("LOR_PLR", "Stolpersteine")
+
+# set Bezirks- und Prognosenräume columns.
+df_aggregate$LOR_BZR <- substr(df_aggregate$LOR_PLR, 1, 6)
+df_aggregate$LOR_PRR <- substr(df_aggregate$LOR_PLR, 1, 4)
+# add a district feature (technically not a LOR)
+df_aggregate$District <- substr(df_aggregate$LOR_PLR, 1, 2)
+
+# reorder columns 
+df_aggregate <- df_aggregate[c(5,4,3,1,2)]
+
+# write into csv 
+write.table(df_aggregate, file = "./stolpersteine/output/stolper_choropleth.csv",
+			fileEncoding = "UTF-8", sep = ",", row.names = FALSE)
+
+\end{lstlisting}
+
+\section{R scripts for retrieving centroid from LOR layers }
+\label{app:r_script_centroid}
+
+The following script was used to retrieve the centroids from each LOR layer and aggregating the number of Stolpersteine inside each cell. This example goes over the PLR layer, but the same procedure was done by adjusting the layer naming accordingly. 
+
+\begin{lstlisting}[title = R script for retrieving centroids and aggregating on LOR layer]
+# import libraries
+library(rgdal)
+library(sp)
+
+# read LOR_PLR from WGS84 shapefile
+BerlinShapePLR <- readOGR(dsn = "./outputDATA/WGS84/from_SHP_UTM33/.",
+                          layer = "BERLIN_LOR_PLR_WGS84")
+
+# get centroid coordinates and IDs of shapefile
+centroidsPLR <- as.data.frame(coordinates(BerlinShapePLR))
+LOR_PLR <- as.data.frame(BerlinShapePLR$SCHLUESSEL)
+
+# create a data.frame with IDS and centroids and change column names
+berlinPLRCentr <- cbind(LOR_PLR, centroidsPLR)
+names(berlinPLRCentr) <- c("LOR_PLR", "Longitude", "Latitude")
+
+# read stolpersteine csv file
+fileName <- "./stolpersteine/output/stolper_choropleth.csv"
+berlinStolper <- read.csv(file = fileName, 
+colClasses = c(rep("character", 4), "numeric"))
+
+# aggregate (sum) over Stolpersteine by common LOR_PLR
+berlinAggPLR <- aggregate(berlinStolper$Stolpersteine,
+						  by = list(berlinStolper$LOR_PLR),
+						  FUN = sum)
+
+# apply name (important LOR_PLR matches for merge)
+names(berlinAggPLR) <- c("LOR_PLR", "Stolpersteine")
+
+# merge and write to file as csv 
+berlinAggPLR <- base::merge(berlinPLRCentr, berlinAggPLR)
+write.table(berlinAggPLR,
+		    file = "./stolpersteine/output/berlinStolpLORPLR.csv",
+		    fileEncoding = "UTF-8", sep = ",", row.names = FALSE)
+\end{lstlisting}

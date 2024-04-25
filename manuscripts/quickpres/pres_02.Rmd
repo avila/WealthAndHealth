@@ -1,0 +1,153 @@
+---
+title: "Exploratory analysis of the health-wealth nexus over the life cycle in Germany (2002-2020)"
+fontsize: 9pt
+date: "18.08.2023" 
+author: "Marcelo Rainho Avila"
+institute: "Free University Berlin"
+header-includes:
+- \usepackage{caption}
+- \usepackage{bm}
+- \usepackage{graphicx}
+- \captionsetup[figure]{labelformat=empty}
+- \captionsetup[table]{labelformat=empty}
+- \definecolor{links}{HTML}{2A1B81}
+- \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+output: beamer_presentation
+classoption: "aspectratio=169"
+#slide_level: 3
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Recap
+
+## Recap: Longitudinal clustering I
+
+![Fig: Longitudinal clustering](../../output/figures/longclust/fig_cluster_traj_233.pdf)
+
+## Recap: Longitudinal clustering II
+
+![Fig: Longitudinal clustering](../../output/figures/longclust/fig_cluster_traj_4444_nw_curt.pdf)
+
+# End of Recap 
+
+## Regression design 
+$$
+g({W_{i|age=32}}) = \alpha_0 + \alpha_1 hs_{i|age=32} + \alpha_2 hs^{sd}_{i|age \in [21..30]} +
+\bm{\beta X_{i}} + \epsilon_{i}
+$$
+$$
+g({W_{i|age=42}}) = \alpha_0 + \alpha_1 hs_{i|age=42} + \alpha_2 hs^{sd}_{i|age \in [31..40]} +
+\bm{\beta X_{i}} + \epsilon_{i}
+$$
+$$
+... \text{ and so on } ...
+$$
+
+- $g()$ is the cubic root here, but other transformations available (asinh, neglog, 5th root, etc)
+- $hs$ stands for _health score_. For simplicity only one is displayed, but both components are included in actual regression.
+- $W$ is currently Net Wealth, but gross wealth results in around 30% high $R^2$.
+- time subscript no longer present since one observation per individual.
+- Linear regression with bootstrap standard errors
+
+
+
+## Table of Coefficients 
+
+\small
+|                        |     30ies     |    |     40ies     |    |     50ies     |     |     60ies     |     |
+|------------------------|---------------|----|---------------|----|---------------|-----|---------------|-----|
+| $mcs$                  | 0.085         |    | 0.236         | ** | 0.225         | *** | 0.129         | *   |
+|                        | (1.02)        |    | (2.42)        |    | (2.67)        |     | (1.82)        |     |
+| $pcs$                  | 0.072         |    | 0.271         | ** | 0.151         |     | 0.105         |     |
+|                        | (0.51)        |    | (1.97)        |    | (1.44)        |     | (1.33)        |     |
+| $mcs^{sd}$             | -0.408        | ** | -0.123        |    | -0.195        |     | -0.635        | *** |
+|                        | (-2.25)       |    | (-0.61)       |    | (-0.85)       |     | (-3.74)       |     |
+| $pcs^{sd}$             | -0.500        | ** | -0.014        |    | -0.651        | *** | -0.395        | *   |
+|                        | (-1.97)       |    | (-0.05)       |    | (-2.78)       |     | (-1.88)       |     |
+| Obs.                   | 895           |    | 1076          |    | 2026          |     | 2151          |     |
+| R-squared              | 0.12          |    | 0.18          |    | 0.21          |     | 0.26          |     |  
+  
+*** p<.01, ** p<.05, * p<.1  
+t-statitstic in parenthesis. 
+
+Interpretation: 
+
+- $mcs/pcs$: a one tenth of std. dev. increase in health score is associated with $x$ units increase in cubic root of net wealth
+- $mcs^{sd}$/$pcs^{sd}$: a one unit increase in the standard deviation of the health score is associated with $x$ 
+units increase in cubic root of net wealth
+
+
+
+## Coefficient Graph 
+
+\centering![](../../output/figures/coefplot/fig_coefplot_01.pdf){width=80%}
+
+\raggedleft\scriptsize Note: 90\%, 95\% and 99\% conf. int. depecited as color shades and line thickness.
+
+## Main points 
+
+- Health scores in levels are positive and their variances are negative, indicating that:
+    - higher health scores are correlated with higher wealth build-up years later, and 
+    - higher health variability (specially meatal) are negatively correlated with later wealth build-up
+- The variances are more often stat. significant. than their corresponding scores in levels
+
+## Graphs of predicted wealth over health scores: Age group = 20ies
+
+
+::: columns
+:::: column
+![](../../output/figures/marginsplot/fig_mp_nw_mcs_21.pdf){width=75%}
+![](../../output/figures/marginsplot/fig_mp_nw_pcs_21.pdf){width=75%}
+::::
+:::: column
+![](../../output/figures/marginsplot/fig_mp_nw_mcs_21ies_var.pdf){width=75%}
+![](../../output/figures/marginsplot/fig_mp_nw_pcs_21ies_var.pdf){width=75%}
+:::: 
+:::
+
+## Graphs of predicted wealth over health scores: Age group = 30ies 
+
+
+::: columns
+:::: column
+![](../../output/figures/marginsplot/fig_mp_nw_mcs_31.pdf){width=75%}
+![](../../output/figures/marginsplot/fig_mp_nw_pcs_31.pdf){width=75%}
+::::
+:::: column
+![](../../output/figures/marginsplot/fig_mp_nw_mcs_31ies_var.pdf){width=75%}
+![](../../output/figures/marginsplot/fig_mp_nw_pcs_31ies_var.pdf){width=75%}
+:::: 
+:::
+
+## Graphs of predicted wealth over health scores: Age group = 40ies 
+
+
+::: columns
+:::: column
+![](../../output/figures/marginsplot/fig_mp_nw_mcs_41.pdf){width=75%}
+![](../../output/figures/marginsplot/fig_mp_nw_pcs_41.pdf){width=75%}
+::::
+:::: column
+![](../../output/figures/marginsplot/fig_mp_nw_mcs_41ies_var.pdf){width=75%}
+![](../../output/figures/marginsplot/fig_mp_nw_pcs_41ies_var.pdf){width=75%}
+:::: 
+:::
+
+
+## Graphs of predicted wealth over health scores: Age group = 50ies 
+
+
+::: columns
+:::: column
+![](../../output/figures/marginsplot/fig_mp_nw_mcs_51.pdf){width=75%}
+![](../../output/figures/marginsplot/fig_mp_nw_pcs_51.pdf){width=75%}
+::::
+:::: column
+![](../../output/figures/marginsplot/fig_mp_nw_mcs_51ies_var.pdf){width=75%}
+![](../../output/figures/marginsplot/fig_mp_nw_pcs_51ies_var.pdf){width=75%}
+:::: 
+:::
+
+

@@ -1,0 +1,79 @@
+---
+title: 'Socioeconomic Status and Health: An exploratory analysis'
+author: "Marcelo Avila"
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation: default
+header-includes:
+- \widowpenalties 1 150
+- \setbeameroption{hide notes}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Motivation 
+
+- Individuals with higher Socioeconomic Status (SES) tend to display better health outcomes
+
+- Correlational relationship well established in literature but (causal) mechanisms are 
+hard to investigate due to endogeneity and long-term development (multiple generations)
+
+- Deaton (2003) exposes a few hypotheses
+
+  - Education: with access to better education -> better health decisions
+  - Irrationality: Too high discount rate -> failure to build capital & protect health
+  - Absolute vs relative  "income hypothesis” -> Evidence that not only level of wealth but also
+  _ranking_, i.e, inequality, affect health outcomes
+
+
+## Data 
+
+- Cross-sectional SOEPv36 data from 2019 with 24.429 observations, including new sample on
+top-stakeholders (TS)
+
+- Wealth module from 2017 for other samples
+
+- Item non-response imputed via Bayesian Networks implemented by Göbler (2019)
+
+- Drawback: Health module (from 2018) with broader coverage of health variables not available for
+SOEP TS sample
+
+
+## Exploratory Visualisations {.allowframebreaks}
+
+
+![fig_life_sats_by_wealth_and_age]("figures/fig_life_sats_by_wealth_and_age.png")
+![fig_life_sats_by_wealth_and_educ]("figures/fig_life_sats_by_wealth_and_educ.png")
+![fig_life_sats_by_wealth_and_educ]("figures/fig_life_sats_by_wealth_x_age_educ_both.png")
+![fig_depress_by_wealth_age]("figures/fig_depress_by_wealth_age.png")
+![fig_depress_by_wealth_educ]("figures/fig_depress_by_wealth_educ.png")
+![fig_sleep_wealth_age]("figures/fig_sleep_wealth_age.png")
+![fig_workhrs_by_healthsat_be_wealth_ridges]("figures/fig_workhrs_by_healthsat_be_wealth_ridges.png")
+<!-- ![fig_workhrs_by_healthsat_be_wealthgrp]("figures/fig_workhrs_by_healthsat_be_wealthgrp.png") -->
+
+## Outlook 
+
+### Objectives
+
+- Generate via Principal Components a physical, a mental and (possibly) a _social health_ variables
+to consolidate available health information in fewer dimensions
+
+- Investigate which variables more strongly predict health outcomes in these dimensions
+
+- investigate how predictive are the physical and mental health variables on income and wealth
+outcomes. 
+
+### Challenges 
+
+- Properly deal with endogeneity, confounder and collider biases!
+- Still need to consolidate a overall research question. 
+
+## References 
+
+Deaton, Angus. 2003. "Health, Inequality, and Economic Development ." Journal of Economic Literature, 41 (1): 113-158. 
+
+Göbler, K. (2019). A Novel Imputation Algorithm with Bayesian Networks“. In: Mimeo.
+

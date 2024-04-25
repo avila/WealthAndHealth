@@ -1,0 +1,1954 @@
+Chair of Public Finance and Social Policy
+of the
+Free University Berlin
+
+Master Thesis
+
+The health-wealth nexus over the life cycle
+
+Marcelo Rainho Avila
+
+Supervisor:
+
+Prof. Dr. Carsten Schröder
+
+Matriculation-Nr.:
+
+4679876
+
+Address:
+
+Seestraße 100, 13353, Berlin
+
+Email:
+
+m.avila@fu-berlin.de
+
+Submission:
+
+xx.xx.xxxx
+
+Abstract
+
+It is a long-established fact that a reader will be distracted by the readable content of a page
+when looking at its layout. The point of using that is that it has a more-or-less normal distribution
+of letters, as opposed to using ’Content here, content here’, making it look like readable English.
+Many desktop publishing packages and web page editors now use that as their default model text,
+and a search for ’lorem ipsum’ will uncover many websites still in their infancy. Various versions
+have evolved over the years, sometimes by accident, sometimes on purpose (injected humor and
+the like).
+
+Contents
+Abstract
+
+ii
+
+List of Figures
+
+iv
+
+List of Tables
+
+iv
+
+1 Introduction
+
+1
+
+2 Literature Review
+
+2
+
+3 Data
+3.1 SOEP . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.2 Descriptives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3
+3
+3
+
+4 Empirical Methodology and Main Results
+4.1 Measuring Health . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.2 Diff in Diff . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.2.1 Diff-in-Diff Design From CS . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.2.2 Doubly-robust . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.2.3 assumptions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.3 Diff-in-Diff . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.4 Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+4
+5
+10
+10
+11
+11
+12
+12
+
+5 Discussion and Conclusion
+
+20
+
+A Title of appendix 1
+21
+A.1 Section 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+A.2 Section 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+B Title of appendix 2
+22
+B.1 Section 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+B.2 Section 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+Bibliography
+
+23
+
+iii
+
+List of Figures
+4.1
+4.2
+4.3
+4.4
+4.5
+4.6
+4.7
+4.8
+
+Factor loadings comparison between SF-12 and alternative methods . . . . . . . .
+Histogram of health variables used in the factor model . . . . . . . . . . . . . . . .
+Bivariate density of mental and physical health scores . . . . . . . . . . . . . . . .
+Main results figure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Labor market outcomes comparison . . . . . . . . . . . . . . . . . . . . . . . . . .
+subjective health and well-being comparison . . . . . . . . . . . . . . . . . . . . . .
+Validation with objective health diagnoses . . . . . . . . . . . . . . . . . . . . . . .
+Comparison . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6
+8
+9
+13
+14
+14
+16
+17
+
+List of Tables
+4.1
+4.2
+
+Overview of module on physical and mental health domains from individual questionnaire . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Main results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+iv
+
+7
+15
+
+1 Introduction
+
+1
+
+2 Literature Review
+
+2
+
+3 Data
+3.1 SOEP
+3.2 Descriptives
+
+3
+
+4 Empirical Methodology and Main Results
+
+4
+
+4 Empirical Methodology and Main Results
+
+4.1 Measuring Health
+Since 2002, as part of the health module in the individual questionnaire, SOEP includes questions
+modeled on the 12-item Short Form Health Survey version 2 (SF-12). Based on these questions,
+SOEP provides the Physical (PCS) and the Mental Component Summary (MCS) scales, as described in Andersen et al. (2007).
+The SF-12 methodology prescribes both the formulation of the questionnaire and the computation to construct the scales (see Ware et al. (2002) as cited in Andersen et al. (2007))
+For my main analysis, I use the input variables as provided by SOEP but instead of conducting
+a
+To create mental and physical health scores for individuals in our sample I follow a similar
+procedure as described by Andersen et al. (ibid.), on which the health scores provided by SOEP
+are based. The procedure I follow differs from the SOEP’s implementation in two important
+aspects.
+Firstly, I conduct an oblique rotation to allow for correlation between the factors. By forcing an
+orthogonal rotation, as is the case in when extracting the principal components, one maximizes
+the variance accounted for each component. One crucial restriction is that uncorrelated factors
+must be assumed (Gorsuch, 2015, p. 199).
+Secondly, I plug all variables into the factor model instead of working with the mean values of
+each subscale. With that, I can increase the confidence on the validity of each question by checking
+that variables belonging to the same category are indeed closely clustered. The generated scores,
+however, are highly correlated regardless of the rotation method chosen.
+In Table 4.1, I present in detail the input data to the factor model, including the question
+wording in the questionnaire and transformations applied to them.
+test
+Child (2006) suggested removing those items which have communality value less than 0.20 in
+the dimension reduction technique. Low commonality value of an item represents a poor ratio of
+its unique variance to its shared variance. This indicates such an item could not contribute to
+explaining the construct adequately. You can read the article by Peter Samuels (2017) for further
+understanding.
+NOT ONLY Orthogonality, but The communalities are assumed to be 1.!!! (soep def)
+
+5
+
+.9
+
+Factor 2 (mental health)
+
+Factor 2 (mental health)
+
+4 Empirical Methodology and Main Results
+
+mh_m
+re_m
+sf_m
+
+.7
+
+vt_m
+
+.5
+
+rp_p
+
+.3
+
+bp_p
+gh_p
+pf_p
+
+.1
+-.1
+
+.9
+re1_m
+re2_m
+
+.7
+.5
+
+sf_m
+mh1_m
+mh2_m
+
+.3
+
+vt_m
+
+rp1_p
+rp2_p
+bp_p
+gh_p
+
+.1
+
+pf1_p
+pf2_p
+
+-.1
+-.1
+
+.1
+.3
+.5
+.7
+.9
+Factor 1 (physical health)
+
+-.1
+
+.1
+.3
+.5
+.7
+.9
+Factor 1 (physical health)
+
+(a) SOEP’s default (SF-12): PCA followed by varimax (b) Alternative method: Principal factors with oblique
+rotation
+rotation
+
+Figure 4.1
+
+Factor loadings comparison between SF-12 and alternative methods
+
+Note: The graphs show in both versions that the variables are meaningfully clustered in their respective group and
+the clusters are well separated. However, allowing for an oblique rotation results in a clearer factor separation. The
+loadings of each variable are closer to one of the axes, indicating that a variable strongly affects one but not the
+other factor. Further, by using all variables instead of the mean of grouped variables in the alternative model we
+can confirm that variables from the same category are indeed closely clustered. One drawback with the alternative
+model is that vt (Vitality) is only weakly loaded from both factors.
+
+6
+
+4 Empirical Methodology and Main Results
+
+Table 4.1
+
+Overview of module on physical and mental health domains from individual questionnaire
+
+Category
+Physical Health Domain
+Physical Function
+
+Variable
+
+Question
+
+pf1 (ple0004)
+
+(𝑏)
+
+Physical Function
+
+pf2 (ple0005)
+
+General Health
+
+gh
+
+Bodily Pain
+Role Physical
+
+bp (ple0030)
+rp1 (ple0031)
+
+Role Physical
+
+rp2 (ple0032)
+
+Mental Health Domain
+Stress
+Mental Health
+Mental Health
+Vitality
+Role Emotional
+
+When you have to climb several flights of
+stairs on foot, does your health limit you
+greatly, somewhat, or not at all?
+(𝑏)
+And what about other demanding everyday activities, such as when you have to lift
+something heavy or do something requiring
+physical mobility: Does your health limit you
+greatly, somewhat, or not at all?
+(𝑐,𝑑)
+How would you describe your current
+health?
+(𝑎)
+have severe physical pain?
+(𝑎)
+feel that due to physical health problems
+you achieved less than you wanted to at work
+or in everyday activities?
+(𝑎)
+feel that due to physical health problems
+you were limited in some way at work or in
+everyday activities?
+
+(ple0008)
+
+(𝑎,𝑒)
+
+feel rushed or pressed for time?
+feel down and gloomy?
+(𝑎,𝑑)
+feel calm and relaxed?
+(𝑎,𝑑)
+feel energetic?
+(𝑎)
+feel that due to mental health or emotional
+problems you achieved less than you wanted
+to at work or in everyday activities?
+(𝑎)
+feel that due to mental health or emotional
+problems you carried out your work or everyday tasks less thoroughly than usual?
+(𝑎)
+feel that due to physical or mental health
+problems you were limited socially, that is, in
+contact with friends, acquaintances, or relatives?
+
+st (ple0026)
+mh1 (ple0027)
+mh2 (ple0028)
+vt (ple0029)
+re1 (ple0033)
+
+Role Emotional
+
+re2 (ple0034)
+
+Social Function
+
+sf
+
+(𝑎)
+
+(ple0035)
+
+Notes: This table shows an overview of the questions used in the factor models to construct the physical and mental health scores. Names of input variables from pl dataset in parentheses.
+a: Categories with 5-points Likert scale and time framed to previous four weeks.
+b: Categories with 3-points Likert scale and no explicit time frame.
+c: Categories with 5-points Likert scale and time framed as ‘currently’.
+d: Categories order reversed so lower values are ‘negative’ and higher values are ‘positive’ health outcomes.
+e: st is not included SF12 methodology and, for better comparability, also not in the alternative factor model, but
+displayed here for completeness.
+
+7
+
+4 Empirical Methodology and Main Results
+
+A: Physical Health
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+(a) bp: Physical pain in the last 4
+weeks
+60
+50
+40
+30
+20
+10
+0
+
+negative
+
+.
+
+positive
+
+(d) pf2: State of health affects
+tiring tasks
+
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+60
+50
+40
+30
+20
+10
+0
+
+negative
+
+.
+
+positive
+
+(b) gh: Current general health
+
+(c) pf1: State of health affects
+ascending stairs
+
+60
+50
+40
+30
+20
+10
+0
+
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+(e) rp1: Accomplished less due to
+physical problems
+
+negative .
+
+.
+
+. positive
+
+(f) rp2: Limitations due to
+physical problems
+
+B: Mental Health
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+(g) mh1: Run-down, melancholy
+in the last 4 weeks
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+(j) re1: Accomplished less due to
+emotional problems
+
+Figure 4.2
+
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+(h) mh2: Well-balanced in the last
+4 weeks
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+(k) re2: Less careful due to
+emotional problems
+
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+(i) vt: Physical pain in the last 4
+weeks
+60
+50
+40
+30
+20
+10
+0
+
+negative .
+
+.
+
+. positive
+
+(l) sf: Limited socially due to
+health
+
+Histogram of physical and mental health variables used in the factor model
+
+Notes: Graphs depict proportion of categories so that they sum up to 100. Labels recoded to order from ‘negative’
+to ‘positive’ in terms of health outcome, independently of specific wording. For a detailed description on question
+wording, framing and recoding, see Table 4.1.
+
+8
+
+80
+
+80
+
+60
+
+60
+
+mcs
+
+mcs
+
+4 Empirical Methodology and Main Results
+
+40
+
+20
+
+40
+
+20
+
+0
+
+0
+0
+
+20
+
+40
+
+60
+
+80
+
+0
+
+pcs
+
+40
+
+60
+
+80
+
+pcs
+
+(a) SF12 methodology
+
+Figure 4.3
+
+20
+
+(b) Alternative methodology
+
+Bivariate density estimation of mental and physical health scores
+
+Note: TODO: expand note
+
+9
+
+4 Empirical Methodology and Main Results
+
+4.2 Diff in Diff
+In the main analysis, the goal is to estimate the dynamics of wealth which can be attributed
+to significant health degradation in the physical and mental domain. For that, I apply the
+Differences-in-Differences estimator for staggered treatment adoption designs as introduced by
+Callaway and Sant’Anna (2021). This approach incorporates the recent discussions on the issues
+faced by commonly used Two-Way Fixed-Effects (TWFE) estimator for similar research settings.
+Specifically, this approach is robust to the “forbidden comparisons” issue, term coined and explained in Borusyak et al. (2024, p. 14). For an overview on the recent methods that do not impose
+strict assumptions on treatment homogeneity, refer to the extensive survey from de Chaisemartin
+and D’Haultfoeuille (2022).
+4.2.1 Diff-in-Diff Design From CS
+The estimator proposed in Callaway and Sant’Anna (2021), avoids these “forbidden comparisons”.
+In short, the CS estimator can be divided into two steps. First, compute the differences of valid
+comparison groups in several simple, balanced 2-periods by 2-groups DiD designs. Then, aggregate
+these estimations in a meaningful way. Adapting the notation of Eq. 2.8 from (ibid.), the groups
+in the first step can be defined by their respective treatment period 𝑔 and the measurement time
+𝑡. So each 𝐴𝑇 𝑇 (𝑔, 𝑡) is defined as
+𝐴𝑇 𝑇 (𝑔, 𝑡) = 𝔼 [𝑌𝑡 − 𝑌𝑔−1 |𝐺𝑔 = 1] − 𝔼 [𝑌𝑡 − 𝑌𝑔−1 |𝐶 = 1],
+
+(4.1)
+
+where the conditional term 𝐺𝑔 = 1 identifies the group first treated at period 𝑔 and 𝐶 = 1
+determines the control units.1 This is the group-time average treatment effect, as coined by Callaway
+and Sant’Anna (ibid.).
+Concretely, 𝑡 = {2002, 2004, ..., 2020} and 𝑔 ∈ 𝒢, where 𝒢 = {2004, 2006, ..., 2020}. Note that
+although we have data from 2002 onward, the always-treated group, that is, those treated in 2002
+or those that are treated in their first survey year are dropped from the analysis. Note also that,
+to avoid confusion, the subscript 𝑔 − 1 in Eq. (4.1) identifies the previous period, which in the
+current setting means two years prior, due to the bi-yearly data structure.
+Since each one of these groups is by construction, a canonical DiD design, they are valid
+comparisons and do not suffer from the “negative weights” issue.
+In the second step, the Callaway and Sant’Anna (ibid.) propose different ways of aggregating
+the 𝐴𝑇 𝑇 (𝑔, 𝑡)′ 𝑠. In the main analysis, I follow the event study type of specification. For that, a
+relative-time variable 𝑒 = 𝑡 − 𝑔 is defined, which identifies time elapsed since treatment adoption.
+The target parameter is
+𝜃𝑒𝑠 (𝑒) = ∑ 𝟙[𝑔 + 𝑒 ≤ 𝒯]𝑃 (𝐺 = 𝑔|𝐺 + 𝑒 ≤ 𝒯)𝐴𝑇 𝑇 (𝑔, 𝑔 + 𝑒),
+
+(4.2)
+
+𝑔∈𝒢
+
+where 𝒯 is 2020 in this analysis. The two new terms in the above summation are, first, the
+1
+
+Note that the authors introduce two approaches that differs in terms of control units. One uses never-treated
+only, while the other uses also not-yet-treated units as control. I focus here on the never-treated specification,
+which is used in the main analysis, due to the risk of anticipation effects biasing the results.
+
+10
+
+4 Empirical Methodology and Main Results
+indicator function that restricts the group-time average treatment effects. And second, the term
+𝑃 (.) are the group weights, so that the summation produces an average - weighted by group size
+- of all 𝐴𝑇 𝑇 (𝑔, 𝑡)’s included in the aggregation.
+Note that this aggregation may suffer from compositional changes which will have important
+implications, which are explained thoroughly in Callaway and Sant’Anna (2021, see Equation 3.5).
+In short, the authors show that there are two approaches to handling it. Either restricting the
+analysis balanced sample or, alternatively, relying on the additional assumption that the effects
+are equal across groups. That is, 𝐴𝑇 𝑇 (𝑔, 𝑔 + 𝑒) does not vary with 𝑔 for any 𝑒 ≥ 0. In the main
+analysis, I make the equal-effects assumption, but robustness checks with sample restrictions do
+not change the results considerably.
+Now concretely, in the main analysis, the relative time window is 𝑒 = {−10, −8, ..., 10, 12} years,
+for outside this range estimates get very imprecise. The time of treatment is when 𝑒 = 0 and the
+base or reference period, which is the last period before treatment, is when 𝑒 = −2.
+After computing the 𝐴𝑇 𝑇 (𝑔, 𝑡)’s, there are a few choices of overall aggregation to obtain a
+single parameter estimating the effect being assigned to treatment. As proposed by Callaway and
+Sant’Anna (ibid., Section 3.2), an intuitive one would be
+̅
+𝜃𝑠𝑖𝑚𝑝𝑙𝑒
+=
+
+𝒯
+1
+∑ ∑ 𝟙[𝑡 ≥ 𝑔]𝐴𝑇 𝑇 (𝑔, 𝑡)𝑃 (𝐺 = 𝑔|𝐺 ≤ 𝒯),
+𝑘 𝑔∈𝒢 𝑡=2004
+
+(4.3)
+
+𝒯
+
+where 𝑘 = ∑𝑔∈𝒢 ∑𝑡=2004 𝟙[𝑡 ≥ 𝑔]𝐴𝑇 𝑇 (𝑔, 𝑡)𝑃 (𝐺 = 𝑔|𝐺 ≤ 𝒯). Another aggregation target proposed is relevant for the event-study structure applied here. We can obtain an overall treatment
+effect by averaging 𝜃𝑒𝑠 (𝑒) over all event times, as in
+̅ =
+𝜃𝑒𝑠
+
+1 𝒯−2
+∑ 𝜃 (𝑒)
+𝒯 − 1 𝑒=0 𝑒𝑠
+
+4.2.2 Doubly-robust
+4.2.3 assumptions
+4.2.4 assignment to treatment
+Rios-Avila et al., 2024
+Rios-Avila et al., 2023
+Vilagut et al., 2013
+
+11
+
+(4.4)
+
+4 Empirical Methodology and Main Results
+
+4.3 Diff-in-Diff
+4.4 Results
+
+12
+
+4 Empirical Methodology and Main Results
+
+Gross Wealth (log, winsored)
+
+Net Wealth (neglog, winsored)
+
+.2
+
+.2
+
+.1
+
+.1
+
+0
+
+0
+ATT
+
+.3
+
+ATT
+
+.3
+
+-.1
+
+-.1
+
+-.2
+
+-.2
+-.3
+
+-.3
+Physical Health (oblique)
+
+Physical Health (oblique)
+
+-.4
+
+Mental Health (oblique)
+
+-.4
+-10
+
+-8
+
+-6
+
+-4
+
+-2
+0
+2
+4
+6
+Years since the event
+
+8
+
+10
+
+12
+
+Mental Health (oblique)
+
+-10
+
+-8
+
+-6
+
+-4
+
+-2
+0
+2
+4
+6
+Years since the event
+
+8
+
+10
+
+12
+
+10
+
+12
+
+(a) In relative terms: wealth variables (neg)log transformed
+
+Gross Wealth (tsd.€, winsored)
+
+Net Wealth (tsd.€, winsored)
+
+10
+
+0
+
+0
+ATT
+
+10
+
+ATT
+
+20
+
+20
+
+-10
+
+-10
+
+-20
+
+-20
+Physical Health (oblique)
+
+-30
+
+Physical Health (oblique)
+
+Mental Health (oblique)
+
+-10
+
+-8
+
+-6
+
+-4
+
+Mental Health (oblique)
+
+-30
+
+-2 0
+2
+4
+6
+Years since the event
+
+8
+
+10
+
+12
+
+-10
+
+-8
+
+-6
+
+-4
+
+-2 0
+2
+4
+6
+Years since the event
+
+8
+
+(b) In absolute terms: wealth variables in levels
+
+Figure 4.4
+
+Main results figure
+
+Notes: This figure depicts the dynamic average treatment on the treated (ATT) of physical (in blue) and mental
+health (in red) deterioration on different measures and transformations of wealth. Whiskers depict the 95%
+confidence interval. All wealth variables are winsored (at 1st and 99th percentiles). In some specifications the
+effect on PCS is similar to that of MCS, while in others there is considerable divergence in terms of persistency
+and in the pre-treatment ATT’s . In most specifications the pre-treatment estimated ATT’s do show some trend
+in means, but their confidence intervals in nearly all cases still include 0. A priori, it is to be expected that the
+transformed versions would better hold the parallel trend assumption. That is, the increase in wealth among
+different groups is parallels in relative terms, proportional to their wealth in previous period, whereas in absolute
+terms, it is less likely that people with different starting wealth follow a parallel wealth accumulation path. The
+time window is restricted to 10 periods before and 12 after treatment due to drastic decrease in statistical
+precision (widening of CI) outside this range. T-2 is the relative time of treatment and t0 is the first period after
+treatment. This panels is a visual representation of the 8 models as displayed in Table 4.2. Panel (a: left) depicts
+models 1 and 5. Panel (a: right) depicts models 2 and 6. Panel (b: left) depicts models 3 and 7. Panel (b: right)
+depicts models 4 and 8.
+
+13
+
+4 Empirical Methodology and Main Results
+
+Full-Time (experience)
+
+Unemployment (experience)
+.6
+
+.5
+
+.4
+ATT
+
+ATT
+
+0
+
+-.5
+
+-1
+
+.2
+0
+
+Physical Health (oblique)
+Mental Health (oblique)
+
+-10 -8
+
+-6
+
+Physical Health (oblique)
+Mental Health (oblique)
+
+-.2
+
+-4 -2 0 2 4 6
+Years since the event
+
+8
+
+10 12
+
+-10 -8
+
+-6
+
+(a) xxx
+
+Figure 4.5
+
+-4 -2 0 2 4 6
+Years since the event
+
+8
+
+10 12
+
+(b) xxx
+
+Labor market outcomes comparison
+
+Notes:
+
+Current Life Satisfaction
+.5
+
+Satisfaction With Health
+.5
+
+Physical Health (oblique)
+Mental Health (oblique)
+
+0
+ATT
+
+ATT
+
+0
+
+-.5
+
+-.5
+-1
+
+-1
+
+-1.5
+-10 -8
+
+-6
+
+-4 -2 0 2 4 6
+Years since the event
+
+8
+
+10 12
+
+-10 -8
+
+(a) xxx
+
+Figure 4.6
+
+Physical Health (oblique)
+Mental Health (oblique)
+
+-6
+
+-4 -2 0 2 4 6
+Years since the event
+
+(b) xxx
+
+subjective health and well-being comparison
+
+Notes:
+
+14
+
+8
+
+10 12
+
+4 Empirical Methodology and Main Results
+
+Table 4.2
+
+Main results
+
+Physical health
+log
+
+SimpleATT
+Pre_avg
+Post_avg
+tm10
+tm8
+tm6
+tm4
+tp0
+tp2
+tp4
+tp6
+tp8
+tp10
+tp12
+Obs
+Pretrend 𝜒2 (df)
+Pretrend p-value
+
+Mental Health
+level
+
+log
+
+level
+
+gross
+(1)
+
+net
+(2)
+
+gross
+(3)
+
+net
+(4)
+
+gross
+(5)
+
+net
+(6)
+
+gross
+(7)
+
+net
+(8)
+
+-0.07∗∗
+(0.02)
+0.02
+(0.04)
+-0.09∗∗
+(0.03)
+0.01
+(0.08)
+0.06
+(0.05)
+0.00
+(0.03)
+0.03
+(0.01)
+-0.01
+(0.01)
+-0.02
+(0.02)
+-0.08∗∗
+(0.03)
+-0.10∗∗
+(0.03)
+-0.13∗∗
+(0.04)
+-0.15∗∗
+(0.05)
+-0.12∗
+(0.06)
+
+-0.06∗
+(0.03)
+0.05
+(0.05)
+-0.06
+(0.04)
+0.05
+(0.10)
+0.07
+(0.07)
+0.03
+(0.05)
+0.04
+(0.02)
+-0.03∗
+(0.02)
+-0.04
+(0.03)
+-0.07∗
+(0.04)
+-0.09∗
+(0.04)
+-0.06
+(0.05)
+-0.07
+(0.06)
+-0.06
+(0.08)
+
+-7.72∗∗∗
+(2.19)
+5.13
+(3.66)
+-9.10∗∗∗
+(2.64)
+5.16
+(7.91)
+7.52
+(5.11)
+3.74
+(3.15)
+4.11∗∗∗
+(1.19)
+-2.43∗
+(0.94)
+-5.38∗∗
+(1.79)
+-9.02∗∗∗
+(2.49)
+-9.51∗∗
+(3.10)
+-11.62∗∗
+(3.93)
+-14.61∗∗
+(4.50)
+-11.16
+(6.13)
+
+-7.10∗∗∗
+(1.98)
+3.97
+(3.16)
+-8.27∗∗
+(2.62)
+4.26
+(6.53)
+5.89
+(4.39)
+2.32
+(2.98)
+3.39∗∗
+(1.09)
+-2.73∗∗
+(0.87)
+-5.57∗∗∗
+(1.65)
+-8.22∗∗∗
+(2.44)
+-8.18∗∗
+(2.93)
+-9.37∗
+(3.64)
+-12.63∗∗
+(4.78)
+-11.18∗
+(5.57)
+
+-0.08∗∗∗
+(0.02)
+0.01
+(0.03)
+-0.10∗∗∗
+(0.03)
+0.02
+(0.07)
+-0.02
+(0.05)
+0.00
+(0.03)
+0.03∗
+(0.01)
+-0.01
+(0.01)
+-0.03
+(0.02)
+-0.10∗∗∗
+(0.02)
+-0.12∗∗∗
+(0.03)
+-0.15∗∗∗
+(0.04)
+-0.12∗∗
+(0.04)
+-0.18∗∗
+(0.06)
+
+-0.13∗∗∗
+(0.03)
+0.06
+(0.04)
+-0.16∗∗∗
+(0.03)
+0.08
+(0.09)
+0.06
+(0.07)
+0.06
+(0.05)
+0.05∗
+(0.02)
+-0.03∗
+(0.01)
+-0.06∗
+(0.02)
+-0.14∗∗∗
+(0.03)
+-0.19∗∗∗
+(0.04)
+-0.22∗∗∗
+(0.05)
+-0.21∗∗∗
+(0.06)
+-0.28∗∗∗
+(0.07)
+
+-5.53∗
+(2.29)
+-3.87
+(4.06)
+-7.56∗
+(3.07)
+-13.43
+(8.90)
+-1.85
+(6.38)
+-1.57
+(3.72)
+1.38
+(1.34)
+-1.20
+(0.94)
+-2.12
+(1.76)
+-4.84
+(2.65)
+-6.74∗
+(3.26)
+-8.66∗
+(4.26)
+-9.73
+(5.55)
+-19.64∗∗
+(6.49)
+
+-5.48∗∗
+(2.07)
+-1.65
+(3.25)
+-7.22∗∗
+(2.55)
+-5.96
+(7.65)
+-0.22
+(5.48)
+-1.97
+(3.28)
+1.53
+(1.20)
+-1.42
+(0.85)
+-2.49
+(1.66)
+-5.18∗
+(2.32)
+-6.99∗
+(2.81)
+-8.20∗
+(3.66)
+-8.88
+(4.60)
+-17.40∗∗
+(5.70)
+
+26.63 (22)
+0.226
+
+28.26 (22)
+0.167
+
+45.96 (22)
+0.002
+
+57.87 (22)
+0.000
+
+19.11 (22)
+0.639
+
+26.14 (22)
+0.246
+
+21.03 (22)
+0.519
+
+20.03 (22)
+0.581
+
+Notes: Table of results depict the coeﬀicients of C&S diff-in-diff estimation aggregated in a event-study structure. Tm
+are the periods before treatment and Tp are those concurrent to or after treatment. The last period before treatment,
+the base level 𝑇 𝑚2, is not estimated. 𝑇 𝑝0 is the concurrent, on impact effect. SimpleATT depicts the average of all
+ATT(g,t)’s weighted by group size, as explained in Eq. 3.10 from Callaway and Sant’Anna, 2021. Pre_avg and Post_avg
+are the average pre and post-treatment effects with respective equal weights for each relative time 𝑡 . In most specifications pre-treatment ATT is not statistically different to zero, while post-treatment effects are. In most models, the
+pre-treatment ATT’s are not statistically significantly different to 0, apart from the last period before treatment (Tm4)
+in model (3), (4) and (6) Standard error in parenthesis, estimated with multiplicative WildBootstrap procedure with 999
+repetitions, clustered at the individual level. Using doubly-robust estimation method. Using never treated as control
+group to avoid bias due to anticipation effects. long2. * 𝑝 < 0.05, ** 𝑝 < 0.01, *** 𝑝 < 0.001
+
+15
+
+4 Empirical Methodology and Main Results
+
+Cardiopathy
+.15
+
+.2
+
+.1
+
+.1
+
+ATT
+
+ATT
+
+Back Pain
+.3
+
+0
+
+.05
+0
+
+Physical Health (oblique)
+Mental Health (oblique)
+
+-.1
+-10 -8
+
+-6
+
+-4 -2 0 2 4 6
+Years since the event
+
+8
+
+Physical Health (oblique)
+Mental Health (oblique)
+
+-.05
+
+10 12
+
+-10 -8
+
+-6
+
+(a) xxx
+
+.15
+
+.15
+
+.1
+
+.1
+
+.05
+0
+
+-4 -2 0 2 4 6
+Years since the event
+
+8
+
+Physical Health (oblique)
+Mental Health (oblique)
+
+-.05
+
+10 12
+
+-10 -8
+
+(c) xxx
+
+Figure 4.7
+
+.05
+0
+
+Physical Health (oblique)
+Mental Health (oblique)
+
+-6
+
+10 12
+
+Sleep Disorder
+.2
+
+ATT
+
+ATT
+
+Depression
+
+-10 -8
+
+8
+
+(b) xxx
+
+.2
+
+-.05
+
+-4 -2 0 2 4 6
+Years since the event
+
+-6
+
+-4 -2 0 2 4 6
+Years since the event
+
+(d) xxx
+
+Validation with objective health diagnoses
+
+Notes:
+
+16
+
+8
+
+10 12
+
+4 Empirical Methodology and Main Results
+
+Cardiopathy
+.15
+
+.2
+
+.1
+
+.1
+
+.05
+
+ATT
+
+ATT
+
+Back Pain
+.3
+
+0
+
+0
+Physical Health (sf12)
+Mental Health (sf12)
+
+-.1
+-10 -8
+
+-6
+
+-4 -2 0 2 4 6
+Years since the event
+
+8
+
+Physical Health (sf12)
+Mental Health (sf12)
+
+-.05
+
+10 12
+
+-10 -8
+
+-6
+
+(a)
+
+10 12
+
+Sleep Disorder
+.2
+
+.15
+
+.15
+
+ATT
+
+.1
+ATT
+
+8
+
+(b)
+
+Depression
+
+.05
+0
+
+-10 -8
+
+-6
+
+-4 -2 0 2 4 6
+Years since the event
+
+8
+
+.1
+.05
+0
+
+Physical Health (sf12)
+Mental Health (sf12)
+
+-.05
+
+Physical Health (sf12)
+Mental Health (sf12)
+
+-.05
+
+10 12
+
+-10 -8
+
+(c)
+
+Figure 4.8
+
+-4 -2 0 2 4 6
+Years since the event
+
+-6
+
+-4 -2 0 2 4 6
+Years since the event
+
+(d)
+
+Comparison
+
+Notes:
+
+17
+
+8
+
+10 12
+
+4 Empirical Methodology and Main Results
+
+Unique Obs.
+Total Obs. (N×T)
+Years in SOEP
+Age
+Years of Education
+Physical Health (oblique)
+Mental Health (oblique)
+Gross Wealth (log, winsored)
+Net Wealth (neglog, winsored)
+Gross Wealth (tsd.€, winsored)
+Net Wealth (tsd.€, winsored)
+Unemployment Experience (years)
+Full-Time Experience (years)
+Gender
+Male
+Female
+Marital Status of Individual
+Married
+Single
+Widowed
+Divorced
+Separated
+Educational Attainment
+Less than H S
+High School
+More than H S
+
+treat_any_mcs_main
+0
+1
+Total
+19,454 (72.6%)
+7,337 (27.4%)
+26,791 (100.0%)
+(66.6%) 76,751 (33.4%) 38,454 (100.0%) 115,205
+8.06 (4.83)
+10.75 (5.39)
+8.79 (5.13)
+47.20 (16.15)
+45.76 (15.25)
+46.80 (15.92)
+12.52 (2.76)
+12.17 (2.61)
+12.42 (2.72)
+51.11 (8.82)
+45.28 (9.70)
+49.51 (9.43)
+49.33 (7.68)
+39.50 (7.25)
+46.64 (8.74)
+3.40 (2.14)
+3.02 (2.14)
+3.29 (2.15)
+2.92 (2.46)
+2.49 (2.49)
+2.80 (2.47)
+135.33 (222.50) 103.69 (187.69)
+126.66 (213.99)
+110.46 (197.62)
+82.85 (167.05)
+102.90 (190.14)
+0.85 (2.46)
+1.31 (3.10)
+0.97 (2.66)
+16.54 (13.99)
+15.08 (13.46)
+16.14 (13.86)
+9,309 (47.9%)
+10,145 (52.1%)
+
+3,163 (43.1%)
+4,174 (56.9%)
+
+12,472 (46.6%)
+14,319 (53.4%)
+
+11,955 (61.5%)
+4,702 (24.2%)
+841 (4.3%)
+1,496 (7.7%)
+460 (2.4%)
+
+4,177 (56.9%)
+1,896 (25.8%)
+301 (4.1%)
+741 (10.1%)
+222 (3.0%)
+
+16,132 (60.2%)
+6,598 (24.6%)
+1,142 (4.3%)
+2,237 (8.3%)
+682 (2.5%)
+
+2,320 (12.2%)
+11,304 (59.6%)
+5,333 (28.1%)
+
+1,050 (14.8%)
+4,440 (62.4%)
+1,621 (22.8%)
+
+3,370 (12.9%)
+15,744 (60.4%)
+6,954 (26.7%)
+
+18
+
+4 Empirical Methodology and Main Results
+
+Unique Obs.
+Total Obs. (N×T)
+Years in SOEP
+Age
+Years of Education
+Physical Health (oblique)
+Mental Health (oblique)
+Gross Wealth (log, winsored)
+Net Wealth (neglog, winsored)
+Gross Wealth (tsd.€, winsored)
+Net Wealth (tsd.€, winsored)
+Unemployment Experience (years)
+Full-Time Experience (years)
+Gender
+Male
+Female
+Marital Status of Individual
+Married
+Single
+Widowed
+Divorced
+Separated
+Educational Attainment
+Less than H S
+High School
+More than H S
+
+0
+19,816 (72.7%)
+(68.1%) 80,685
+8.32 (5.00)
+46.54 (16.15)
+12.73 (2.81)
+49.90 (7.32)
+50.98 (8.67)
+3.45 (2.13)
+2.98 (2.43)
+139.56 (227.14)
+113.77 (201.23)
+0.76 (2.26)
+16.05 (13.87)
+
+treat_any_pcs_main
+1
+Total
+7,436 (27.3%)
+27,252 (100.0%)
+(31.9%) 37,748 (100.0%) 118,433
+10.38 (5.39)
+8.88 (5.19)
+46.76 (15.10)
+46.60 (15.87)
+11.84 (2.48)
+12.49 (2.75)
+40.36 (6.93)
+47.30 (8.38)
+44.71 (10.45)
+49.27 (9.60)
+2.89 (2.15)
+3.30 (2.15)
+2.31 (2.54)
+2.80 (2.48)
+94.19 (172.21)
+127.18 (214.51)
+74.94 (153.86)
+103.17 (190.27)
+1.50 (3.34)
+0.96 (2.62)
+15.93 (13.61)
+16.02 (13.80)
+
+9,393 (47.4%)
+10,423 (52.6%)
+
+3,300 (44.4%)
+4,136 (55.6%)
+
+12,693 (46.6%)
+14,559 (53.4%)
+
+11,904 (60.1%)
+5,070 (25.6%)
+795 (4.0%)
+1,574 (7.9%)
+473 (2.4%)
+
+4,358 (58.6%)
+1,727 (23.2%)
+333 (4.5%)
+828 (11.1%)
+190 (2.6%)
+
+16,262 (59.7%)
+6,797 (24.9%)
+1,128 (4.1%)
+2,402 (8.8%)
+663 (2.4%)
+
+2,145 (11.1%)
+11,201 (58.0%)
+5,959 (30.9%)
+
+1,222 (16.9%)
+4,626 (64.0%)
+1,385 (19.1%)
+
+3,367 (12.7%)
+15,827 (59.6%)
+7,344 (27.7%)
+
+19
+
+5 Discussion and Conclusion
+
+20
+
+Appendix A
+Title of appendix 1
+A.1 Section 1
+A.2 Section 2
+
+21
+
+Appendix B
+Title of appendix 2
+B.1 Section 1
+B.2 Section 2
+
+22
+
+Bibliography
+Andersen, H. H. et al. (2007). ‘Computation of Standard Values for Physical and Mental Health
+Scale Scores Using the SOEP Version of SF-12v2’. In: Schmollers Jahrbuch, p. 13.
+Borusyak, K., X. Jaravel and J. Spiess (16th Jan. 2024). Revisiting Event Study Designs: Robust
+and Eﬀicient Estimation. Version 5. arXiv: 2108.12419 [econ]. url: http://arxiv.org/abs/
+2108.12419 (visited on 22/01/2024). preprint.
+Callaway, B. and P. H. Sant’Anna (Dec. 2021). ‘Difference-in-Differences with Multiple Time Periods’. In: Journal of Econometrics 225.2, pp. 200–230. issn: 03044076. doi: 10.1016/j.jeconom.
+2020.12.001. url: https://linkinghub.elsevier.com/retrieve/pii/S0304407620303948
+(visited on 22/01/2024).
+De Chaisemartin, C. and X. D’Haultfoeuille (May 2022). Two-Way Fixed Effects and Differencesin-Differences with Heterogeneous Treatment Effects: A Survey. doi: 10.3386/w29734. preprint.
+Gorsuch, R. L. (2015). Factor Analysis. Classic edition. New York ; London: Routledge, Taylor &
+Francis Group. 443 pp. isbn: 978-1-138-83198-8 978-1-138-83199-5.
+Rios-Avila, F., P. H. C. Sant’Anna and B. Callaway (25th Feb. 2023). CSDID: Stata Module for
+the Estimation of Difference-in-Difference Models with Multiple Time Periods. Version 1.73.
+Boston College Department of Economics. url: https://ideas.repec.org//c/boc/bocode/
+s458976.html (visited on 22/01/2024).
+– (4th Jan. 2024). CSDID2: Mata Implementation of CSDID. Version 1.73. url: https://github.
+com/friosavila/stpackages/tree/8f0e3a92688ab411495907dc970ff0cdc270913d.
+Vilagut, G. et al. (1st June 2013). ‘The Mental Component of the Short-Form 12 Health Survey
+(SF-12) as a Measure of Depressive Disorders in the General Population: Results with Three
+Alternative Scoring Methods’. In: Value in Health 16.4, pp. 564–573. issn: 1098-3015. doi:
+10.1016/j.jval.2013.01.006. url: https://www.sciencedirect.com/science/article/
+pii/S1098301513000168 (visited on 07/09/2023).
+Ware, J. E. et al. (2002). How to Score Version 2 of the SF-12 Health Survey (with a Supplement
+Documenting Version 1). Lincoln, RI: Qualitymetric Incorporated.
+
+23
+
+I declare that I have authored this thesis independently, that I have not used other than
+the declared sources / resources, and that I have explicitly marked all material which has
+been quoted either literally or by content from the used sources.
+
+Berlin, November 24, 2017
+
+...............................................
+(Signature of the author)
+
+

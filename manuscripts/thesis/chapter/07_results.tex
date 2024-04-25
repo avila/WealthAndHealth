@@ -1,0 +1,550 @@
+\section{Results}
+\label{sec:Results}
+
+In this section, I first present the results of the estimated event-study coefficients $\hat{\theta}_{es}(e)$ for
+each of the eight main models. These models are from the physical and mental domains, encompassing
+specifications in levels and logarithms, and employing gross and net wealth as the response variable.
+Subsequently, I present the results of a secondary analysis aiming to explore possible mechanisms through which
+wealth accumulation is affected due to physical or mental health degradation.
+
+In all the following figures, the panels depict the resulting coefficient estimates for two models
+simultaneously, facilitating the comparison of the same model across different health dimensions. Thus, the
+single lines do not depict a treated vs. non-treated development but directly represent the ATT coefficients for
+the model in the physical and mental domains.
+
+It's important to note that, for easier interpretation, a transformation was applied to the coefficients in the
+(neg)log models so that they already represent the effect in percentage terms. More details on the
+transformation and a caveat on the interpretation of the neglog transformation are discussed in
+\cref{sec:transformcoefs}.
+
+
+
+
+\subsection{Effects of Health Deterioration on Wealth Accumulation}
+\label{sec:mainanalysiswealthaccum}
+\hyphenation{SimpleATT}
+
+In \cref{fig:maindid} and the corresponding \cref{tab:main_res_event}, I present the main results of this
+analysis. In broad terms, the results are similar across different wealth dimensions, net and gross, and
+transformations, whether in levels or in (negative) logarithms. The \textit{SimpleATT}, as defined in
+\cref{eq:didsimp}, is negative and statistically significant at least to the $\alpha=0.05$ level in all but
+the physical domain with neglog-transformed net wealth (model P2).
+
+The average pre-treatment trend (\textit{Pre average}) is not statistically significantly different from 0 in
+all specification. In contrast, the average post-treatment (\textit{Post average}) is statistically significant
+in all but P2. Most single pre-treatment effects are not statistically different from 0, apart from the last
+period before the reference period ($e=4$). This suggests that the negative health outcome is not experienced
+completely unexpectedly. There is an indication of an anticipation one periods before crossing the threshold
+defined in the treatment assignment rule.
+
+The $\chi^2$ Pretrend test, which is a joint significance test with the null hypothesis ($H_0$) that all
+pre-treatment $ATT(g,t)'s$ are equal to a constant $k$ is clearly rejected ($p \leq 0.001$) in level
+specifications from the physical domain (models P3 and P4) and on the verge of rejection ($p = 0.069$) in the
+neglog specification (P2). The pre-treatment average and aforementioned tests corroborate the parallel trends
+assumptions of the log-transformed gross wealth in both physical and mental health domains. Therefore, I 
+give more weight on those specifications (P1 and M1) in further considerations.
+
+\begin{figure}[tb!] % fig:maindid
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log)\\(P1/M1)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_11_gw_nlog_1o2_ct2.pdf}
+        \label{sfig:did_gw_nlog}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Net Wealth (neglog)\\(P2/M2)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_21_nw_nlog_1o2_ct2.pdf}
+        \label{sfig:did_nw_nlog}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (k€, winsored)\\(P3/M3)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_31_gw_1o2_ct2.pdf}
+        \label{sfig:did_gw}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Net Wealth (k€, winsored)\\(P4/M4)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_41_nw_1o2_ct2.pdf}
+        \label{sfig:did_nw}
+    \end{subfigure}
+    \caption{Main results} 
+    \label{fig:maindid} 
+    \fnote{Notes: This figure illustrates the dynamic Average Treatment on the Treated (ATT) of physical health
+    (in blue) and mental health (in red) deterioration on different measures and transformations of wealth. The
+    time window is restricted to ten periods before and twelve after treatment due to a drastic decrease in
+    statistical precision outside this range. The time of treatment is denoted as $e=0$, and the reference
+    period is set to $e=-2$, depicted with a vertical dashed line. Whiskers depict the 95\% confidence interval
+    based on Wild Bootstrap standard errors clustered at the individual level. This panel is a visual
+    representation of the eight models as displayed in \cref{tab:main_res_event}. 
+    Panel \subref{sfig:did_gw_nlog}  depicts models P1 and M1, panel \subref{sfig:did_nw_nlog}  
+    M2 and P2, panel \subref{sfig:did_gw}  P3 and M3, while panel \subref{sfig:did_nw}  
+    depicts models P4 and M4.}
+\end{figure}
+% end figure --------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+% tab:main_res_event ---- Main results: table of coefficients
+% -------------------------------------------------------------------------------------------------
+%\newcolumntype{p}{>{\columncolor{cp}}c}
+%\newcolumntype{m}{>{\columncolor{cm}}c}
+\newcolumntype{P}{>{\columncolor{cp}}S[table-number-alignment = left, table-format = -2.2,table-space-text-post = \sym{***}]}
+\newcolumntype{M}{>{\columncolor{cm}}S[table-number-alignment = left, table-format = -2.2,table-space-text-post = \sym{***}]}
+\begin{table}[htbp!]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \begin{threeparttable}       
+            \caption{Main results: table of coefficients}
+            \label{tab:main_res_event}
+%            \setlength{\tabcolsep}{4pt}
+            \begin{tabular}{l*4{P}*4{M}}
+                \toprule
+                & \multicolumn{4}{l}{Physical Health}   & \multicolumn{4}{l}{Mental Health}     \\ \cmidrule(lr{1em}){2-5} \cmidrule(lr{1em}){6-9}
+                & \multicolumn{2}{l}{(neg)log}               & \multicolumn{2}{l}{level} & \multicolumn{2}{l}{(neg)log} & \multicolumn{2}{l}{level} \\ \cmidrule(lr{1em}){2-3} \cmidrule(lr{1em}){4-5} \cmidrule(lr{1em}){6-7} \cmidrule(lr{1em}){8-9} 
+                                                        & {gross (\%)} & {net (\%)$^1$} & {gross} & {net} & {gross (\%)} & {net (\%)$^1$} & {gross} & {net}               \\
+                                                        & {(P1)}  & {(P2)}            & {(P3)}  & {(P4)}              & {(M1)}  & {(M2)}            & {(M3)}  & {(M4)}              \\  
+                                                        \midrule
+                \input{./incl/tbls/tbl_full_main_bd_1o2_ct2.tex}% &
+            \end{tabular}%
+            \begin{tablenotes}[para,flushleft]%
+                \vspace*{-\baselineskip}
+                {\raggedleft*~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$\\}
+                Notes: This table depicts the event study coefficients $\theta_\text{es}(e)$ as in \cref{eq:theta_es}. 
+               \textit{SimpleATT} depicts the average of all ATT(g,t)'s weighted by group size (see \cref{eq:didsimp}). 
+               \textit{Pre average} and \textit{Post average} are the average pre- and post-treatment effects with equal
+               weights for each $e$ see \cref{eq:didpostpast}).
+               %
+               One can evaluate the pre-trends by looking at the pretrend $\chi^{2}$ test, 
+               the coefficients of \textit{Pre average} or at each ATT for $e<0$.
+               %
+               Standard error shown in parenthesis are estimated via multiplicative Wild Bootstrap with 999
+               replications and clustered at the individual level.
+               %
+               Covariates used for doubly robust procedure was age spline, federal state, legal disability, 
+               marital status, gender, and years of education.
+               %
+               Using never treated as control group to avoid bias due to anticipation effects.\\
+               $^1$Coefficients (and standard errors) of (neg)log specifications are transformed to 
+               represent the effect in percentage terms, but such interpretation of the neglog
+               transformation might be biased (see \cref{sec:transformcoefs})
+            \end{tablenotes}
+        \end{threeparttable}
+    \end{adjustbox}
+\end{table}
+% -------------------------------------------------------------------------------------------------
+% end table 
+% -------------------------------------------------------------------------------------------------
+
+
+\subsubsection{Physical domain} %
+
+The average treatment effect for the treated sub-population (ATT) from experiencing an adverse physical health
+outcome averages at about $-6.5\%$ or $-8.5\%$ gross wealth build-up, depending on the aggregation
+choice. Ten to twelve years post-treatment, the effect reaches around $-12\%$ to $-14\%$.
+
+Note that the \textit{post average} tends to display stronger effects than the \textit{SimpleATT} because each
+post-treatment period is equally weighted, whereas the simple average is weighted by each group size. Due to
+attrition, the group sizes shortly after and before treatment are bigger than those that remain longer in
+SOEP. Since the effects shortly after treatment are smaller in magnitude, the observed difference arises.
+
+
+In absolute terms (models P3 and P4), experiencing a negative health outcome is associated with accumulating
+€7,000 (\textit{SimpleATT}) to €8,500 (\textit{post average}) less wealth than the control units.  This
+difference reaches up to $€12,600$ (gross) and $€13,000$ (net) within twelve years from the event.
+However, due to the strong rejection of the pre-trend tests, the validity of a causal interpretation is less
+credible in these two specifications. Note also that the effect is measured compared to the untreated group.
+Therefore, it is not necessarily the case that they experiences a decrease in their wealth; rather, they fail
+to follow the same accumulation path relative to the control group. These patterns can be observed in
+\cref{fig:inlevelspcsmain,fig:inlevelsmcsmain}.
+
+ 
+
+\subsubsection{Mental domain}%
+%
+Looking at the mental health domain, the effects tend to be stronger. Those that experience an negative mental
+health outcome accumulate, on average, $-8.3$ to $-10.3\%$ gross wealth, depending on the aggregation choice.
+We also see an indication that the effects might arise faster. Four years after the event ($e=4$), we see
+already an effect of $-10\%$, and reaching $-15\%$ within the twelve years window.
+
+In absolute terms (models M3 and M4), the impact reaches $-21.3$ (gross) and $-17.7$ (net) thousand Euros
+twelve years after the event. Note, however, that there is a large, unexpected increase (in absolute terms) in
+the last period of the event window, and the confidence interval is quite large at that stage.
+
+In general terms, the impact of experiencing a negative mental health outcome seems to be stronger than that in
+the physical domain. Further, the models also seem to behave better in the mental domain when evaluating 
+the pre-treatment trends and the precision of estimates after the event. 
+
+One caveat, though, is that while we cannot reject the pre-treatment tests and most of the pre-treatment ATT's
+confidence intervals (CI) include 0, the pre-treatment CI's are still quite large. This implies that, in a less
+optimistic view, one cannot exclude the possibility of diverging pretrend paths. To illustrate, a straight line
+crossing from pre-treatment to post-treatment (and diverging from 0) would imply different wealth accumulation
+paths. In that being true, this challenges the parallel trends assumption and, thus, the estimated coefficients
+would not portray a causal effect of experiencing a bad health outcome. %
+% todo: move this to discussion
+
+
+\subsection{Exploring Wealth Accumulation Channels}
+\label{sec:secondaryanalysischannels}
+
+To understand potential reasons for the observed differences in wealth accumulation, I explore the effect the
+same adverse health outcomes on labor market statuses. I focus on four key variables: full-time employment
+experience, unemployment experience (both measured in months since entering the labor market), current
+individual annual labor earnings, as well as current employment status. In the labor earnings specification,
+unemployed people are kept in the analysis with a labor earnings of 0.
+
+
+\subsubsection{Full-time experience} As shown in \cref{sfig:c_expft_main}, one can observe a slightly different
+trajectory after treatment when comparing the physical and mental health models. Physical health shock suggests
+a stronger effect, resulting in over 7 months less full-time employment experience twelve years after the event. In
+contrast, the mental health impact is nearly 5 months. However, the pre-treatment trend in the physical health
+model, although with confidence intervals that include 0, hits at a linear pre-trend. 
+
+
+\subsubsection{Unemployment experience} In \cref{sfig:c_expue_main}, a distinct pattern emerges. Similarly to
+the full-time experience case, the physical health model also shows a pre-trend divergence, but this time more
+clearly. In contrast, the mental health model shows a distinct break-point at $e=-2$. The effects in both domains
+are of similar magnitude, reaching around $4.5$ months of additional unemployment experience when compared to
+the respective untreated groups.
+
+
+\subsubsection{Labor earnings} \cref{sfig:c_labor_earns_main} shows a similar pre-treatment trend in the
+physical and mental domains, supporting a common pre-trend only up to period $e=-6$. Before that, although with
+confidence intervals still covering 0, one could argue for a divergence in pre-treatment trend which is
+detrimental to the parallel trends assumption.
+
+After the event, the physical health shock has a more pronounced impact compared to the mental health case. The
+post-average effect aggregates to $-2.6$ thousand Euros in annual labor income. Twelve years after the event,
+it reaches $-4$ thousand Euros. In the mental dimension, the \textit{post average} aggregates to $-1.6$, and
+reaches nearly $-2.7$ thousand Euros twelve years after the event.
+
+
+\subsubsection{Employment status} In \cref{sfig:c_empl_status_main}, we observe that the pre-treatment trend is
+quite similar in both models, with the centers of estimates relatively close to 0. Post treatment, on the other
+hand, the shock in the physical domain is stronger. Given that the response variable is binary, the estimates
+can be interpreted as in a linear probability model. In the physical domain, the average post-treatment effect
+is a nearly $5\%$ reduction in the employment rate for the affected group, reaching $7.5\%$ twelve years after the
+event.
+
+In the mental health domain, the effect is similarly strong to that in the physical case in the first two periods
+after the event, reaching a $-3.5\%$ reduction in the employment rate at $e=4$, and stabilizes in that range
+over the rest of the event window. In this case, the simple average and post average are roughly the same,
+equaling around a $2.8\%$ reduction in the employment rate for the affected group.
+
+% ---------------------------------------------------------------------------------------------------------------------
+% Labor market outcomes comparison
+% ---------------------------------------------------------------------------------------------------------------------
+\begin{figure}[tb!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Full-Time exp. (months)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_expft_1o2_main.pdf}
+        \label{sfig:c_expft_main}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Unemployment exp. (months)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_expue_1o2_main.pdf}
+        \label{sfig:c_expue_main}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Individual Labor Earnings}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_labor_earns_1o2_main.pdf}
+        \label{sfig:c_labor_earns_main}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Employment Status}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_empl_status_1o2_main.pdf}
+        \label{sfig:c_empl_status_main}
+    \end{subfigure}
+    \caption{Labor market outcomes comparison} 
+    \label{fig:csdid_labor}
+    \fnote{Notes: The same $DiD_\text{DR}$ framework was applied to other response variables,
+        using the same covariates and treatment rule as specified in the main analysis. 
+        Whiskers depict the 95\% confidence interval}
+\end{figure}
+
+
+\subsection{Effect Heterogeneity}\label{sec:effheterog}
+
+\newcommand{\commonnotesheterogb}{%
+    Whiskers depict the 95\% confidence interval. 
+    Reduced event window due to decrease in precision after dividing the sample into subgrous.
+    }
+
+
+So far, the analysis covered the entire sample. However one might anticipate effect heterogeneity based on key
+characteristics of the population. To explore this, I replicate the the main analysis after dividing the sample
+into two subgroups, one based on age and the other on educational attainment.
+
+Note that in these specifications, the analysis focuses on comparing treated and control units within the same
+subgroup rather than comparing outcomes across different groups. To clarify, for the higher education group,
+the figures illustrate the difference in the evolution of the response variable between treated and untreated
+units, all within the higher education group. If the trends of each subgroup are significantly different, it
+provides evidence of effect heterogeneity with respect to the grouping variable. For easier comparison between
+different models and specifications, sub-group figures from the physical domain are presented in shades of
+blue, and those from the mental domain are in variations of red.
+
+
+\subsubsection{Heterogeneity by educational attainment}
+
+The sample is divided into two groups: those who attained at most a high-school degree and those who with a
+higher education certificate. On average, those in the first group completed 11 years of schooling, while those
+in the latter completed nearly 16 years.
+
+The results of the effect on wealth accumulation, measured by the logarithm of gross wealth, as depicted in
+\cref{sfig:by_educ_g1_main_gw_nlog}, are similar to those obtained in the main analysis (compare with
+\cref{sfig:did_gw_nlog}). Further, we observe no substantial evidence of differences between the two groups,
+suggesting no effect heterogeneity by educational attainment.
+
+% FIG: Effect heterogeneity educational attainment
+\begin{figure}[tb!]
+    \centering
+    \begin{subfigure}{0.9\textwidth}
+        \caption{Gross Wealth (log)}
+        \label{sfig:by_educ_g1_main_gw_nlog}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/d_heterog/comb_by_educ_g1_gw_nlog_main.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.9\textwidth}
+        \caption{Unemployment Experience (months)}
+        \label{sfig:by_educ_g1_main_expue}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/d_heterog/comb_by_educ_g1_expue_main.pdf}
+    \end{subfigure}
+%    \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/d_heterog/comb_by_educ_g1_gw_nlog_main.pdf}
+    \caption{Effect heterogeneity by educational attainment}
+    \label{fig:heterog_educ}
+    \fnote{Note: \commonnotesheterogb}
+\end{figure}
+
+
+
+When focusing on the unemployment experience, a group distinction becomes clearer, as depicted in
+\cref{sfig:by_educ_g1_main_expue}. The general pattern in the physical domain is similar to that depicted in
+the main analysis, illustrating a distinct pre-treatment trend that extends linearly into the post-treatment
+period. However, there is a variation in magnitude between both subgroups, with the less educated experiencing
+an effect twice as large as the one faced by the highly educated.
+
+Turning our attention to the mental health domain, the general pattern also mirrors that of the main analysis,
+where the assumption of a common trend is more plausible. In this case, the effect is primarily driven by the
+less educated group, manifesting an impact of around five months of unemployment experience eight years after
+the event. In contrast, for the highly educated, the effect amounts to approximately $1.5$ months of
+unemployment in the same time frame.
+
+
+\topic{Heterogeneity by age group}%
+% ----------------------------------------------------------------------------
+%
+%% FIG: Effect heterogeneity by age groups
+\begin{figure}[tb!]
+    \centering
+    \begin{subfigure}{0.95\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/d_heterog/comb_by_age_g3_gw_nlog_main.pdf}
+        \label{sfig:comb_by_age_g3_gw_nlog_main}
+    \end{subfigure}
+    \begin{subfigure}{0.95\textwidth}
+        \caption{Unemployment Experience (months)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/d_heterog/comb_by_age_g3_expue_main.pdf}
+        \label{sfig:comb_by_age_g3_expue_main}
+    \end{subfigure}
+    \caption{Effect heterogeneity by age groups}
+    \label{fig:heterog_age}
+    \fnote{Note: \commonnotesheterogb}
+\end{figure}
+
+One can anticipate differences in wealth accumulation and (dis)savings patterns over the life cycle. To explore
+heterogeneity by age, three groups are defined: younger (aged 18 to 39), prime-age (40 to 55), and older adults 
+(56 to 75). These cutoff points were chosen to achieve groups roughly equal in sample size, but also aiming on
+capturing three distinct stages in the wealth accumulation trajectory. The first group begins, on average, with
+minimal wealth but can rapidly build it up in this time window. The second group, on average, starts with an
+already consolidated wealth value but can still experience further accumulation, stabilization, or
+disaccumulation. Meanwhile, the third group is likely to start experiencing dissavings to a lesser or higher
+extent.
+
+
+When dividing the sample into three groups, one should exercise caution in interpretation due to the
+statistical imprecision that arises. With that in mind, examining the wealth panels in
+\cref{sfig:comb_by_age_g3_gw_nlog_main}, the general pattern appears similar to that of the main analysis.
+However, the parallel trends assumption, as judged by the pre-treatment trends, may seem plausible for some
+groups but less so for the others. Even refraining from interpreting a causal effect, one can clearly observe
+distinct subgroup accumulation paths, which could be the subject of deeper examination.
+
+
+When looking at the unemployment experience, as depicted in \cref{sfig:comb_by_age_g3_expue_main}, a result
+similar to that in the main analysis becomes apparent. There is a more pronounced hint\,---\,stronger in the
+physical domain and less so in the mental domain\,---\,that the prime-age group is more strongly affected by the
+adverse health outcome. Similar to the main analysis, however, only in the mental health domain does the
+pre-treatment trend corroborate the parallel trends assumption.
+
+
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+\subsection{Validation and Robustness Checks}
+\label{sec:main_valid_robust}
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+\subsubsection{Treatment assignment rule}
+\label{sec:validtreatrule}
+
+
+To validate the treatment assignment rule, as described in detail in \cref{sec:treatassigrule}, I reapply the
+procedure to variables that are intrinsically related to the measures of physical and mental health. With that,
+strong correlations with the adverse health outcome are to be expected. Clearly, the aim here is not to
+evaluate the impact on such measures, since they are basically different facets of the same concept, but to
+validate the assignment rule and better understand the model. For that, I examine a few measures of subjective
+health and well-being, as well as specific health diagnoses. 
+
+
+All four variables depicted in \cref{fig:csdid_subjective} are measured on an 11-point Likert scale, ranging
+from very unsatisfied to very satisfied with the current item. A few insights emerge. First, the effect is
+long-lasting in both domains when looking at life and health satisfaction, meaning that the effect does not
+bounce back to 0 after the adverse event. Satisfaction with income or work, on the other hand, shows a slow
+trend back towards 0.
+
+Another insight, when comparing the two health domains and leaving aside the difference in magnitude, is that the mental health shock has a stronger impact on life satisfaction than on health satisfaction. 
+This suggests that the items measured by the MCS weigh more heavily on overall life satisfaction, whereas physical health is more saliently measured by the PCS.
+The magnitude of the mental health shock is similar concerning life and health satisfaction. In contrast, the physical health shock shows a considerably stronger impact on health than on life satisfaction.
+
+
+Focusing on the pre-trends, especially in the mental health domain in panels a, b, and d, a pattern emerges
+where the Average Treatment Effects on the Treated (ATT's) converge towards 0 . 
+This suggests the existence of anticipation a few periods before treatment (as defined by the chosen treatment rule).
+An appealing extension would be to set the treatment time one or two periods before experiencing the more drastic adverse health
+outcome to account for this anticipation. 
+Nevertheless, the visible kink around $e=-2$ does indicate that there was a considerable divergence in the paths between treated and control units occurring due to (or for other reasons, but concurrently) the health shock.
+%todo: mention this in the discussion (anticipation adjust, effect bias!!)
+
+
+% ---------------------------------------------------------------------------------------------------------------------
+% Validation on subjective health and well-being comparison
+% ---------------------------------------------------------------------------------------------------------------------
+\begin{figure}[tb!]
+    \centering
+    \begin{subfigure}{0.475\textwidth}
+        \caption{Current Life Satisfaction}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_sats_life_1o2_main.pdf}
+        \label{fig:csdid_subjective:a}
+    \end{subfigure}
+    \begin{subfigure}{0.475\textwidth}
+        \caption{Satisfaction With Health}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_sats_health_1o2_main.pdf}
+        \label{fig:csdid_subjective:b}
+    \end{subfigure}
+    \begin{subfigure}{0.475\textwidth}
+        \caption{Satisfaction With Income}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_sats_pinc_1o2_main.pdf}
+        \label{fig:csdid_subjective:c}
+    \end{subfigure}
+    \begin{subfigure}{0.475\textwidth}
+        \caption{Satisfaction With Work}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_sats_work_1o2_main.pdf}
+        \label{fig:csdid_subjective:d}
+    \end{subfigure}
+    \caption{Validation on subjective health and well-being measures} 
+    \label{fig:csdid_subjective}
+    \fnote{Notes: 
+        Variables measured in a 11-point Likert scale. 
+        Whiskers depict the 95\% confidence interval. 
+        }
+\end{figure}
+
+
+The variables depicted in \cref{fig:csdid_hltdiag} target four specific health diagnoses. 
+Two are from the physical domain, Back Pain and Cardiopathy, and two are from the mental domain, Depression and Sleep Disorder.
+The response variables are binary indicators of ever being diagnosed with the respective condition, so the coefficients can be interpreted as in the linear probability model. 
+Illustratively, a coefficient of 0.05 means a 5\% increase in the diagnosis rate of a given condition.
+
+
+% ---------------------------------------------------------------------------------------------------------------------
+% Validation with objective health diagnoses
+% ---------------------------------------------------------------------------------------------------------------------
+\begin{figure}[tb!]
+    \centering
+    \begin{subfigure}{0.475\textwidth}
+        \caption{Back Pain}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_backpain_ev_1o2_main.pdf}
+        \label{fig:csdid_hltdiag:a}
+    \end{subfigure}
+    \begin{subfigure}{0.475\textwidth}
+        \caption{Cardiopathy}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_cardio_ev_1o2_main.pdf}
+        \label{fig:csdid_hltdiag:b}
+    \end{subfigure}
+    \begin{subfigure}{0.475\textwidth}
+        \caption{Depression}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_depres_ev_1o2_main.pdf}
+        \label{fig:csdid_hltdiag:c}
+    \end{subfigure}
+    \begin{subfigure}{0.475\textwidth}
+        \caption{Sleep Disorder}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_1_sleep_ev_1o2_main.pdf}
+        \label{fig:csdid_hltdiag:d}
+    \end{subfigure}
+    \caption{Validation with selected measures of health diagnoses} 
+    \label{fig:csdid_hltdiag}
+    \fnote{Notes: 
+        Response variables are binary indicators of being ever diagnosed with the respective condition.
+        Panels have different scale on the y-axis.
+        Whiskers depict the 95\% confidence interval}
+\end{figure}
+
+The four panels show a few patterns that are useful for assessing the inner workings of the models.
+The \cref{fig:csdid_hltdiag:a,fig:csdid_hltdiag:b}, for example, confirm that the health shock in the physical domain is more strongly associated with back pain and cardiopathy than the shock in the mental domain.
+On a more technical note, we observe a pre-trend that is parallel to the 0 line but significantly different from 0.
+This indicates an anticipation of one period but not longer, since we are measuring the ATT's against the reference period when $e=-2$.
+If that is true, adjusting for anticipation by assigning the treatment time one period prior to the current rule could better capture the treatment effect.
+In that case, the post-treatment effect would be higher than currently shown.
+
+
+In \cref{fig:csdid_hltdiag:c,fig:csdid_hltdiag:d}, with variables related to mental health, we observe that the shock from both domains seems to capture a similar increase in the diagnostic rate after the event.
+While this could raise concerns about using health scores obtained from obliquely rotated factors, the results are very similar when using scores obtained from orthogonal rotation following a Principal Components Analysis (see
+\cref{fig:csdid_hltdiag_rep} on page \pageref{fig:csdid_hltdiag_rep}).
+
+In conclusion, we gather that the assignment rule is able to capture variations in subjective well-being measurements as well as in specific health diagnoses in the physical and mental domain.
+
+
+
+
+% -------------------------------------------------------------------------------------------------
+%  Robustness checks ----
+% -------------------------------------------------------------------------------------------------
+\subsection{Robustness Checks}
+\label{sec:robusts_specific}
+
+In the following, I present a series of alternative specifications and model variations conducted to assess the robustness of the results obtained.
+
+% -------------------------------------------------------------------------------------------------
+\subsubsection{Model specification} In order to assess model stability, I compare the main results with four other specifications. These alternative results are presented in \cref{fig:ep_gw_nlog,tab:t_cmp_gw_nlog}. 
+Note that all robustness models are to be compared against the primary specification from the main analysis; that
+is, P1 and M1 are to be compared against P1\tsub{(a)} to P1\tsub{(d)} and M1\tsub{(a)} to M1\tsub{(d)}, respectively.
+
+The specifications vary in terms of the comparison units, by keeping not-yet-treated units in the control group (models tagged with subscript \textit{a}). 
+Furthermore, a model without covariates was run, which implies a simpler $DiD$ without the Doubly-Robustness property, since no covariates are used to predict treatment probabilities (tagged with subscript \textit{b}).
+Additionally, to account for attrition, the inverse probability of remaining in SOEP is used as weights in one specification  (tagged with subscript \textit{c}). An evidence of panel attrition differentially affecting the participation length over wealth quintiles is presented in \cref{fig:kpmesurvnwqileage}. 
+Finally, a model with a \textit{balanced} panel is also estimated, where the sample is restricted to people that remains in SOEP from 2002 to 2020 (tagged with subscript \textit{d}). 
+In this specification, there are 2,371 unique individuals and 22,687 total observations in the physical health domain.
+In the mental domain, the figures are 2,110 and 20,010, respectively.  
+%
+Note that some individuals are automatically dropped in the estimation procedure due to, e.g., restricting the event window so that the number of total observations is not exactly $N \times T$.
+
+The results are stable across specifications, and similar to those obtained in the main analysis, with the balanced specification (P1\tsub{d} and  M1\tsub{d}) being the closest ones. 
+The coefficients in the other models are lower by about two to three percentage points, but the general pre and post-treatment remain similar. 
+
+
+% -------------------------------------------------------------------------------------------------
+\subsubsection{Treatment assignment rule}
+
+One possible source of vulnerability in the main specification is the discretionary choice of the treatment
+rule. 
+To assess if this poses a risk to the interpretation of the main analysis, I replicate it with a different treatment assignment rule. 
+In this case, individuals are assigned to treatment after only one experience of an adverse health outcome, while the threshold is set to one standard deviation lower than the median health score values of people of the same age and gender. 
+The higher threshold is chosen so that not too many people are assigned to treatment at a point or another.
+
+The results, as presented in detail in \cref{tab:diff_treat_rule,fig:diff_treat_rule}, and focusing in the main specification with $\log$ of gross wealth as response variable, show a reduction of about half in the physical health domain. 
+The \textit{Simple ATT} of P1\tsub{r} reduces to~$-3.44\%$ (from~$6.5\%$ in P1) and the post average aggregates to~$-4.8\%$, albeit with a relatively large standard error of~$2.49$ deeming it statistically insignificant.
+
+In the mental domain, the results are more in line with those obtained in the main analysis. 
+The~$simple~ATT$ of M1\tsub{r} is estimated at~$−7.36\%$ (compared to~$−8.34\%$ from M1), and the post-average is~$-9.66\%$ (from~$-10.30\%$) and still significant at any conventional level. 
+In the longer term, the center of the estimated coefficients are slightly reduced in the longer term. 
+In the M1\tsub{r}, the coefficients six to twelve years after the event of stabilizes at around~$-12\%$ (compared to~$-13$ to~$-15\%$ from M1).
+
+In conclusion, the results are considerable stable in the mental health domain over different specifications. 
+In the physical domain, we gather evidence of some model dependency, meaning that the results are more susceptible to variation depending on the exact modeling specifications. 
+In the secondary models P2--P4 (those with net wealth or wealth measured in levels), the results are more stable. 
+However, due to pre-trend issues and the expectation that the parallel trends hold in relative but not in absolute terms, I give more weight to the primary models, which capture the evolution of gross wealth in relative terms.
+

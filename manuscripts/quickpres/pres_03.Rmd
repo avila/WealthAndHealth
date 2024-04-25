@@ -1,0 +1,168 @@
+---
+title: "The health-wealth nexus over the life cycle"
+fontsize: 10.5pt
+date: "`r format(Sys.time(), '%d.%m.%Y')`"
+author: "Marcelo Rainho Avila"
+institute: "Free University Berlin"
+output: 
+  beamer_presentation:
+    incremental: true
+header-includes:
+- \usepackage{caption}
+- \usepackage{bm}
+- \usepackage{graphicx}
+- \usepackage{pgfpages}
+- \captionsetup[figure]{labelformat=empty}
+- \captionsetup[table]{labelformat=empty}
+- \definecolor{links}{HTML}{2A1B81}
+- \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+#- \setbeameroption{show notes on second screen}
+#- \setbeameroption{show only notes}
+#- \pgfpagesuselayout{8 on 1}[a4paper,border shrink=1mm]
+theme: metropolis
+classoption: "aspectratio=169"
+bibliography: bib.bib
+link-citations: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Overview 
+
+## Thesis structure 
+
+
+- Intro
+- (Re)Constructing mcs and pcs from factor model of _subjective health measures_
+     - Discussion on differences between SOEP's and my factor model
+- Validating MCS and PCS (based on other more _objective_ variables)
+- Estimation of longitudinal clusters (GBTM) 
+- Main analysis: How does (mental/physical) health affect wealth build up
+     - Implement a matching method? 
+     - Implement a "event study" as in "out for good"?
+- Optional: detailed descriptives of health outcome across the wealth distribution (also over the life cycle)
+
+## Longitudinal Clusters
+
+\centering Longitudinal clusters of net wealth over the life cycle
+\centering![](../../output/figures/longclust/fig_traj_18_75_3333_nw_curt.pdf){width=70%}
+
+
+::: notes 
+- 4 groups. 
+- starting conditions in terms of wealth is very similar for the 3 groups
+:::
+
+## health scores by trajectory group I: mcs and pcs
+
+\centering 
+![](../../output/figures/diff_health_by_clust/fig_dhbc_breg_mcs_main_1875.pdf){width=49%}
+![](../../output/figures/diff_health_by_clust/fig_dhbc_breg_pcs_main_1875.pdf){width=49%}
+
+- Indication of survivorship bias kicking in at around age 60 in cluster 1 for both variables
+- Indication of (small) starting differences, and increase over the life cycle
+
+## health scores by trajectory group: mcs and pcs variation
+
+\centering
+![](../../output/figures/diff_health_by_clust/fig_dhbc_breg_mcs_main_sd_1875.pdf){width=49%}
+![](../../output/figures/diff_health_by_clust/fig_dhbc_breg_pcs_main_sd_1875.pdf){width=49%}
+
+- Using variation of health components as a measure of _health shock_
+
+## Research question 
+
+1. Whether mental and physical health impacts wealth build-up in a relatively long term (8 to 10 years intervals). 
+1. Whether a high variation in mental and physical health impacts wealth build-up.
+1. How do mental and physical health differs across wealth distribution over the life cycle.
+
+
+## Choices: model specification 
+
+
+### a: on the model specification choice 
+
+\begin{equation}
+  \tag{1: Residualized change model}
+  \label{eq:regressor}
+  W_2 = \alpha_1 + \alpha_2 T + \beta W_1 + ... + \epsilon
+\end{equation}
+\begin{equation}
+  \tag{2: Change scores method}
+  \label{eq:delta}
+  \Delta W = W_2 - W_1 = \alpha_1 + \alpha_2 T + ... + \epsilon
+\end{equation}
+
+\pause
+
+- The **Lord's paradox** @lord1967 raises the issue of when it is appropriate to control for baseline (or starting conditions) status
+
+- Paul @allison1990 defends the _change scores method_, which he calls _"the underdog"_ at the time, but when
+expected that $W_1 \xrightarrow{\text{causal}} W_2$, then the _regressor variable approach_  is better
+indicated (see ibid, pg 110). 
+
+- Note that the _change scores method_ is a restricted form of the _residualized change model_, with $\beta$ fixed to $1$.
+
+
+## Choices: transfomartion 
+
+### b: on the transformation choice
+
+\begin{equation}
+  g(W_2)- g(W_1)
+\end{equation}
+\begin{equation}
+  g(W_2 - W_1)
+\end{equation}
+
+
+- Possible transformations: identity, neglog, asinh, cubic root, percentile rank, etc.
+- Question: what does the choice between (1) and (2) would change, a priori?
+- To use net wealth or gross wealth? 
+
+## Regression design 
+
+$$
+g({W_{i|age=32}}) = \alpha_0 + \alpha_1 hs^{mean}_{i|age \in [21..30]} + \alpha_2 hs^{sd}_{i|age \in [21..30]} +
+\beta W_{i|age=20} + \bm{\alpha X_{i}} + \epsilon_{i}
+$$
+$$
+g({W_{i|age=42}}) = \alpha_0 + \alpha_1 hs^{mean}_{i|age \in [31..40]} + \alpha_2 hs^{sd}_{i|age \in [31..40]} +
+\beta W_{i|age=30} + \bm{\beta X_{i}} + \epsilon_{i}
+$$
+$$
+... \text{ and so on } ...
+$$
+
+- I can also do a single model with a relative period, but with separate models one can also check for differences 
+in coeffecients over the life cycle.
+- $g()$ is the cubic root here, but other transformations available (asinh, neglog, 5th root, etc)
+- $hs$ stands for _health score_. For simplicity only one is displayed, but both components are included in actual regression.
+- $W$ is currently Net Wealth, but gross wealth also available (and easier to model).
+
+
+## Open questions or "To do's"
+
+- \alert<1>{Bad (and good) controls}
+- \alert<2>{Some generational control (parents education?)}
+- \alert<3>{Distance matching or weighting (with continuous treatment?)}
+- \alert<4>{Construct balanced panel (only those with at least $x$ years presence?)}
+- \alert<5>{How to deal with panel attrition (a priori: lower health scores correlates with attrition, specially later in life)}
+
+::: notes 
+- Bad control: should (HH) income be considered a control variable?
+:::
+
+
+<!-- ## quotes -->
+
+<!-- "if Y is ordinal, the difference between two ordinal variables is no longer ordinal" -->
+<!-- > https://stats.stackexchange.com/a/15795 -->
+
+
+## References 
+
+\footnotesize

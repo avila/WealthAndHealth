@@ -1,0 +1,569 @@
+% -------------------------------------------------------------------------------------------------
+% input figures with histograms of mental and physical health questions ----
+% -------------------------------------------------------------------------------------------------
+
+
+
+
+\newcommand{\vlgwnlog}{Gross Wealth (log)}                   % gw_nlog
+\newcommand{\vlnwnlog}{Net Wealth (neglog)}                  % nw_nlog
+\newcommand{\vlgw}{Gross Wealth (k€, winsored)}              % gw
+\newcommand{\vlnw}{Net Wealth (k€, winsored)}                % nw
+\newcommand{\vlexpue}{Unemployment exp. (months)}            % expue
+\newcommand{\vlexpft}{Full-Time exp. (months)}               % expft
+\newcommand{\vlemplstatus}{Employment Status of Individual}  % empl_status
+\newcommand{\vllaborearns}{Individual Labor Earnings}        % labor_earns
+\newcommand{\vlcardioev}{Cardiopathy}                        % cardio_ev
+\newcommand{\vldepresev}{Depression}                         % depres_ev
+
+
+% -------------------------------------------------------------------------------------------------
+%  {\vlgwnlog}{Gross Wealth (log)}                   % gw_nlog
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+\begin{figure}[htb!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log)\qquad Models: P1\tsub{a} / M1\tsub{a}}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep1_gw_nlog.pdf}
+        \label{sfig:ep1_gw_nlog}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log)\qquad Models: P1\tsub{b} / M1\tsub{b}}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep2_gw_nlog.pdf}
+        \label{sfig:ep2_gw_nlog}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log)\qquad Models: P1\tsub{c} / M1\tsub{c}}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep3_gw_nlog.pdf}
+        \label{sfig:ep3_gw_nlog}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log)\qquad Models: P1\tsub{d} / M1\tsub{d}}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/f_robust/ep4_gw_nlog.pdf}
+        \label{sfig:ep4_gw_nlog}
+    \end{subfigure}
+    \caption{Varying model specification}
+    \label{fig:ep_gw_nlog}
+    \fnote{Notes: Replications with $\log(Gross~Wealth)$ as response variable with  different specifications to check for model dependence.\\
+        Models P1\tsub{a} and M1\tsub{a} include not-yet-treated (as well as never-treated) as comparison units. \\ 
+        Models P1\tsub{b} and M1\tsub{b} do not include any covariates. \\
+        Models P1\tsub{c} and M1\tsub{c} include covariates and are weighted by the inverse probability of remaining in the SOEP, to account for sample attrition might have differential impact over the wealth
+        distribution. \\
+        Models P1\tsub{d} and M1\tsub{d} are balanced, estimated with people present from 2002 to 2020.
+        %                todo: this part to main text body 
+        The coefficients are stable across models and similar to those obtained from the 
+        main specifications P1 and M1. The estimated coefficients of the mental
+        health domain are consistently higher than those of the physical domain. 
+        Coefficients (and standard errors) already transformed to represent the effect in percentage terms. 
+        The same results are also presented in \cref{tab:t_cmp_gw_nlog}.}
+\end{figure}
+
+%S[table-format=1.3, table-space-text-post ={***}]
+% -------------------------------------------------------------------------------------------------
+%\newcolumntype{p}{>{\columncolor{cp}}S}
+%\newcolumntype{P}{>{}S[table-number-alignment = left]}
+%\newcolumntype{P}{>{\columncolor{cp}}S[table-number-alignment = left]}
+%\newcolumntype{M}{>{\columncolor{cm}}S[table-number-alignment = left]}
+\begin{table}[htb!]
+    \begin{adjustbox}{max width=\textwidth}
+        \begin{threeparttable}
+            \scriptsize
+            \caption{Varying model specification}
+            \label{tab:t_cmp_gw_nlog}
+            %            \setlength{\tabcolsep}{12pt}
+            \begin{tabular}{l*{4}{P}*{4}{M}}
+                \toprule
+                & \multicolumn{4}{l}{Physical Health} & \multicolumn{4}{l}{Mental Health}                             \\ %\cmidrule(lr){2-5} \cmidrule(lr){6-9} 
+                & \multicolumn{4}{l}{Gross Wealth (log)} & \multicolumn{4}{l}{Gross Wealth (log)}                             \\ \cmidrule(lr){2-5} \cmidrule(lr){6-9} 
+                & {(P1\tsub{a})}       & {(P1\tsub{b})}       & {(P1\tsub{c})}        & {(P1\tsub{d})}        & {(M1\tsub{a})}       & {(M1\tsub{b})}       & {(M1\tsub{c})}        & {(M1\tsub{d})}       \\
+                & (\%)       & (\%)               & (\%)                & (\%)                & (\%)       & (\%)               & (\%)                &  (\%)              \\
+                \midrule%
+                \input{./incl/tbls/t_cmp_gw_nlog.tex}
+            \end{tabular}
+            \begin{tablenotes}[para,flushleft]
+                \vspace*{-\baselineskip} {\raggedleft*~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$\\}
+                Notes: Replications with $\log(Gross~Wealth)$ as response variable with different specifications to check for model dependence.  
+                Wild Bootstrap standard error in parenthesis. 
+                \item Models P1\tsub{a} and M1\tsub{a} include not-yet-treated (as well as never-treated) as comparison units. \\ 
+                \item Models P1\tsub{b} and M1\tsub{b} do not include any covariates. \\
+                \item Models P1\tsub{c} and M1\tsub{c} include covariates and are weighted by the inverse probability of remaining in the SOEP, to account for sample attrition might have differential impact over the wealth
+                distribution. \\
+                \item Models P1\tsub{d} and M1\tsub{d} are balanced, estimated with people present from 2002 to 2020.
+                %                todo: this part to main text body 
+                The coefficients are stable across models and similar to those obtained from the 
+                main specifications P1 and M1. 
+                The covariates included are gender, age spline, federal state residence, legal disability, marital status, and years of education.
+                Coefficients (and standard errors) already transformed to represent the effect in percentage terms. 
+                For a visual representation of the same results see \cref{fig:ep_gw_nlog}.
+            \end{tablenotes}
+        \end{threeparttable}
+    \end{adjustbox}
+\end{table} % todo: include number in balanced model
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+
+
+
+% -------------------------------------------------------------------------------------------------
+% tab:diff_treat_rule ----
+% -------------------------------------------------------------------------------------------------
+\begin{table}[htbp!]
+    \centering \
+    \begin{adjustbox}{max width=1\textwidth}
+        \begin{threeparttable}
+            \scriptsize
+            \caption{Table of results with different treatment rule}
+            \label{tab:diff_treat_rule}
+            \setlength{\tabcolsep}{6pt}
+            \begin{tabular}{l PPPP MMMM}
+                \toprule
+                & \multicolumn{4}{l}{Physical Health} & \multicolumn{4}{l}{Mental Health}                             \\ \cmidrule(lr){2-5} \cmidrule(lr){6-9} 
+                & \multicolumn{2}{l}{(neg)log} & \multicolumn{2}{l}{level} & \multicolumn{2}{l}{(neg)log} & \multicolumn{2}{l}{level} \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} 
+                & {gross (\%)} & {net (\%)$^1$} & {gross} & {net} & {gross (\%)} & {net (\%)$^1$} & {gross} & {net}           \\ 
+                & {(P1\tsub{r})}       & {(P2\tsub{r})}       & {(P3\tsub{r})}        & {(P4\tsub{r})}        & {(M1\tsub{r})}       & {(M2\tsub{r})}       & {(M3\tsub{r})}        & {(M4\tsub{r})}       \\
+                \midrule%
+                \input{./incl/tbls/tbl_full_main_bd_1_ct1.tex}
+            \end{tabular}
+            \begin{tablenotes}[para,flushleft]
+                \vspace*{-\baselineskip} 
+                {\raggedleft*~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$ \\}
+                Notes: Results of replicating the primary model with a different assignment rule. 
+                Instead of having to experience a negative health outcome at least twice, people experiencing it 
+                only once is already assigned to treatment. Further, the threshold is 1~Std.~Dev. instead of $1/2$ used in the main analysis. 
+                In general, the results are similar, but consistently smaller than in the main analysis. The difference is
+                around half to two thirds of estimations in the main results. The only model which is not strongly affected
+                by these parameter changes is the one with gross wealth in logarithms as the response variable, M1\tsub{r} in the
+                robustness checks and M1 in the main analysis. 
+                The covariates included are gender, age spline, federal state residence, legal disability, marital status, and years of education.
+                $^1$Coefficients (and standard errors) of log specifications are transformed to represent the effect in percentage terms, but
+                such interpretation of the neglog transformation might be biased (see \cref{sec:transformcoefs})
+                Wild Bootstrap standard error in parenthesis. 
+                The main results are presented in \cref{tab:main_res_event} and the corresponding notes 
+                on the procedure apply to this table equally. 
+            \end{tablenotes}
+        \end{threeparttable}
+    \end{adjustbox}
+\end{table}
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+
+
+
+
+
+% -------------------------------------------------------------------------------------------------
+% figure: robustness checks (diff treat rule) ----
+% -------------------------------------------------------------------------------------------------
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log)\\(P1\tsub{r} / M1\tsub{r})}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_11_gw_nlog_1_ct1.pdf}
+        \label{sfig:did_gw_nlog1ct1}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Net Wealth (neglog)\\(P2\tsub{r} / M2\tsub{r})}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_21_nw_nlog_1_ct1.pdf}
+        \label{sfig:did_nw_nlog1ct1}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (k€, winsored)\\(P3\tsub{r} / M3\tsub{r})}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_31_gw_1_ct1.pdf}
+        \label{sfig:did_gw1ct1}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Net Wealth (k€, winsored)\\(P4\tsub{r} / M4\tsub{r})}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_41_nw_1_ct1.pdf}
+        \label{sfig:did_nw1ct1}
+    \end{subfigure}
+    \caption{Event-study results with different treatment assignment rule}
+    \label{fig:diff_treat_rule}
+    \fnote{Notes: The results corresponding to this panel is presented in \cref{tab:diff_treat_rule}.
+        The same notes apply to this figure. }
+\end{figure}
+
+
+
+% pcs_main        // Physical Health (oblique)
+% gw_nlog         // Gross Wealth (log)
+% gw              // Gross Wealth (k€, winsored)
+% pcs_main        // Physical Health (oblique)
+% empl_status     // Employment Status of Individual
+% sats_health     // Satisfaction With Health
+% mcs_main        // Mental Health (oblique)
+% gw_nlog         // Gross Wealth (log)
+% gw              // Gross Wealth (k€, winsored)
+% mcs_main        // Mental Health (oblique)
+% expue           // Unemployment exp. (months)
+% sats_health     // Satisfaction With Health
+
+
+
+
+\begin{figure}[htb!]
+    % -------------------------------------------------------------------------------------------------
+    % var: pcs_main         % Physical Health Domain
+    % -------------------------------------------------------------------------------------------------
+    % -------------------------------------------------------------------------------------------------
+    \centering \setcounter{subfigure}{0}% Reset subfigure counter
+    %%A: Physical Health Domain
+    %\\ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Physical Health (oblique)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_pcs_main_pcs_main_n1_win1.pdf}
+        \label{sfig:fpcsmainpcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_gw_nlog_pcs_main_n1_win1.pdf}
+        \label{sfig:fgwnlogpcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Gross Wealth (k€, winsored)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_gw_pcs_main_n1_win1.pdf}
+        \label{sfig:fgwpcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Mental Health (oblique)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_pcs_main_mcs_main_n1_win1.pdf}
+        \label{sfig:fpcsmainmcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Unemployment exp. (months)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_expue_pcs_main_n1_win1.pdf}
+        \label{sfig:fexpuepcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Satisfaction With Health}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_sats_health_pcs_main_n1_win1.pdf}
+        \label{sfig:fsatshealthpcsmain}
+    \end{subfigure}
+    % start main caption
+    \caption{Development of selected variables from event study (Physical Health Domain)}
+    \label{fig:inlevelspcsmain}
+    \fnote{Panels depict the evolution of selected variables for the
+        treated group (in red) and the untreated (in blue). In panel (a), one can see that, on average, the untreated do experience a strong direct impact at $e=0$
+        but it recovers to the previous values in the next period ($e=2$), while the treated recovers only
+        slightly and carry on on a downward trend. In panel (d), one can see the cross effect on the other health domain. That is,
+        how does the shock in the one health dimension affect the other health dimension. Whiskers depict the 99\% confidence interval. \\
+        Notes:\\
+        - a: The untreated group, by definition, are not
+        assigned a ``event year'', so their event is set as the year when they experience their worst
+        health outcome, albeit still below the threshold. The actual DiD procedure do not impute any treatment
+        year for the untreated, but for this visualization, one has to set a date or assign randomly and any
+        choice would have some drawbacks. This choice is able depicting the evolution of people on limit of treatment assignment.\\
+        - b: The vertical line depict the last period before (imputed) treatment taking place.\\
+        - c: To avoid sample composition affecting the interpretation of these figures, the sample is restricted to a balanced panel.}
+\end{figure}
+
+\begin{figure}[htb!]
+    % -------------------------------------------------------------------------------------------------
+    % var: mcs_main         % Mental Health Domain
+    % -------------------------------------------------------------------------------------------------
+    % -------------------------------------------------------------------------------------------------
+    \centering \setcounter{subfigure}{0}% Reset subfigure counter
+    %%A: Mental Health Domain
+    %\\ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Mental Health (oblique)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_mcs_main_mcs_main_n1_win1.pdf}
+        \label{sfig:fmcsmainmcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_gw_nlog_mcs_main_n1_win1.pdf}
+        \label{sfig:fgwnlogmcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Gross Wealth (k€, winsored)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_gw_mcs_main_n1_win1.pdf}
+        \label{sfig:fgwmcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Physical Health (oblique)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_mcs_main_pcs_main_n1_win1.pdf}
+        \label{sfig:fmcsmainpcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Unemployment exp. (months)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_expue_mcs_main_n1_win1.pdf}
+        \label{sfig:fexpuemcsmain}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Satisfaction With Health}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_sats_health_mcs_main_n1_win1.pdf}
+        \label{sfig:fsatshealthmcsmain}
+    \end{subfigure}
+    % start main caption
+    \caption{Development of selected variables from event study (Mental Health Domain)}
+    \label{fig:inlevelsmcsmain}
+    \fnote{Notes: points a: b: and c: of \cref{fig:inlevelspcsmain} also apply, as well as similar interpretation of each panels.
+        Emphasis here to panel (e), showing a nice example of the effect taking place after not only parallel but equal pre-trend.}
+\end{figure}
+
+
+
+\begin{figure}
+    \centering
+    {Kaplan--Meier survival estimates}\par
+    \includegraphics[width=0.7\linewidth]{../../output/figures/attrition/kpme_surv_nw_qile_age}
+    \caption{Survival analysis of SOEP participants by wealth quintiles}
+    \label{fig:kpmesurvnwqileage}
+    \fnote{
+        Notes: This graph evidentiates the gradient in panel attrition by wealth levels.
+        It depicts an unadjusted survival estimate of participation length for each quintile of 
+        age-adjusted gross wealth.  While the four upper quintile groups show a similar survival rate, 
+        those in the bottom quintile are less likely to remain as long in the SOEP.
+        The graph suggests that the differential attrition 
+        rate is stronger in the first 5 years. From then on, the curves evolve parallel to one another. 
+        For this analysis, SOEP's entering yeard is used, including if it happened before 2002. Those that dropped out
+        before 2002 (from when on wealth data are available) are not considered for this examination. 
+        Data source: SOEPv37.
+        }
+\end{figure}
+
+
+
+
+
+
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+% PCS_DEF ----
+\chapter{Replications based on the SF-12 method}%
+%
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------
+\begin{figure}
+    % -------------------------------------------------------------------------------------------------
+    % var: pcs_def         % Physical Health Domain
+    % -------------------------------------------------------------------------------------------------
+    % -------------------------------------------------------------------------------------------------
+    \centering \setcounter{subfigure}{0}% Reset subfigure counter
+    \renewcommand{\thesubfigure}{P\alph{subfigure}}
+    Physical Health Domain
+    \\ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Physical Health (oblique)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_pcs_def_pcs_def_n1_win1.pdf}
+        \label{sfig:fpcsdefpcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_gw_nlog_pcs_def_n1_win1.pdf}
+        \label{sfig:fgwnlogpcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Gross Wealth (k€, winsored)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_gw_pcs_def_n1_win1.pdf}
+        \label{sfig:fgwpcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Mental Health (oblique)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_pcs_def_mcs_def_n1_win1.pdf}
+        \label{sfig:fpcsdefmcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Unemployment exp. (months)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_expue_pcs_def_n1_win1.pdf}
+        \label{sfig:fexpuepcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Satisfaction With Health}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_sats_health_pcs_def_n1_win1.pdf}
+        \label{sfig:fsatshealthpcsdef}
+    \end{subfigure}
+%    % start def caption
+%    \caption{Development of selected variables from event study (Physical Health Domain)}
+%    \label{fig:inlevelspcsdef}
+%    \fnote{}
+%\end{figure}
+%\begin{figure}[htb!]
+%    % -------------------------------------------------------------------------------------------------
+%    % var: mcs_def         % Mental Health Domain
+%    % -------------------------------------------------------------------------------------------------
+%    % -------------------------------------------------------------------------------------------------
+    \centering \setcounter{subfigure}{0}% Reset subfigure counter
+    \renewcommand{\thesubfigure}{M\alph{subfigure}}
+    Mental Health Domain
+    \\ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Mental Health (oblique)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_mcs_def_mcs_def_n1_win1.pdf}
+        \label{sfig:fmcsdefmcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Gross Wealth (log)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_gw_nlog_mcs_def_n1_win1.pdf}
+        \label{sfig:fgwnlogmcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Gross Wealth (k€, winsored)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_gw_mcs_def_n1_win1.pdf}
+        \label{sfig:fgwmcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Physical Health (oblique)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_mcs_def_pcs_def_n1_win1.pdf}
+        \label{sfig:fmcsdefpcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Unemployment exp. (months)}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_expue_mcs_def_n1_win1.pdf}
+        \label{sfig:fexpuemcsdef}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \caption{Satisfaction With Health}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/h_descr/f_sats_health_mcs_def_n1_win1.pdf}
+        \label{sfig:fsatshealthmcsdef}
+    \end{subfigure}
+    % start main caption
+    \caption{Development of selected variables based on SF-12 method}
+    \label{fig:inlevelsmcsdef}
+    \fnote{Notes: Replication of \cref{fig:inlevelspcsmain,fig:inlevelsmcsmain} using PCS and MCS following the SF-12 method.
+    Here one can observe the negative cross-effect in \subref{sfig:fpcsdefmcsdef} and \subref{sfig:fmcsdefpcsdef} where the adverse outcome 
+    in one dimension impacts the other dimension in the opposite direction. The pre-treatment trend, specially in \subref{sfig:fexpuepcsdef} 
+    and \subref{sfig:fexpuemcsdef}, are less supportive of the parallel trends assumption than in the alternative method.
+    Same considerations regarding the ``treatment date'' of the untreated stated in the notes of  \cref{fig:inlevelspcsmain} apply here as well.}
+\end{figure}
+
+
+
+
+
+% ---------------------------------------------------------------------------------------------------------------------
+% Validation with objective health diagnoses
+% ---------------------------------------------------------------------------------------------------------------------
+\begin{figure}[tb!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Depression}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_2_depres_ev_1o2_def.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Sleep Disorder}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/c_othervars/f_2_sleep_ev_1o2_def.pdf}
+    \end{subfigure}
+    \caption{Replication of validation of mental health diagnoses with orthogonal health scores} 
+    \label{fig:csdid_hltdiag_rep}
+    \fnote{Notes: This replication aims to show that also using orthogonal health scores, the effect follows 
+        a similar in both domains, similar to using oblique scores. 
+        Response variables are binary indicators of being ever diagnosed with the respective condition.
+        Panels have different scale on the y-axis. Whiskers depict the 95\% confidence interval}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------------------------------------------------------------------------------
+% figure: SF-12 default pcs mcs
+% -------------------------------------------------------------------------------------------------
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (log)\\(M1\tsub{sf12} / P1\tsub{sf12})}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_12_gw_nlog_1o2_ct2.pdf}
+        \label{sfig:did_sf12_a}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Net Wealth (neglog)\\(M2\tsub{sf12} / P2\tsub{sf12})}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_22_nw_nlog_1o2_ct2.pdf}
+        \label{sfig:did_sf12_b}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Gross Wealth (k€, winsored)\\(M3\tsub{sf12} / P3\tsub{sf12})}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_32_gw_1o2_ct2.pdf}
+        \label{sfig:did_sf12_c}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \caption{Net Wealth (k€, winsored)\\(M4\tsub{sf12} / P4\tsub{sf12})}
+        \includegraphics[width=.95\linewidth]{../../output/figures/csdid2/b_mcspcs/f_42_nw_1o2_ct2.pdf}
+        \label{sfig:did_sf12_d}
+    \end{subfigure}
+    \caption{Replication of main analysis with SF-12 scores}
+    \label{fig:did_sf12}
+    \fnote{Notes: These panels are a visual representation of the table of coefficients presented in \cref{tab:coefs_sf12}. 
+        Post-treatment, the effects are in line with those obtained in the main analysis. Pre-treatment, in contrast, seems 
+        to be less supportive of the parallel trends assumptions, including in the primary specifications with log-transformed 
+        gross wealth (P1\tsub{sf12} and M1\tsub{sf12}). To what extend this is driven by the particular treatment rule or
+        whether an artifact from the sf12 or from the alternative scores computes could be a matter of further inquiry.
+        To what extend should be, a priori, expected that the trends remain parallel 8 or 10 years prior to treatment 
+        is also worth considering. 
+    Whiskers depict the 95\% confidence interval.}
+\end{figure}
+
+
+
+\begin{table}[htbp!]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \begin{threeparttable}       
+            \caption{Table of coefficients of models based on the SF-12 methodology}
+            \label{tab:coefs_sf12} % \setlength{\tabcolsep}{4pt}
+            \begin{tabular}{l*4{P}*4{M}}
+                \toprule
+                & \multicolumn{4}{l}{Physical Health}   & \multicolumn{4}{l}{Mental Health}     \\ \cmidrule(lr{1em}){2-5} \cmidrule(lr{1em}){6-9}
+                & \multicolumn{2}{l}{(neg)log}               & \multicolumn{2}{l}{level} & \multicolumn{2}{l}{(neg)log} & \multicolumn{2}{l}{level} \\ \cmidrule(lr{1em}){2-3} \cmidrule(lr{1em}){4-5} \cmidrule(lr{1em}){6-7} \cmidrule(lr{1em}){8-9} 
+                & {gross (\%)} & {net (\%)$^1$} & {gross} & {net} & {gross (\%)} & {net (\%)$^1$} & {gross} & {net}               \\
+                & {(P1\tsub{sf12})}  & {(P2\tsub{sf12})}            & {(P3\tsub{sf12})}  & {(P4\tsub{sf12})}              & {(M1\tsub{sf12})}  & {(M2\tsub{sf12})}            & {(M3\tsub{sf12})}  & {(M4\tsub{sf12})}              \\  
+                \midrule
+                \input{./incl/tbls/tbl_full_def_bd_1o2_ct2.tex}% &
+            \end{tabular}%
+            \begin{tablenotes}[para,flushleft]%
+                \vspace*{-\baselineskip}
+                {\raggedleft*~$p<0.05$,~**~$p<0.01$,~***~$p<0.001$\\}
+                Notes: This results are a replication of \cref{tab:main_res_event} based on the SF-12 methodology for construction PCS and MCS. 
+                Wild Bootstrap standard error in parenthesis. 
+                A visual representation of this results are depicted in \cref{fig:did_sf12}
+                $^1$Coefficients (and standard errors) of log specifications are transformed to represent the effect in percentage terms, but
+                such interpretation of the neglog transformation might be biased (see \cref{sec:transformcoefs})
+            \end{tablenotes}
+        \end{threeparttable}
+    \end{adjustbox}
+\end{table}
+% -------------------------------------------------------------------------------------------------
+% end table 
+% -------------------------------------------------------------------------------------------------
+
+
+

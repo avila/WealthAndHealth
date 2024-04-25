@@ -1,0 +1,274 @@
+. foreach var of global health_vars_in_pl {
+  2.     qui levels_valid `var' 
+  3.     // search for variables that include years 2011, 12 OR 13 AND 2017, 18 or 19. 
+.     if ustrregexm("`r(levels)'", "(2011|2012|2013).*(2016|2017|2018|2019)") {
+  4.     
+.         local lab: variable label `var'
+  5.         di as res  "Var: `var'; `lab'"
+  6.         di as text "`r(levels)'"
+  7.         qui distinct `var'
+  8.         if `r(ndistinct)' > 50 {
+  9.             global list_of_good_vars_conti "$list_of_good_vars_conti `var'"
+ 10.         }
+ 11.         else {
+ 12.             global list_of_good_vars_categ "$list_of_good_vars_categ `var'"
+ 13.         }
+ 14.     }
+ 15. }
+Var: plb0024_h; Krankgemeldet ueber 6 Wochen Vorjahr [harmonisiert]
+1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: plb0024_v3; Laenger als 6 Wochen krank gemeldet  [1999-2019]
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0004; Gesundheitszustand beeintr. Treppen steigen
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0005; Gesundheitszustand beeintr. Anstreng. Taetigkeiten
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0006; Koerpergroesse in cm
+2002,2004,2006,2008,2010,2012,2014,2016,2018
+Var: ple0007; Koerpergewicht in kg
+2002,2004,2006,2008,2010,2012,2014,2016,2018
+Var: ple0008; Gesundheitszustand gegenwaertig
+1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0009; Einschraenkg.im Alltgasleben wg. gesundheitl. Probleme
+2011,2012,2013,2015,2016,2017,2018,2019
+Var: ple0011; Schlafstoerung
+2011,2013,2015,2017,2019
+Var: ple0012; Diabetes
+2009,2011,2013,2015,2017,2019
+Var: ple0013; Asthma
+2009,2011,2013,2015,2017,2019
+Var: ple0014; Herzkrankheit
+2009,2011,2013,2015,2017,2019
+Var: ple0015; Krebserkrankung
+2009,2011,2013,2015,2017,2019
+Var: ple0016; Schlaganfall
+2009,2011,2013,2015,2017,2019
+Var: ple0017; Migraene
+2009,2011,2013,2015,2017,2019
+Var: ple0018; Bluthochdruck
+2009,2011,2013,2015,2017,2019
+Var: ple0019; Depressive Erkrankung
+2009,2011,2013,2015,2017,2019
+Var: ple0020; Demenzerkrankung
+2009,2011,2013,2015,2017,2019
+Var: ple0021; Gelenkerkrankungen (auch Arthrose, Rheuma)
+2011,2013,2015,2017,2019
+Var: ple0022; Chronische Rueckenbeschwerden
+2011,2013,2015,2017,2019
+Var: ple0023; Sonstige Krankheit
+2009,2011,2013,2015,2017,2019
+Var: ple0024; Keine Krankheit festgestellt
+2009,2011,2013,2015,2017,2019
+Var: ple0026; Eile, Zeitdruck letzten 4 Wochen
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0027; Niedergeschlagen letzten 4 Wochen
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0028; Ausgeglichen letzten 4 Wochen
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0029; Energie letzten 4 Wochen
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0030; Koerperliche Schmerzen letzten 4 Wochen
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0031; Weniger geschafft wg. koerperlicher Probleme
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0032; Inhaltliche Einschraenkung wg. koerperlicher Probleme
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0033; Weniger geschafft wg. seelischer Probleme
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0034; Weniger Sorgfalt wg. seelischer Probleme
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0035; Einschraenkung sozialer Kontakte wg. Gesundheit
+2002,2004,2006,2008,2010,2012,2014,2016,2017,2018,2019
+Var: ple0036; Leiden unter chronischen Krankheiten
+1984,1985,1986,1987,1988,1989,1991,2009,2010,2011,2012,2013,2014,2016,2018
+Var: ple0040; Erwerbs-, Schwerbehinderung
+1984,1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0041; Behinderungsgrad in Prozent
+1984,1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0044_h; Wegen Krankheit nicht gearbeitet Vorjahr [harmonisiert]
+1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0044_v1; Keinen Tag gefehlt wegen Krankheit (unregelmaessig) [1985-2019]
+1985,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0046; Wegen Krankheit nicht gearbeitet Vorjahr, Tage
+1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0048; Wegen Krankheit des Kindes nicht gearbeitet
+2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0049; Anzahl Tage wegen Krankh. Kind nicht gearbeitet
+2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0050; Aus anderen Gruenden nicht gearbeitet
+2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0051; Anzahl Tage aus anderen Gruenden nicht gearbeitet
+2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0052; Keine Fehltage aus persoenlichen Gruenden
+2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0053; Krankenhausaufenthalt Vorjahr
+1984,1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0055; Krankenhausaufenthalt Vorjahr Anzahl
+1984,1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0056; Krankenhausaufenthalt Vorjahr Naechte
+1984,1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0072; Arztbesuche Anzahl
+1988,1989,1991,1992,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0073; Arztbesuche Keine
+1984,1985,1986,1987,1988,1989,1991,1992,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0081_h; Rauchen gegenwaertig [harmonisiert]
+2002,2004,2006,2008,2010,2012,2014,2016,2018
+Var: ple0086_v2; Rauchen: Anzahl Zigaretten pro Tag (unregelmaessig) [2002-2018]
+2002,2004,2006,2008,2010,2012,2014,2016,2018
+Var: ple0086_v3; Rauchen: Anzahl Pfeifen pro Tag (unregelmaessig) [2002-2018]
+2002,2004,2006,2008,2010,2012,2014,2016,2018
+Var: ple0086_v4; Rauchen: Anzahl Zigarren pro Tag (unregelmaessig) [2002-2018]
+2002,2004,2006,2008,2010,2012,2014,2016,2018
+Var: ple0097; Art der Krankenversicherung
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0098_v5; Private Zusatzversicherung (Ja/Nein)  [1999-2008,2010-2014,2016,2018]
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0099_h; Versichertenstatus [harmonisiert]
+1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0099_v5; Versichertenstatus  [1999-2019]
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0104_h; Welche Krankenversicherung erst ab 1999 [harmonisiert]
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0128_h; Beitrag fuer private Zusatzkrankenversicherung [harmonisiert]
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0128_v2; Mon. Beitrag priv. Zusatzkrankenvers. (Euro)  [2002-2008,2010-2014,2016,2018]
+2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0129; Beitrag fuer private Zusatzkrankenversicherung unbekannt
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0130; Krankenhausbehandlung abgedeckt
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0131; Zahnersatz abgedeckt
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0132; Heil-,Hilfsmittel abgedeckt
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0133; Auslandsaufenthalt abgedeckt
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0134; Sonstige Leistungen abgedeckt
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2010,2011,2012,2013,2014,2016,2018
+Var: ple0160; Kassenwechsel in Vorjahr
+1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+Var: ple0162; Gesundheitliche Probleme laenger als halbes Jahr
+2012,2013,2015,2016,2017,2018,2019
+Var: plh0182; Lebenszufriedenheit gegenwaertig
+1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019
+
+. 
+
+
+. do "/tmp/st_158.do"
+
+. /* 
+> list_of_good_vars_categ: 
+>     plb0024_h plb0024_v3 ple0004 ple0005 ple0008 ple0026 ple0027 ple0028 ple0029 ple0030 ple0031 ple0032 ple0033 ple0034
+>     ple0035 ple0040 ple0044_h ple0044_v1 ple0053 ple0055 ple0073 ple0081_h ple0086_v3 ple0086_v4 ple0097 ple0098_v5
+>     ple0099_h ple0099_v5 ple0104_h ple0129 ple0130 ple0131 ple0132 ple0133 ple0134 ple0160 plh0182
+> 
+> list_of_good_vars_conti:
+>     ple0006 ple0007 ple0041 ple0046 ple0056 ple0072 ple0086_v2 ple0128_h ple0128_v2
+> */
+. 
+. di `: word count $list_of_good_vars_categ' // 57 variables
+57
+
+. desc $list_of_good_vars_categ
+
+              storage   display    value
+variable name   type    format     label      variable label
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+plb0024_h       byte    %60.0g     plb0024_h
+                                              Krankgemeldet ueber 6 Wochen Vorjahr [harmonisiert]
+plb0024_v3      byte    %60.0g     plb0024_v3
+                                              Laenger als 6 Wochen krank gemeldet [1999-2019]
+ple0004         byte    %60.0g     ple0004    Gesundheitszustand beeintr. Treppen steigen
+ple0005         byte    %60.0g     ple0005    Gesundheitszustand beeintr. Anstreng. Taetigkeiten
+ple0008         byte    %60.0g     ple0008    Gesundheitszustand gegenwaertig
+ple0009         byte    %60.0g     ple0009    Einschraenkg.im Alltgasleben wg. gesundheitl. Probleme
+ple0011         byte    %60.0g     ple0011    Schlafstoerung
+ple0012         byte    %60.0g     ple0012    Diabetes
+ple0013         byte    %60.0g     ple0013    Asthma
+ple0014         byte    %60.0g     ple0014    Herzkrankheit
+ple0015         byte    %60.0g     ple0015    Krebserkrankung
+ple0016         byte    %60.0g     ple0016    Schlaganfall
+ple0017         byte    %60.0g     ple0017    Migraene
+ple0018         byte    %60.0g     ple0018    Bluthochdruck
+ple0019         byte    %60.0g     ple0019    Depressive Erkrankung
+ple0020         byte    %60.0g     ple0020    Demenzerkrankung
+ple0021         byte    %60.0g     ple0021    Gelenkerkrankungen (auch Arthrose, Rheuma)
+ple0022         byte    %60.0g     ple0022    Chronische Rueckenbeschwerden
+ple0023         byte    %60.0g     ple0023    Sonstige Krankheit
+ple0024         byte    %60.0g     ple0024    Keine Krankheit festgestellt
+ple0026         byte    %60.0g     ple0026    Eile, Zeitdruck letzten 4 Wochen
+ple0027         byte    %60.0g     ple0027    Niedergeschlagen letzten 4 Wochen
+ple0028         byte    %60.0g     ple0028    Ausgeglichen letzten 4 Wochen
+ple0029         byte    %60.0g     ple0029    Energie letzten 4 Wochen
+ple0030         byte    %60.0g     ple0030    Koerperliche Schmerzen letzten 4 Wochen
+ple0031         byte    %60.0g     ple0031    Weniger geschafft wg. koerperlicher Probleme
+ple0032         byte    %60.0g     ple0032    Inhaltliche Einschraenkung wg. koerperlicher Probleme
+ple0033         byte    %60.0g     ple0033    Weniger geschafft wg. seelischer Probleme
+ple0034         byte    %60.0g     ple0034    Weniger Sorgfalt wg. seelischer Probleme
+ple0035         byte    %60.0g     ple0035    Einschraenkung sozialer Kontakte wg. Gesundheit
+ple0036         byte    %60.0g     ple0036    Leiden unter chronischen Krankheiten
+ple0040         byte    %60.0g     ple0040    Erwerbs-, Schwerbehinderung
+ple0044_h       byte    %60.0g     ple0044_h
+                                              Wegen Krankheit nicht gearbeitet Vorjahr [harmonisiert]
+ple0044_v1      byte    %60.0g     ple0044_v1
+                                              Keinen Tag gefehlt wegen Krankheit (unregelmaessig) [1985-2019]
+ple0048         byte    %60.0g     ple0048    Wegen Krankheit des Kindes nicht gearbeitet
+ple0050         byte    %60.0g     ple0050    Aus anderen Gruenden nicht gearbeitet
+ple0052         byte    %60.0g     ple0052    Keine Fehltage aus persoenlichen Gruenden
+ple0053         byte    %60.0g     ple0053    Krankenhausaufenthalt Vorjahr
+ple0055         byte    %60.0g     ple0055    Krankenhausaufenthalt Vorjahr Anzahl
+ple0073         byte    %60.0g     ple0073    Arztbesuche Keine
+ple0081_h       byte    %60.0g     ple0081_h
+                                              Rauchen gegenwaertig [harmonisiert]
+ple0086_v3      byte    %60.0g     ple0086_v3
+                                              Rauchen: Anzahl Pfeifen pro Tag (unregelmaessig) [2002-2018]
+ple0086_v4      byte    %60.0g     ple0086_v4
+                                              Rauchen: Anzahl Zigarren pro Tag (unregelmaessig) [2002-2018]
+ple0097         byte    %60.0g     ple0097    Art der Krankenversicherung
+ple0098_v5      byte    %60.0g     ple0098_v5
+                                              Private Zusatzversicherung (Ja/Nein) [1999-2008,2010-2014,2016,2018]
+ple0099_h       byte    %52.0g     ple0099_h
+                                              Versichertenstatus [harmonisiert]
+ple0099_v5      byte    %60.0g     ple0099_v5
+                                              Versichertenstatus [1999-2019]
+ple0104_h       byte    %60.0g     ple0104_h
+                                              Welche Krankenversicherung erst ab 1999 [harmonisiert]
+ple0129         byte    %60.0g     ple0129    Beitrag fuer private Zusatzkrankenversicherung unbekannt
+ple0130         byte    %60.0g     ple0130    Krankenhausbehandlung abgedeckt
+ple0131         byte    %60.0g     ple0131    Zahnersatz abgedeckt
+ple0132         byte    %60.0g     ple0132    Heil-,Hilfsmittel abgedeckt
+ple0133         byte    %60.0g     ple0133    Auslandsaufenthalt abgedeckt
+ple0134         byte    %60.0g     ple0134    Sonstige Leistungen abgedeckt
+ple0160         byte    %60.0g     ple0160    Kassenwechsel in Vorjahr
+ple0162         byte    %60.0g     ple0162    Gesundheitliche Probleme laenger als halbes Jahr
+plh0182         byte    %59.0g     plh0182    Lebenszufriedenheit gegenwaertig
+
+. 
+. di `: word count $list_of_good_vars_conti' // 11 variables
+11
+
+. desc $list_of_good_vars_conti
+
+              storage   display    value
+variable name   type    format     label      variable label
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ple0006         int     %60.0g     ple0006    Koerpergroesse in cm
+ple0007         int     %60.0g     ple0007    Koerpergewicht in kg
+ple0041         byte    %60.0g     ple0041    Behinderungsgrad in Prozent
+ple0046         int     %60.0g     ple0046    Wegen Krankheit nicht gearbeitet Vorjahr, Tage
+ple0049         int     %60.0g     ple0049    Anzahl Tage wegen Krankh. Kind nicht gearbeitet
+ple0051         int     %60.0g     ple0051    Anzahl Tage aus anderen Gruenden nicht gearbeitet
+ple0056         int     %60.0g     ple0056    Krankenhausaufenthalt Vorjahr Naechte
+ple0072         byte    %60.0g     ple0072    Arztbesuche Anzahl
+ple0086_v2      int     %60.0g     ple0086_v2
+                                              Rauchen: Anzahl Zigaretten pro Tag (unregelmaessig) [2002-2018]
+ple0128_h       int     %60.0g     ple0128_h
+                                              Beitrag fuer private Zusatzkrankenversicherung [harmonisiert]
+ple0128_v2      int     %60.0g     ple0128_v2
+                                              Mon. Beitrag priv. Zusatzkrankenvers. (Euro) [2002-2008,2010-2014,2016,2018]
+
+. 
+. 
+end of do-file
+

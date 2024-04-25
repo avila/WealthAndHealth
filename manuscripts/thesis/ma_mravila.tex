@@ -1,0 +1,348 @@
+% !TeX spellcheck = en_US
+\documentclass[
+  fontsize=12pt,
+  bibliography=totoc,
+  numbers=noenddot,
+  listof=totoc,
+  %toc=totoc,
+  appendixprefix,
+  oneside,  %  twoside=semi,
+  paper=a4,
+  % test
+  headings=small,
+%  parskip=full
+]{scrbook} % scrbook  memoir
+\setcounter{tocdepth}{2}                                 % levels which are displayed in the table of contents
+%
+% Packages
+% -----------------------------------
+\usepackage[
+  paper=a4paper,
+  left=12.5mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm,
+%  showframe,
+  bindingoffset=10mm]{geometry}                            % page and binding margins can be adjust here
+
+\usepackage{inputenc}                                 % mutated vowel (Umlaute) in the text
+\usepackage[british]{babel}                                 % orthography
+\usepackage{csquotes}                                       % Context sensitive quotation
+%\usepackage[utf8]{fontenc}                                 % for better encoding --
+\usepackage{lmodern}                                        % font family
+\usepackage{microtype}                                      % for micro typography (for a better typeface)
+\usepackage{graphicx}                                       % for including graphs (pdf,png - but do avoid jpg)
+\graphicspath{{./img/}{../../output/figures}}                                     % path to the pictures
+\usepackage{grffile}
+\usepackage{xcolor}
+\definecolor{White}{rgb}{1,1,1}
+\definecolor{cp}{gray}{0.92}
+\definecolor{cm}{gray}{0.96}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\usepackage[hyphens]{url}                                   %  formatting URL (e.g. in the literature)
+
+\usepackage{tabularx}                                       % for a better configuration of tables
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{afterpage}
+
+\usepackage[flushleft]{threeparttable}
+\usepackage[active]{srcltx}
+
+\usepackage{siunitx}
+\sisetup{group-separator=\, ,
+        output-exponent-marker = \text{e},
+        exponent-product={},
+        retain-explicit-plus,
+        input-open-uncertainty  = ,
+        input-close-uncertainty = ,
+        table-align-text-pre    = false,
+        group-minimum-digits={4},
+%        round-mode=places,
+        table-space-text-post = \sym{***},
+        table-space-text-pre    = (,
+        table-space-text-post   = ),
+        table-align-text-post=false,
+} % centering in tables} % centering in tables
+
+%\usepackage{listings}                                       % for computer code output
+% \usepackage{inconsolata}
+
+\usepackage{mdwlist}                                        % lists
+
+\usepackage{setspace}                                       % setting of the lines (rows)
+%\newtheorem{mydef}{Merksatz}                               % if examples or mnemotechnic verses are used with continuous numeration
+%\newtheorem{bsp}{Beispiel}
+
+%\usepackage{todonotes}                                     % for the creation of ToDos
+\usepackage{lscape}                                         % for the rotation of pages
+
+%\usepackage{tikz}
+%\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+% -------------------------------------------------------------------------------------------------
+% math packages ----
+% -------------------------------------------------------------------------------------------------
+%\usepackage{amsmath}                                        % for the writting of mathematical formula
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\sign}{sign}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\usepackage{unicode-math}
+%\usepackage{bm}
+\usepackage{calc}
+%\usepackage{footnote}                                      % footnotes
+\usepackage{tablefootnote}                                  % footnotes in tables
+
+% test test
+\usepackage{caption} % 'format=plain' avoids hanging indentation
+\captionsetup{
+  font=normalsize,
+  labelsep=quad,
+  labelfont={sf,bf},
+  justification=justified, %justified, raggedright
+  singlelinecheck=false
+  }
+\usepackage[
+    font=footnotesize,
+    justification=centering,
+    subrefformat=parens,
+    labelformat=parens]{subcaption}
+
+\captionsetup[sub]{labelfont=bf, labelformat=brace, subrefformat=simple}
+% fnote command to use as notes for figures
+\newcommand\fnote[1]{
+    \captionsetup{
+        font=footnotesize, 
+        justification=justified,
+        singlelinecheck=false}\vspace*{-.3\baselineskip}\caption*{#1}
+}
+
+
+
+
+%% end subcaption
+
+\usepackage[
+    linktocpage=true,
+    colorlinks]{hyperref}                 % For hperlinks in PDF-documents
+
+\hypersetup{%
+    colorlinks=false,% false: hyperlinks will be black
+    linkcolor=blue,
+    linkbordercolor=blue,% hyperlink of cref borders 
+    urlcolor=blue,
+    urlbordercolor=white,
+    citecolor=blue,% if colorlinks true
+    citebordercolor=blue,% hyperlink of citation
+    pdfborderstyle={/S/U/W 1}% border style will be underline of width x pt, 
+    }
+\hypersetup{%
+    pdftitle={The health-wealth nexus over the life cycle},
+    pdfsubject={Master Thesis in Economics at FU-Berlin},
+    pdfauthor={Marcelo Rainho Avila},
+    pdfproducer={TeXstudio + xelatex},
+    pdfcreator={Marcelo Rainho Avila}
+}
+
+\usepackage[noabbrev,capitalise,nameinlink]{cleveref}
+%\crefname{chapter}{Section}{Sections}
+
+\usepackage{bookmark} %%https://tex.stackexchange.com/questions/30330/how-can-i-avoid-compiling-twice
+
+
+\usepackage{enumitem}
+
+% hack 
+\usepackage{scrhack}
+\usepackage{adjustbox}
+\usepackage{float} % here for H placement parameter
+\usepackage{appendix}
+\usepackage{colortbl}
+
+\usepackage{pdflscape}
+
+%\pdfminorversion=6
+
+% bibliography --
+\usepackage[
+    backend=biber,
+    sortcites=false,
+    style=authoryear-icomp, %authoryear-icomp
+    doi=true,
+    isbn=false,
+    url=false,
+    eprint=false, % https://tex.stackexchange.com/questions/23117/
+    %backref=true,
+    giveninits=true,
+    uniquename=init,
+    dashed=false,
+    bibencoding=utf8,
+    hyperref,
+    maxcitenames=2]{biblatex}
+    %authoryear, %bibstyle=draft, %sorting=nyt,
+\setlength\bibitemsep{1.5\itemsep}
+
+\addbibresource{./literature/sources.bib}                   % including literature sources
+\DeclareLabeldate{\field{date}\field{eventdate}\field{origdate}\field{year}\literal{nodate}}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+\DefineBibliographyStrings{english}{%
+    backrefpage = {page},% originally "cited on page"
+    backrefpages = {pages},% originally "cited on pages"
+}
+
+\AtEveryBibitem{%
+    \ifboolexpr 
+    { % test 
+        test {\ifentrytype{online}}
+        or 
+        test {\ifentrytype{software}}
+    }
+    { % true , do nothing
+    }
+    { % false
+        \clearfield{month}%
+        \clearfield{day}%
+    } 
+}
+
+
+\DeclareCiteCommand{\citeauthor} % https://tex.stackexchange.com/questions/75902
+{\boolfalse{citetracker}%
+    \boolfalse{pagetracker}%
+    \usebibmacro{prenote}}
+{\ifciteindex
+    {\indexnames{labelname}}
+    {}%
+    \printtext[bibhyperref]{\printnames{labelname}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+
+% https://tex.stackexchange.com/questions/1687/hyperlink-name-with-biblatex-authoryear
+\DeclareFieldFormat{citehyperref}{%
+    \DeclareFieldAlias{bibhyperref}{noformat}% Avoid nested links
+    \bibhyperref{#1}}
+
+\DeclareFieldFormat{textcitehyperref}{%
+    \DeclareFieldAlias{bibhyperref}{noformat}% Avoid nested links
+    \bibhyperref{%
+        #1%
+        \ifbool{cbx:parens}
+        {\bibcloseparen\global\boolfalse{cbx:parens}}
+        {}}}
+
+\savebibmacro{cite}
+\savebibmacro{textcite}
+
+\renewbibmacro*{cite}{%
+    \printtext[citehyperref]{%
+        \restorebibmacro{cite}%
+        \usebibmacro{cite}}}
+
+\renewbibmacro*{textcite}{%
+    \ifboolexpr{
+        ( not test {\iffieldundef{prenote}} and
+        test {\ifnumequal{\value{citecount}}{1}} )
+        or
+        ( not test {\iffieldundef{postnote}} and
+        test {\ifnumequal{\value{citecount}}{\value{citetotal}}} )
+    }
+    {\DeclareFieldAlias{textcitehyperref}{noformat}}
+    {}%
+    \printtext[textcitehyperref]{%
+        \restorebibmacro{textcite}%
+        \usebibmacro{textcite}}}
+
+
+% inline code environment
+\let\code=\texttt
+
+% for esttab estout table output
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+
+% for expliciting topic (unnumberd subsection)
+%\newcommand{\topic}[1]{\vspace{.5em}\noindent\textbf{#1}\qquad}
+\newcommand{\topic}{\subsubsection}
+
+% short for \textsubscript
+\newcommand{\tsub}[1]{\textsubscript{#1}}
+\newcommand{\tsup}[1]{\textsuperscript{#1}}
+
+
+% hook 
+\ExplSyntaxOn % providing \expandableinput
+\cs_new:Npn \expandableinput #1
+{ \use:c { @@input } { \file_full_name:n {#1} } }
+\ExplSyntaxOff
+
+\makeatletter
+
+\renewcommand\thesubfigure{\alph{subfigure}}
+\renewcommand\p@subfigure{\thefigure\,}
+
+% https://tex.stackexchange.com/a/122465/145182 Subsubsection: remove the newline (like paragraph)
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+    {-3.25ex\@plus -1ex \@minus -.2ex}%
+    {-1.5ex \@plus -.2ex}% Formerly 1.5ex \@plus .2ex
+    {\normalfont\normalsize\bfseries}}
+
+\makeatother
+
+
+% Document
+% -----------------------------------
+\begin{document}
+
+
+\frontmatter
+    \input{./title/title}                                   % title
+%    \input{./chapter/abstract_eng}                          % abstract
+     \tableofcontents                                       % table of contents
+    \clearpage
+\begingroup
+    \let\cleardoublepage\relax
+    \listoffigures                                          % list of figures
+\endgroup
+\begingroup
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+       \listoftables                                       % list of tables
+\endgroup
+
+% -----------------------------------
+
+\mainmatter                                                 % the respective chapters
+
+\onehalfspacing                      % line spacing which is set to 1.5 from this point on
+
+
+\nocite{
+    rios-avila.etal2023csdid,
+    rios-avila.etal2024csdid2,
+    statacorp.2023stata,
+    correia2023reghdfe}
+
+	\input{./chapter/00_main_matter.tex}
+
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+%\printbibliography
+\renewcommand*{\bibfont}{\small}
+\addcontentsline{toc}{section}{References}
+\printbibliography[title={References},notkeyword={software}]
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+% \addcontentsline{toc}{section}{Data Sources} % better use printbibliography’s options for that
+\printbibliography[heading=subbibliography,keyword={software},title={Key Software}]
+
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\pagestyle{headings}
+\input{./chapter/98_appendix}
+\backmatter
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\input{./chapter/99_declaration}
+
+\end{document}

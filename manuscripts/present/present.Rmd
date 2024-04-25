@@ -1,0 +1,165 @@
+---
+title: 'Socioeconomic Status and Health: An exploratory analysis for Germany'
+author: "Marcelo Avila"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  beamer_presentation: default
+header-includes:
+- \widowpenalties 1 150
+- \setbeameroption{hide notes}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Motivation 
+
+- Better health outcome is correlated with higher socioeconomic status (SES)
+
+- Economic literature on topic relatively sparse due to intrinsic endogeneity of the problem
+
+- SOEP provides rich information on several areas including health, wealth, income, lifestyle
+that allows for very granular examination on possible mechanisms
+
+- Deaton (2003) exposes a few hypotheses
+  - Education: with access to better education -> better health
+decisions
+  - Irrationality: Too high discount rate -> failure to build capital
+& protect health
+  - Absolute vs relative “income hypothesis” -> not only level of wealth but also
+  ranking, i.e, inequality, affect health outcomes
+
+## Data 
+
+- Cross-sectional SOEPv36 data from 2019 with 24.429 observations including new sample on
+top-stakeholders (TS)
+
+- Wealth module from 2017 for other samples
+
+- INKAR data for geographic healthcare provision on district level (Landkreis) 
+
+- Item non-response imputed via Bayesian Networks as proposed by Göbler (2019)
+
+- Drawback: Health module (from 2018/2020) with broader coverage of health variables not yet available
+for SOEP TS sample 
+
+## Health Data 
+
+48 health related variables such as: 
+
+- Did you feel _(x)_ in the last 2 weeks?
+  - Lack of interests, Depressiveness, Nervousness, etc
+- Has a doctor ever diagnosed you with _(x)_ ? 
+  - Diabetes, Asthma, Cardiopathy, Cancer, Apoplectic Stroke, Migraine, etc
+- How many days did you not work due to illness in the previous year? 
+- Number of hospital stays in previous year? 
+- Health insurance provider, and many more
+
+## Wealth Percentiles
+
+
+|   | 25th| 50th| 75th| 90th | 95th | 100th |
+|---|  --:|  --:|  --:|   --:|   --:|    --:|
+Net | 0,5 | 25,6 | 170 | 450 | 870 | 130M
+Gross | 3,5 | 49,9 | 225 | 530 | 1,0M | 130M | 
+Table: Percentile cuts of Wealth variables (_in thousand €_)
+
+
+
+- Problematic to look at lower end of distribution looking only at wealth dimension
+- Some distortion due to individuals with high socioeconomic status but vast amount of debt
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+library(dplyr)
+#file.info("../data/intermediary/df_wealth_health_v2.rds")$mtime
+df_wealth_health <- readRDS("../data/intermediary/df_wealth_health_v2.rds")  %>%
+  mutate(
+    education = ordered(education,
+                        labels = c("No completion" ,
+                                   "Lower Secondary" ,
+                                   "Upper Secondary",
+                                   "Tertiary or higher"))
+  )
+
+library(gtsummary)
+#theme_gtsummary_journal(journal = "jama")
+df_wealth_health %>%
+  select(net_wealth_group, net_wealth)  %>%
+  tbl_summary(
+    by = net_wealth_group,
+    statistic = list(all_continuous() ~ "{max}",
+                     all_categorical() ~ "{n} / {N} ({p}%)"))
+
+df_wealth_health %>%
+  select(gross_wealth_group, gross_wealth)  %>%
+  tbl_summary(
+    by = gross_wealth_group,
+    statistic = list(all_continuous() ~ "{max}",
+                     all_categorical() ~ "{n} / {N} ({p}%)"))
+```
+
+
+## Exploratory Visualisations {.allowframebreaks}
+
+
+![fig_life_sats_by_wealth_and_age](../output/figures/explorative/fig_life_sats_by_wealth_and_age.png)
+![fig_life_sats_by_wealth_and_educ](../output/figures/explorative/fig_life_sats_by_wealth_and_educ.png)
+![fig_life_sats_by_wealth_and_educ](../output/figures/explorative/fig_life_sats_by_wealth_x_age_educ_both.png)
+![fig_depress_by_wealth_age](../output/figures/explorative/fig_depress_by_wealth_age.png)
+![fig_depress_by_wealth_educ](../output/figures/explorative/fig_depress_by_wealth_educ.png)
+![fig_sleep_wealth_age](../output/figures/explorative/fig_sleep_wealth_age.png)
+![fig_workhrs_by_healthsat_be_wealth_ridges](../output/figures/explorative/fig_life_sats_by_wealth_and_age_lower.png)
+
+![fig_workhrs_by_healthsat_be_wealth_ridges](../output/figures/explorative/fig_workhrs_by_healthsat_be_wealth_ridges.png)
+<!-- ![fig_workhrs_by_healthsat_be_wealthgrp](../output/figures/explorative/fig_workhrs_by_healthsat_be_wealthgrp.png) -->
+
+
+## INKAR Indicators {.allowframebreaks} 
+
+- Bundesinstitut für Bau-, Stadt- und Raumforschung im Bundesamt für Bauwesen und Raumordnung (BBSR Bonn) 
+provides through INKAR (Inkdikatoren und Karten zur Raum- und Stadtentwicklung) regional indicators on 
+several variables including healthcare provision. 
+
+- Healthcare provision displays regional heterogeneity that might play a role in health outcomes. 
+
+- Note: INKAR Data note yet merged with SOEP data
+
+![fig_map_doctors](../output/figures/explorative/fig_map_doctors.png){height=75%}
+![fig_map_doctors](../output/figures/explorative/fig_map_hospital_bed.png){height=75%}
+
+<!-- ![fig_map_doctors](../output/figures/explorative/fig_map_general_pract.png){height=75%} -->
+<!-- ![fig_map_doctors](../output/figures/explorative/fig_map_pharmacies.png){height=75%} -->
+
+
+## Outlook 
+
+### Objectives
+
+- Generate via Principal Components a physical, a mental and (possibly) a _social health_ variables
+to consolidate available health information in fewer dimensions
+
+- Investigate which variables more strongly predict health outcomes in these dimensions
+
+- investigate how predictive are the physical and mental health variables on income and wealth
+outcomes. 
+
+### Challenges 
+
+- Find a methodology that properly deal with endogeneity, confounder and collider biases 
+(even if not aiming to infer causality)
+- Still need to consolidate and focus on a overall research question. 
+
+## References 
+
+Deaton, Angus. 2003. "Health, Inequality, and Economic Development ." Journal of Economic Literature, 41 (1): 113-158. 
+
+Göbler, K. (2019). A Novel Imputation Algorithm with Bayesian Networks“. In: Mimeo.
+
+
+
+# coments 
+
+Dataset: SOEP 2002, 2007, 2012, 2017, 2019 Excluding rich sample in 2019 Analyses: 1) For every year, descriptive statistics of core variables: Mean, SD, share of missings 2) Box plots of satisfaction with health a. by net wealth quartiles b. by age groups c. for each age group: by net wealth quartiles 3) xtLogit: dummy of having a certain disease on: net wealth quartiles, age dummies …. + Margins Margins plot 4) xtologit (or xtreg) of health satisfaction on: net wealth quartiles, having a certain disease, interaction net wealth quartiles x having a certain disease, age dummies …. External validation of health variables: Compare pop shares in SOEP with a certain disease and external admin statistics11:23
+good point: Say, a diagnosis has been detected, how does health (life) satisfaction evolve over time for differnt wealth groups...11:29
